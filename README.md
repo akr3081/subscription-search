@@ -1,2 +1,2 @@
 # subscription-search
-Chrome extension for searching YouTube subscriptions.
+React app for searching through your YouTube subscriptions.

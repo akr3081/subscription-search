@@ -1,4 +1,4 @@
-const baseUrl = 'https://youtube.googleapis.com/youtube/v3';
+import { BASE_URL } from './constants';
 
 /**
  * Gets subscriptions based on the current pageToken
@@ -8,7 +8,7 @@ const baseUrl = 'https://youtube.googleapis.com/youtube/v3';
  * @returns {object} Subscription payload
  */
 const fetchSubscriptionData = async ({channelId, apiKey, pageToken}) => {
-    const res = await fetch(`${baseUrl}/subscriptions?key=${apiKey}&part=snippet&channelId=${channelId}&order=alphabetical&maxResults=50&pageToken=${pageToken}`);
+    const res = await fetch(`${BASE_URL}/subscriptions?key=${apiKey}&part=snippet&channelId=${channelId}&order=alphabetical&maxResults=50&pageToken=${pageToken}`);
     return await res.json();
 }
 
@@ -41,7 +41,7 @@ const getSubscriptions = async ({channelId, apiKey}) => {
  * @returns {object} List of videos
  */
 const fetchChannelResults = async ({channelId, apiKey, searchTerm, maxResultsPerChannel}) => {
-    const res = await fetch(`${baseUrl}/search?key=${apiKey}&channelId=${channelId}&maxResults=${maxResultsPerChannel}&q=${searchTerm}&part=snippet&safeSearch=none&type=video`);
+    const res = await fetch(`${BASE_URL}/search?key=${apiKey}&channelId=${channelId}&maxResults=${maxResultsPerChannel}&q=${searchTerm}&part=snippet&safeSearch=none&type=video`);
     const resJson = await res.json();
     return resJson.items;
 }
@@ -57,33 +57,12 @@ const fetchChannelResults = async ({channelId, apiKey, searchTerm, maxResultsPer
 const getAllVideos = async ({subscriptionIds, apiKey, searchTerm, maxResultsPerChannel}) => {
     let videoList = [];
 
-    // TODO can we make this simpler???
     const promiseList = subscriptionIds.map(subId => fetchChannelResults({channelId: subId, apiKey, searchTerm, maxResultsPerChannel}));
     await Promise.all(promiseList).then(subscriptionData => {
         subscriptionData.forEach(subVideos => {
-            console.log(1111, subVideos);
             videoList.push(...subVideos);
         })
     })
 
     return videoList;
-}
-
-const execute = async () => {
-    const apiKey = '';
-    const channelId = '';
-
-    const subscriptions = await getSubscriptions({channelId, apiKey});
-
-    // TODO add toggle to only search certain channels
-    // TOOD make this static to limit api calls
-    const subscriptionIds = subscriptions.map(sub => sub.snippet.resourceId.channelId);
-
-    const searchTerm = document.getElementById('search_input').value;
-    const maxResultsPerChannel = document.getElementById('search_max_results').value;
-
-    const videos = await getAllVideos({subscriptionIds, apiKey, searchTerm, maxResultsPerChannel});
-
-    const videoTitles = videos.map(video => video.snippet.title);
-    console.log(1111, videoTitles);
 }
