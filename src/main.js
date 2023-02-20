@@ -74,19 +74,16 @@ const execute = async () => {
     const channelId = '';
 
     const subscriptions = await getSubscriptions({channelId, apiKey});
-    console.log(1111, subscriptions[0]);
 
     // TODO add toggle to only search certain channels
     // TOOD make this static to limit api calls
     const subscriptionIds = subscriptions.map(sub => sub.snippet.resourceId.channelId);
-    console.log(2222, subscriptionIds);
 
     const searchTerm = document.getElementById('search_input').value;
     const maxResultsPerChannel = document.getElementById('search_max_results').value;
 
     const videos = await getAllVideos({subscriptionIds, apiKey, searchTerm, maxResultsPerChannel});
-    console.log(3333, videos);
 
     const videoTitles = videos.map(video => video.snippet.title);
-    console.log(4444, videoTitles);
+    console.log(1111, videoTitles);
 }
