@@ -1,8 +1,15 @@
 .home {
   align-items: center;
-  background: lightgrey;
+  /*background: lightgrey;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
+}
+
+.subscriptionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 60%;
 }

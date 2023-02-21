@@ -7,7 +7,7 @@ import { BASE_URL } from './constants';
  * @param {string} pageToken - Token for paginated results
  * @returns {object} Subscription payload
  */
-const fetchSubscriptionData = async ({ channelId, apiKey, pageToken }) => {
+export const fetchSubscriptionData = async ({ channelId, apiKey, pageToken }) => {
   const res = await fetch(
     `${BASE_URL}/subscriptions?key=${apiKey}&part=snippet&channelId=${channelId}&order=alphabetical&maxResults=50&pageToken=${pageToken}`
   );
@@ -20,7 +20,7 @@ const fetchSubscriptionData = async ({ channelId, apiKey, pageToken }) => {
  * @param {string} apiKey - The api key used to fetch data
  * @returns {array} List of subscriptions
  */
-const getSubscriptions = async ({ channelId, apiKey }) => {
+export const getSubscriptions = async ({ channelId, apiKey }) => {
   const subscriptionsList = [];
   let pageToken = '';
 
@@ -41,7 +41,7 @@ const getSubscriptions = async ({ channelId, apiKey }) => {
  * @param {number} maxResultsPerChannel - The max number of results to return for each channel
  * @returns {object} List of videos
  */
-const fetchChannelResults = async ({ channelId, apiKey, searchTerm, maxResultsPerChannel }) => {
+export const fetchChannelResults = async ({ channelId, apiKey, searchTerm, maxResultsPerChannel }) => {
   const res = await fetch(
     `${BASE_URL}/search?key=${apiKey}&channelId=${channelId}&maxResults=${maxResultsPerChannel}&q=${searchTerm}&part=snippet&safeSearch=none&type=video`
   );
@@ -57,7 +57,7 @@ const fetchChannelResults = async ({ channelId, apiKey, searchTerm, maxResultsPe
  * @param {number} maxResultsPerChannel - The max number of results to return for each channel
  * @returns {object} List of videos from all channels
  */
-const getAllVideos = async ({ subscriptionIds, apiKey, searchTerm, maxResultsPerChannel }) => {
+export const getAllVideos = async ({ subscriptionIds, apiKey, searchTerm, maxResultsPerChannel }) => {
   let videoList = [];
 
   const promiseList = subscriptionIds.map((subId) =>
