@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './AuthHeader.module.css';
 
-const AuthHeader = ({ userData, handleSubmitAuth }) => {
+const AuthHeader = ({ userData, handleSubmitAuth, className }) => {
   const [isFormOpen, setIsFormOpen] = useState(!userData.apiKey);
 
   // Sets form open if apiKey is empty
@@ -27,7 +27,7 @@ const AuthHeader = ({ userData, handleSubmitAuth }) => {
   };
 
   return (
-    <div className={styles.authHeader}>
+    <div className={`${styles.authHeader} ${className}`}>
       {isFormOpen ? (
         <form className={styles.form} onSubmit={handleSubmit}>
           <span>

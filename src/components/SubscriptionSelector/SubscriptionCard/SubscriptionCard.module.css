@@ -1,0 +1,29 @@
+.subscriptionCard {
+  align-items: center;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.subscriptionCard h3 {
+  overflow: hidden;
+  padding: 0 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.subscriptionCard img {
+  border-radius: 50%;
+  height: 3em;
+  width: 3em;
+}
+
+.selectButton {
+  /*background: none;*/
+}
+
+.selectButton svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}

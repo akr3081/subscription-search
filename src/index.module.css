@@ -1,15 +1,26 @@
 .home {
   align-items: center;
-  /*background: lightgrey;*/
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
+  border: 4px solid green;
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'leftRail pageBody';
+  grid-template-columns: 20% 80%;
+  height: 100vh;
 }
 
-.subscriptionsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 60%;
+.header {
+  grid-area: header;
+}
+
+.leftRail {
+  grid-area: leftRail;
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
+.pageBody {
+  grid-area: pageBody;
+  max-height: 100%;
+  overflow-y: scroll;
 }

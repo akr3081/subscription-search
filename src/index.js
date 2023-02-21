@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
 import AuthHeader from './components/AuthHeader/index.jsx';
-import SearchForm from './components/SearchForm/index.jsx';
-import SubscriptionBanner from './components/SubscriptionBanner/index.jsx';
+import SearchForm from './components/SearchForm/SearchForm.jsx';
+import SubscriptionSelector from './components/SubscriptionSelector/SubscriptionSelector.jsx';
 import SubscriptionsMock from './__mocks__/subscriptions.json';
 import VideoMock from './__mocks__/channelVideos.json';
 import { getSubscriptions } from './common/utils';
@@ -30,15 +30,13 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      <AuthHeader userData={userData} handleSubmitAuth={handleSubmitAuth} />
+      <AuthHeader userData={userData} handleSubmitAuth={handleSubmitAuth} className={styles.header} />
 
-      <SearchForm userData={userData} />
-
-      <div className={styles.subscriptionsContainer}>
-        {SubscriptionsMock.items.map((subscription) => (
-          <SubscriptionBanner {...subscription.snippet} videos={VideoMock.items} />
-        ))}
+      <div className={styles.leftRail}>
+        <SubscriptionSelector subscriptions={SubscriptionsMock.items} />
       </div>
+
+      <div className={styles.pageBody} />
     </div>
   );
 };

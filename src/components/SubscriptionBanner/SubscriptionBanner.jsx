@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './SubscriptionBanner.module.css';
-import { ArrowIcon } from '../Icon/index.jsx';
-import VideoCard from '../VideoCard/index.jsx';
+import { ArrowIcon } from '../Icon/Icon.jsx';
+import VideoCard from '../VideoCard/VideoCard.jsx';
 
 const SubscriptionBanner = ({ title, description, resourceId, thumbnails, videos }) => {
   const [isOpen, setIsOpen] = useState(false);
