@@ -1,5 +1,4 @@
 .subscriptionBanner {
-  background: #f7f7f7;
   border: 1px solid black;
   border-radius: 5px;
   width: 100%;
@@ -71,5 +70,9 @@
   transition: transform 0.3s;
 }
 
-.container {
+.videoContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: scroll;
 }

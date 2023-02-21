@@ -6,7 +6,7 @@
     "react-dom": "^18.2.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode=development --open --hot",
+    "start": "webpack-dev-server --mode=development --hot",
     "build": "webpack --mode=production",
     "test": "echo 'set up tests'"
   },

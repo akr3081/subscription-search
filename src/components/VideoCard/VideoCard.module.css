@@ -1,0 +1,14 @@
+.videoCard {
+  background: #f7f7f7;
+  width: min-content;
+}
+
+.videoCard a {
+  color: black;
+  text-decoration: none;
+}
+
+
+.videoCard img {
+  border-radius: 5px;
+}

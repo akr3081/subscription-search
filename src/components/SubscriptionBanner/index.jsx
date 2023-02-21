@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styles from './SubscriptionBanner.module.css';
 import { ArrowIcon } from '../Icon/index.jsx';
+import VideoCard from '../VideoCard/index.jsx';
 
-const SubscriptionBanner = ({ title, description, resourceId, channelId, thumbnails }) => {
+const SubscriptionBanner = ({ title, description, resourceId, thumbnails, videos }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleIsOpen = (e) => {
@@ -21,13 +22,15 @@ const SubscriptionBanner = ({ title, description, resourceId, channelId, thumbna
         />
         <a href={`https://youtube.com/channel/${resourceId.channelId}`}>
           <img src={thumbnails.default.url} alt={title} />
-          <h3>{title}</h3>
+          <h3>{`${title} (${videos.length})`}</h3>
         </a>
       </div>
 
       {isOpen && (
-        <div className={styles.container}>
-          <h4>{description}</h4>
+        <div className={styles.videoContainer}>
+          {videos.map((video) => (
+            <VideoCard {...video.snippet} videoId={video.id.videoId} />
+          ))}
         </div>
       )}
     </div>

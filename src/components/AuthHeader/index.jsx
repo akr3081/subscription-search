@@ -44,7 +44,6 @@ const AuthHeader = ({ userData, handleSubmitAuth }) => {
         </form>
       ) : (
         <div>
-          <h1>Submitted</h1>
           <button onClick={() => setIsFormOpen(true)}>Edit</button>
         </div>
       )}

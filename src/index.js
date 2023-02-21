@@ -3,6 +3,8 @@ import { render } from 'react-dom';
 import AuthHeader from './components/AuthHeader/index.jsx';
 import SearchForm from './components/SearchForm/index.jsx';
 import SubscriptionBanner from './components/SubscriptionBanner/index.jsx';
+import SubscriptionsMock from './__mocks__/subscriptions.json';
+import VideoMock from './__mocks__/channelVideos.json';
 import { getSubscriptions } from './common/utils';
 import styles from './index.module.css';
 
@@ -28,15 +30,13 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      <h1>Subscription Search</h1>
-
       <AuthHeader userData={userData} handleSubmitAuth={handleSubmitAuth} />
 
       <SearchForm userData={userData} />
 
       <div className={styles.subscriptionsContainer}>
-        {subscriptions.map((subscription) => (
-          <SubscriptionBanner {...subscription.snippet} />
+        {SubscriptionsMock.items.map((subscription) => (
+          <SubscriptionBanner {...subscription.snippet} videos={VideoMock.items} />
         ))}
       </div>
     </div>
