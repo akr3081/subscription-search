@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './AuthHeader.module.css';
 
+/**
+ * App header with authentication form
+ * @param {object} userData - Contains user data
+ * @param {function} handleSubmitAuth - Handle auth form submit
+ * @param {string} className - CSS class name
+ */
 const AuthHeader = ({ userData, handleSubmitAuth, className }) => {
   const [isFormOpen, setIsFormOpen] = useState(!userData.apiKey);
 
@@ -49,6 +56,15 @@ const AuthHeader = ({ userData, handleSubmitAuth, className }) => {
       )}
     </div>
   );
+};
+
+AuthHeader.propTypes = {
+  userData: PropTypes.objectOf({
+    apiKey: PropTypes.string,
+    channelId: PropTypes.string
+  }),
+  handleAuthSubmit: PropTypes.func,
+  className: PropTypes.string
 };
 
 export default AuthHeader;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
-import AuthHeader from './components/AuthHeader/index.jsx';
+import AuthHeader from './components/AuthHeader/AuthHeader.jsx';
 import SubscriptionSelector from './components/SubscriptionSelector/SubscriptionSelector.jsx';
 import VideoCard from './components/VideoCard/VideoCard.jsx';
 import SubscriptionsMock from './__mocks__/subscriptions.json';
