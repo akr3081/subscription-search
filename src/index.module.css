@@ -1,26 +1,36 @@
 .home {
-  align-items: center;
+  align-items: flex-start;
   display: grid;
   grid-template-areas:
     'header header'
     'leftRail pageBody';
   grid-template-columns: 20% 80%;
+  grid-template-rows: min-content auto;
   height: 100vh;
 }
 
 .header {
   grid-area: header;
+  max-height: 100%;
 }
 
 .leftRail {
-  align-self: flex-end;
+  align-self: flex-start;
+  border: 1px solid black;
   grid-area: leftRail;
   max-height: 100%;
+  overflow-x: hidden;
   overflow-y: scroll;
+  width: 100%;
 }
 
 .pageBody {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   grid-area: pageBody;
   max-height: 100%;
   overflow-y: scroll;
+  width: 100%;
 }

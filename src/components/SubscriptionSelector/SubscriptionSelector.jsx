@@ -1,7 +1,14 @@
 import React from 'react';
 import styles from './SubscriptionSelector.module.css';
 import SubscriptionCard from './SubscriptionCard/SubscriptionCard.jsx';
+import PropTypes from 'prop-types';
 
+/**
+ * Displays list of subscription cards to be selected
+ * @param {array} subscriptions - List of all subscriptions
+ * @param {array} selectedSubscriptions - List of selected channel ids
+ * @param {function} setSelectedSubscriptions - Updates selectedSubscriptions state hook
+ */
 const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelectedSubscriptions }) => {
   const handleSelect = (subscription) => {
     const channelId = subscription.snippet.resourceId.channelId;
@@ -33,6 +40,17 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
       </div>
     </div>
   );
+};
+
+SubscriptionSelector.propTypes = {
+  subscriptions: PropTypes.arrayOf(PropTypes.object),
+  selectedSubscriptions: PropTypes.arrayOf(PropTypes.string),
+  setSelectedSubscriptions: PropTypes.func
+};
+
+SubscriptionSelector.defaultProps = {
+  subscriptions: [],
+  selectedSubscriptions: []
 };
 
 export default SubscriptionSelector;

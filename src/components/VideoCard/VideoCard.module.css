@@ -1,14 +1,19 @@
 .videoCard {
+  align-items: center;
   background: #f7f7f7;
-  width: min-content;
-}
-
-.videoCard a {
   color: black;
+  display: flex;
+  gap: 20px;
+  justify-self: center;
   text-decoration: none;
+  width: 80%;
 }
-
 
 .videoCard img {
   border-radius: 5px;
+}
+
+.cardContent {
+  height: 100%;
+  width: 100%;
 }

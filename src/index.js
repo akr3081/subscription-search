@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
 import AuthHeader from './components/AuthHeader/index.jsx';
-import SearchForm from './components/SearchForm/SearchForm.jsx';
 import SubscriptionSelector from './components/SubscriptionSelector/SubscriptionSelector.jsx';
+import VideoCard from './components/VideoCard/VideoCard.jsx';
 import SubscriptionsMock from './__mocks__/subscriptions.json';
-import VideoMock from './__mocks__/channelVideos.json';
+import VideoMock from './__mocks__/videos.json';
 import { getSubscriptions } from './common/utils';
 import styles from './index.module.css';
 
 const Home = () => {
   const [userData, setUserData] = useState({ apiKey: '', channelId: '' });
-  const [subscriptions, setSubscriptions] = useState([]);
+  const [subscriptions, setSubscriptions] = useState(SubscriptionsMock.items);
   const [selectedSubscriptions, setSelectedSubscriptions] = useState([]);
+  const [videos, setVideos] = useState(VideoMock);
 
   useEffect(() => {
     if (userData.apiKey && subscriptions.length === 0) {
@@ -35,13 +36,17 @@ const Home = () => {
 
       <div className={styles.leftRail}>
         <SubscriptionSelector
-          subscriptions={SubscriptionsMock.items}
+          subscriptions={subscriptions}
           selectedSubscriptions={selectedSubscriptions}
           setSelectedSubscriptions={setSelectedSubscriptions}
         />
       </div>
 
-      <div className={styles.pageBody} />
+      <div className={styles.pageBody}>
+        {videos.map((video) => (
+          <VideoCard {...video.snippet} videoId={video.id.videoId} />
+        ))}
+      </div>
     </div>
   );
 };
