@@ -1,29 +1,44 @@
 .subscriptionCard {
   align-items: center;
-  border: 1px solid black;
   display: flex;
   justify-content: space-between;
+  max-width: 100%;
+  overflow: hidden;
   padding: 0 20px;
 }
 
-.subscriptionCard h3 {
+.channel {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  max-width: 80%;
+}
+
+.channel h3 {
   overflow: hidden;
-  padding: 0 20px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.subscriptionCard img {
+.channel img {
   border-radius: 50%;
   height: 3em;
   width: 3em;
 }
 
-.selectButton {
-  /*background: none;*/
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.selectButton svg {
+.button svg {
+  color: green;
   height: 1.5rem;
+  stroke-width: 5rem;
   width: 1.5rem;
+}
+
+.isSelected svg {
+  color: red;
 }

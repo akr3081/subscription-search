@@ -2,3 +2,7 @@
   border-radius: 5px;
   width: 100%;
 }
+
+.selections div:nth-child(even) {
+  background: #e5e5e5;
+}

@@ -5,9 +5,12 @@ import { AddIcon, RemoveIcon } from '../../Icon/Icon.jsx';
 const SubscriptionCard = ({ name, image, isSelected, handleSelect }) => {
   return (
     <div className={styles.subscriptionCard}>
-      <img src={image} alt={name} />
-      <h3>{name}</h3>
-      <button onClick={handleSelect} className={styles.selectButton}>
+      <span className={styles.channel}>
+        <img src={image} alt={name} />
+        <h3>{name}</h3>
+      </span>
+
+      <button onClick={handleSelect} className={`${styles.button} ${isSelected && styles.isSelected}`}>
         {isSelected ? <RemoveIcon /> : <AddIcon />}
       </button>
     </div>

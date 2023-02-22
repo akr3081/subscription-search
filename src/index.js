@@ -11,6 +11,7 @@ import styles from './index.module.css';
 const Home = () => {
   const [userData, setUserData] = useState({ apiKey: '', channelId: '' });
   const [subscriptions, setSubscriptions] = useState([]);
+  const [selectedSubscriptions, setSelectedSubscriptions] = useState([]);
 
   useEffect(() => {
     if (userData.apiKey && subscriptions.length === 0) {
@@ -33,7 +34,11 @@ const Home = () => {
       <AuthHeader userData={userData} handleSubmitAuth={handleSubmitAuth} className={styles.header} />
 
       <div className={styles.leftRail}>
-        <SubscriptionSelector subscriptions={SubscriptionsMock.items} />
+        <SubscriptionSelector
+          subscriptions={SubscriptionsMock.items}
+          selectedSubscriptions={selectedSubscriptions}
+          setSelectedSubscriptions={setSelectedSubscriptions}
+        />
       </div>
 
       <div className={styles.pageBody} />
