@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import styles from './SearchBar.module.css';
 
 const SearchBar = ({ handleSubmit, className }) => {
-  const handleSearch = (e) => {
+  const handleSearch = e => {
     e.preventDefault();
     const formDataObj = {};
-  
+
     const formData = new FormData(e.currentTarget);
     formData.forEach((value, key) => (formDataObj[key] = value));
-  
+
     handleSubmit(formDataObj);
   };
 
@@ -33,6 +33,5 @@ SearchBar.propTypes = {
   handleSubmitSearch: PropTypes.func,
   className: PropTypes.string
 };
-
 
 export default SearchBar;

@@ -60,11 +60,11 @@ export const fetchChannelResults = async ({ channelId, apiKey, searchTerm, maxRe
 export const getAllVideos = async ({ subscriptionIds, apiKey, searchTerm, maxResultsPerChannel }) => {
   let videoList = [];
 
-  const promiseList = subscriptionIds.map((subId) =>
+  const promiseList = subscriptionIds.map(subId =>
     fetchChannelResults({ channelId: subId, apiKey, searchTerm, maxResultsPerChannel })
   );
-  await Promise.all(promiseList).then((subscriptionData) => {
-    subscriptionData.forEach((subVideos) => {
+  await Promise.all(promiseList).then(subscriptionData => {
+    subscriptionData.forEach(subVideos => {
       videoList.push(...subVideos);
     });
   });

@@ -10,13 +10,13 @@ import PropTypes from 'prop-types';
  * @param {function} setSelectedSubscriptions - Updates selectedSubscriptions state hook
  */
 const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelectedSubscriptions }) => {
-  const handleSelect = (subscription) => {
+  const handleSelect = subscription => {
     const channelId = subscription.snippet.resourceId.channelId;
     const isSelected = selectedSubscriptions.includes(channelId);
     let newSelectedSubs = [...selectedSubscriptions];
 
     if (isSelected) {
-      newSelectedSubs = newSelectedSubs.filter((selectedSub) => selectedSub !== channelId);
+      newSelectedSubs = newSelectedSubs.filter(selectedSub => selectedSub !== channelId);
     } else {
       newSelectedSubs.push(channelId);
     }
@@ -27,7 +27,7 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
   return (
     <div className={styles.subscriptionSelector}>
       <div className={styles.selections}>
-        {subscriptions.map((subscription) => (
+        {subscriptions.map(subscription => (
           <SubscriptionCard
             name={subscription.snippet.title}
             image={subscription.snippet.thumbnails.default.url}

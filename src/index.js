@@ -17,26 +17,32 @@ const Home = () => {
   useEffect(() => {
     if (userData.apiKey && userData.channelId && subscriptions.length === 0) {
       getSubscriptions({ ...userData })
-        .then((res) => {
+        .then(res => {
           setSubscriptions(res);
         })
-        .catch((err) => {
+        .catch(err => {
           console.log('Subscriptions error', err);
         });
     }
   }, [userData.apiKey]);
 
-  const handleSubmitAuth = ({ apiKey, channelId }) => {
-    setUserData({ apiKey, channelId });
+  const handleSubmitAuth = formData => {
+    setUserData(formData);
   };
 
-  const handleSubmitSearch = ({ apiKey, channelId }) => {
+  const handleSubmitSearch = formData => {
+    console.log({ formData });
     setVideos(VideoMock);
   };
 
   return (
     <div className={styles.home}>
-      <AuthHeader userData={userData} handleSubmitAuth={handleSubmitAuth} handleSubmitSearch={handleSubmitSearch} className={styles.header} />
+      <AuthHeader
+        userData={userData}
+        handleSubmitAuth={handleSubmitAuth}
+        handleSubmitSearch={handleSubmitSearch}
+        className={styles.header}
+      />
 
       <div className={styles.leftRail}>
         <SubscriptionSelector
@@ -47,7 +53,7 @@ const Home = () => {
       </div>
 
       <div className={styles.pageBody}>
-        {videos.map((video) => (
+        {videos.map(video => (
           <VideoCard {...video.snippet} videoId={video.id.videoId} />
         ))}
       </div>

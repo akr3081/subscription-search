@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import styles from './AuthHeader.module.css';
 
-
 /**
  * App header with authentication form
  * @param {object} userData - Contains user data
@@ -25,7 +24,7 @@ const AuthHeader = ({ userData, handleSubmitAuth, handleSubmitSearch, className 
     }
   }, [isFormOpen]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     const formDataObj = {};
 
