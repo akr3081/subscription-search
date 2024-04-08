@@ -35,31 +35,36 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
   return (
     <div className={styles.subscriptionSelector}>
       <div className={styles.info}>{`Subscriptions to Search (${selectedCount}/${totalCount})`}</div>
-      <div className={styles.selections}>
-        {selected.map(subscription => (
-          <SubscriptionCard
-            name={subscription.snippet.title}
-            image={subscription.snippet.thumbnails.default.url}
-            isSelected={selectedSubscriptions.includes(subscription.snippet.resourceId.channelId)}
-            handleSelect={() => {
-              handleSelect(subscription);
-            }}
-          />
-        ))}
 
-        {selected?.length ? <hr className={styles.divider} /> : null}
+      {subscriptions.length ? (
+        <div className={styles.selections}>
+          {selected.map(subscription => (
+            <SubscriptionCard
+              name={subscription.snippet.title}
+              image={subscription.snippet.thumbnails.default.url}
+              isSelected={selectedSubscriptions.includes(subscription.snippet.resourceId.channelId)}
+              handleSelect={() => {
+                handleSelect(subscription);
+              }}
+            />
+          ))}
 
-        {unSelected.map(subscription => (
-          <SubscriptionCard
-            name={subscription.snippet.title}
-            image={subscription.snippet.thumbnails.default.url}
-            isSelected={selectedSubscriptions.includes(subscription.snippet.resourceId.channelId)}
-            handleSelect={() => {
-              handleSelect(subscription);
-            }}
-          />
-        ))}
-      </div>
+          {selected?.length ? <hr className={styles.divider} /> : null}
+
+          {unSelected.map(subscription => (
+            <SubscriptionCard
+              name={subscription.snippet.title}
+              image={subscription.snippet.thumbnails.default.url}
+              isSelected={selectedSubscriptions.includes(subscription.snippet.resourceId.channelId)}
+              handleSelect={() => {
+                handleSelect(subscription);
+              }}
+            />
+          ))}
+        </div>
+      ) : (
+        <div>Please enter a valid API Key and Channel ID to view your subscriptions</div>
+      )}
     </div>
   );
 };

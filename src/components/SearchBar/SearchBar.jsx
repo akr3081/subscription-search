@@ -3,18 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './SearchBar.module.css';
 
 const SearchBar = ({ handleSubmit, className }) => {
-  const handleSearch = e => {
-    e.preventDefault();
-    const formDataObj = {};
-
-    const formData = new FormData(e.currentTarget);
-    formData.forEach((value, key) => (formDataObj[key] = value));
-
-    handleSubmit(formDataObj);
-  };
-
   return (
-    <form className={`${styles.searchBar} ${className}`} onSubmit={handleSearch}>
+    <form className={`${styles.searchBar} ${className}`} onSubmit={handleSubmit}>
       <span>
         <label htmlFor="searchTerm">Search Term</label>
         <input id="searchTerm" name="searchTerm" maxLength="100" required />

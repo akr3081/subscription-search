@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
-import AuthHeader from './components/AuthHeader/AuthHeader.jsx';
+import AppHeader from './components/AppHeader/AppHeader.jsx';
 import SubscriptionSelector from './components/SubscriptionSelector/SubscriptionSelector.jsx';
 import VideoCard from './components/VideoCard/VideoCard.jsx';
-import SubscriptionsMock from './__mocks__/subscriptions.json';
-import VideoMock from './__mocks__/videos.json';
 import { getAllVideos, getSubscriptions } from './common/utils';
 import styles from './index.module.css';
 
@@ -41,7 +39,7 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      <AuthHeader
+      <AppHeader
         userData={userData}
         handleSubmitAuth={handleSubmitAuth}
         handleSubmitSearch={handleSubmitSearch}
