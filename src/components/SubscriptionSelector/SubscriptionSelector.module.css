@@ -1,7 +1,24 @@
 .subscriptionSelector {
+  border: 1px solid black;
   width: 100%;
 }
 
-.selections div:nth-child(even) {
-  background: #e5e5e5;
+.info {
+  background: #b7b7b7;
+  border: 1px solid black;
+  height: 1.5em;
+  width: 100%;
+}
+
+.selections {
+  border: 1px solid black;
+  display: grid;
+  row-gap: 5px;
+  max-height: 85vh;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.divider {
+  width: 100%;
 }

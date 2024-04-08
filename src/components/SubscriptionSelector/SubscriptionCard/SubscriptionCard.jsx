@@ -7,7 +7,7 @@ const SubscriptionCard = ({ name, image, isSelected, handleSelect }) => {
     <div className={styles.subscriptionCard}>
       <span className={styles.channel}>
         <img src={image} alt={name} />
-        <h3>{name}</h3>
+        <h4>{name}</h4>
       </span>
 
       <button onClick={handleSelect} className={`${styles.button} ${isSelected && styles.isSelected}`}>

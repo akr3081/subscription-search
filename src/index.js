@@ -14,20 +14,16 @@ const Home = () => {
   const [selectedSubscriptions, setSelectedSubscriptions] = useState([]);
   const [videos, setVideos] = useState([]);
 
-  useEffect(() => {
-    if (userData.apiKey && userData.channelId && subscriptions.length === 0) {
-      getSubscriptions({ ...userData })
-        .then(res => {
-          setSubscriptions(res);
-        })
-        .catch(err => {
-          console.log('Subscriptions error', err);
-        });
-    }
-  }, [userData.apiKey]);
-
   const handleSubmitAuth = formData => {
     setUserData(formData);
+
+    getSubscriptions({ ...formData })
+      .then(res => {
+        setSubscriptions(res);
+      })
+      .catch(err => {
+        console.log('Subscriptions error', err);
+      });
   };
 
   const handleSubmitSearch = formData => {

@@ -10,6 +10,14 @@ import PropTypes from 'prop-types';
  * @param {function} setSelectedSubscriptions - Updates selectedSubscriptions state hook
  */
 const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelectedSubscriptions }) => {
+  const sortedItems = subscriptions.sort((a, b) => a.snippet.title.localeCompare(b.snippet.title));
+
+  const selected = sortedItems.filter(item => selectedSubscriptions.includes(item.snippet.resourceId.channelId));
+  const unSelected = sortedItems.filter(item => !selected.includes(item));
+
+  const selectedCount = selectedSubscriptions?.length;
+  const totalCount = subscriptions?.length;
+
   const handleSelect = subscription => {
     const channelId = subscription.snippet.resourceId.channelId;
     const isSelected = selectedSubscriptions.includes(channelId);
@@ -26,8 +34,22 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
 
   return (
     <div className={styles.subscriptionSelector}>
+      <div className={styles.info}>{`Subscriptions to Search (${selectedCount}/${totalCount})`}</div>
       <div className={styles.selections}>
-        {subscriptions.map(subscription => (
+        {selected.map(subscription => (
+          <SubscriptionCard
+            name={subscription.snippet.title}
+            image={subscription.snippet.thumbnails.default.url}
+            isSelected={selectedSubscriptions.includes(subscription.snippet.resourceId.channelId)}
+            handleSelect={() => {
+              handleSelect(subscription);
+            }}
+          />
+        ))}
+
+        {selected?.length ? <hr className={styles.divider} /> : null}
+
+        {unSelected.map(subscription => (
           <SubscriptionCard
             name={subscription.snippet.title}
             image={subscription.snippet.thumbnails.default.url}
