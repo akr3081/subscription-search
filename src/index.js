@@ -10,12 +10,12 @@ import styles from './index.module.css';
 
 const Home = () => {
   const [userData, setUserData] = useState({ apiKey: '', channelId: '' });
-  const [subscriptions, setSubscriptions] = useState(SubscriptionsMock.items);
+  const [subscriptions, setSubscriptions] = useState([]);
   const [selectedSubscriptions, setSelectedSubscriptions] = useState([]);
-  const [videos, setVideos] = useState(VideoMock);
+  const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    if (userData.apiKey && subscriptions.length === 0) {
+    if (userData.apiKey && userData.channelId && subscriptions.length === 0) {
       getSubscriptions({ ...userData })
         .then((res) => {
           setSubscriptions(res);
@@ -30,9 +30,13 @@ const Home = () => {
     setUserData({ apiKey, channelId });
   };
 
+  const handleSubmitSearch = ({ apiKey, channelId }) => {
+    setVideos(VideoMock);
+  };
+
   return (
     <div className={styles.home}>
-      <AuthHeader userData={userData} handleSubmitAuth={handleSubmitAuth} className={styles.header} />
+      <AuthHeader userData={userData} handleSubmitAuth={handleSubmitAuth} handleSubmitSearch={handleSubmitSearch} className={styles.header} />
 
       <div className={styles.leftRail}>
         <SubscriptionSelector

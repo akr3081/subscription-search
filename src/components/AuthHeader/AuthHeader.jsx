@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import SearchBar from '../SearchBar/SearchBar.jsx';
 import styles from './AuthHeader.module.css';
+
 
 /**
  * App header with authentication form
@@ -8,7 +10,7 @@ import styles from './AuthHeader.module.css';
  * @param {function} handleSubmitAuth - Handle auth form submit
  * @param {string} className - CSS class name
  */
-const AuthHeader = ({ userData, handleSubmitAuth, className }) => {
+const AuthHeader = ({ userData, handleSubmitAuth, handleSubmitSearch, className }) => {
   const [isFormOpen, setIsFormOpen] = useState(!userData.apiKey);
 
   // Sets form open if apiKey is empty
@@ -50,7 +52,8 @@ const AuthHeader = ({ userData, handleSubmitAuth, className }) => {
           <button type="submit">Save</button>
         </form>
       ) : (
-        <div>
+        <div className={styles.form}>
+          <SearchBar handleSubmit={handleSubmitSearch} />
           <button onClick={() => setIsFormOpen(true)}>Edit</button>
         </div>
       )}
@@ -63,7 +66,8 @@ AuthHeader.propTypes = {
     apiKey: PropTypes.string,
     channelId: PropTypes.string
   }),
-  handleAuthSubmit: PropTypes.func,
+  handleSubmitAuth: PropTypes.func,
+  handleSubmitSearch: PropTypes.func,
   className: PropTypes.string
 };
 
