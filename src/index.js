@@ -5,7 +5,7 @@ import SubscriptionSelector from './components/SubscriptionSelector/Subscription
 import VideoCard from './components/VideoCard/VideoCard.jsx';
 import SubscriptionsMock from './__mocks__/subscriptions.json';
 import VideoMock from './__mocks__/videos.json';
-import { getSubscriptions } from './common/utils';
+import { getAllVideos, getSubscriptions } from './common/utils';
 import styles from './index.module.css';
 
 const Home = () => {
@@ -31,8 +31,16 @@ const Home = () => {
   };
 
   const handleSubmitSearch = formData => {
-    console.log({ formData });
-    setVideos(VideoMock);
+    setVideos([]);
+
+    getAllVideos({
+      subscriptionIds: selectedSubscriptions,
+      apiKey: userData.apiKey,
+      searchTerm: formData.searchTerm,
+      maxResultsPerChannel: formData.maxResults
+    }).then(videos => {
+      setVideos(videos);
+    });
   };
 
   return (
