@@ -7,16 +7,14 @@ import styles from './VideoCard.module.css';
  * @param {string} videoId - Video id
  * @param {string} title - Video title
  * @param {object} thumbnails - Contains image data
- * @param {string} channelTitle - Name of the channel
  */
-const VideoCard = ({ videoId, title, thumbnails, channelTitle }) => {
+const VideoCard = ({ videoId, title, thumbnails }) => {
   return (
     <a href={`https://youtube.com/watch?v=${videoId}`} className={styles.videoCard}>
-      <img src={thumbnails?.medium?.url} height={thumbnails?.medium?.height} width={thumbnails?.medium?.width} />
+      <img src={thumbnails?.medium?.url} />
 
       <div className={styles.cardContent}>
-        <h2>{title}</h2>
-        <h3>{channelTitle}</h3>
+        <h3>{title}</h3>
       </div>
     </a>
   );
@@ -41,8 +39,7 @@ VideoCard.propTypes = {
       height: PropTypes.number,
       width: PropTypes.number
     })
-  }),
-  channelTitle: PropTypes.string
+  })
 };
 
 export default VideoCard;

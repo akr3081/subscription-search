@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { render } from 'react-dom';
+import { getSearchResults, getSubscriptions } from './common/utils';
 import AppHeader from './components/AppHeader/AppHeader.jsx';
+import Gallery from './components/Gallery/Gallery.jsx';
 import SubscriptionSelector from './components/SubscriptionSelector/SubscriptionSelector.jsx';
-import VideoCard from './components/VideoCard/VideoCard.jsx';
-import { getAllVideos, getSubscriptions } from './common/utils';
 import styles from './index.module.css';
 
 const Home = () => {
   const [userData, setUserData] = useState({ apiKey: '', channelId: '' });
   const [subscriptions, setSubscriptions] = useState([]);
   const [selectedSubscriptions, setSelectedSubscriptions] = useState([]);
-  const [videos, setVideos] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
 
   const handleSubmitAuth = formData => {
     setUserData(formData);
@@ -25,16 +25,21 @@ const Home = () => {
   };
 
   const handleSubmitSearch = formData => {
-    setVideos([]);
+    setSearchResults([]);
 
-    getAllVideos({
-      subscriptionIds: selectedSubscriptions,
+    getSearchResults({
+      selectedSubscriptions,
+      subscriptions,
       apiKey: userData.apiKey,
       searchTerm: formData.searchTerm,
       maxResultsPerChannel: formData.maxResults
-    }).then(videos => {
-      setVideos(videos);
-    });
+    })
+      .then(results => {
+        setSearchResults(results);
+      })
+      .catch(err => {
+        console.log('Search error', err);
+      });
   };
 
   return (
@@ -55,8 +60,8 @@ const Home = () => {
       </div>
 
       <div className={styles.pageBody}>
-        {videos.map(video => (
-          <VideoCard {...video.snippet} videoId={video.id.videoId} />
+        {searchResults?.map(channel => (
+          <Gallery title={channel.title} image={channel.image} items={channel.items} />
         ))}
       </div>
     </div>

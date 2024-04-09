@@ -1,0 +1,28 @@
+.gallery {
+  border: 1px solid #d5d5d5;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 90%;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.header img {
+  border-radius: 50%;
+  height: 2.5em;
+  width: 2.5em;
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: scroll;
+}

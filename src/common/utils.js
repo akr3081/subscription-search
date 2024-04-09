@@ -1,4 +1,9 @@
 import { BASE_URL } from './constants';
+import SubscriptionMock from '../__mocks__/subscriptions.json';
+import MappedSearchResultsMock from '../__mocks__/mappedSearchResults.json';
+
+// FIXME: Remove this once testing is done
+const MOCK_API_CALLS = true;
 
 /**
  * Gets subscriptions based on the current pageToken
@@ -8,6 +13,8 @@ import { BASE_URL } from './constants';
  * @returns {object} Subscription payload
  */
 export const fetchSubscriptionData = async ({ channelId, apiKey, pageToken }) => {
+  if (MOCK_API_CALLS) return pageToken === '' ? SubscriptionMock : { items: [] };
+
   const res = await fetch(
     `${BASE_URL}/subscriptions?key=${apiKey}&part=snippet&channelId=${channelId}&order=alphabetical&maxResults=50&pageToken=${pageToken}`
   );
@@ -50,24 +57,35 @@ export const fetchChannelResults = async ({ channelId, apiKey, searchTerm, maxRe
 };
 
 /**
- * Gets a list of videos based on all subscriptions
+ * Gets search results for provided subscriptions
  * @param {string} subscriptionIds - List of channel ids from your subscriptions
  * @param {string} apiKey - The api key used to fetch data
  * @param {string} searchTerm - Input for search results
  * @param {number} maxResultsPerChannel - The max number of results to return for each channel
- * @returns {object} List of videos from all channels
+ * @returns {array} List of channels with associated videos
  */
-export const getAllVideos = async ({ subscriptionIds, apiKey, searchTerm, maxResultsPerChannel }) => {
-  let videoList = [];
+export const getSearchResults = async ({
+  selectedSubscriptions,
+  subscriptions,
+  apiKey,
+  searchTerm,
+  maxResultsPerChannel
+}) => {
+  if (MOCK_API_CALLS) return MappedSearchResultsMock;
 
-  const promiseList = subscriptionIds.map(subId =>
-    fetchChannelResults({ channelId: subId, apiKey, searchTerm, maxResultsPerChannel })
-  );
-  await Promise.all(promiseList).then(subscriptionData => {
-    subscriptionData.forEach(subVideos => {
-      videoList.push(...subVideos);
-    });
-  });
+  const channelResults = [];
 
-  return videoList;
+  for (const subId of selectedSubscriptions) {
+    const channelVideos = await fetchChannelResults({ channelId: subId, apiKey, searchTerm, maxResultsPerChannel });
+    const id = channelVideos[0].snippet.channelId;
+    const items = channelVideos.map(video => ({ videoId: video.id.videoId, ...video.snippet }));
+
+    const channelData = subscriptions.find(sub => sub.snippet.resourceId.channelId === id);
+    const title = channelData.snippet.title;
+    const image = channelData.snippet.thumbnails.medium;
+
+    channelResults.push({ id, title, image, items });
+  }
+
+  return channelResults;
 };
