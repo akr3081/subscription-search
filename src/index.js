@@ -1,21 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
 import { getSearchResults, getSubscriptions } from './common/utils';
 import AppHeader from './components/AppHeader/AppHeader.jsx';
 import Gallery from './components/Gallery/Gallery.jsx';
 import SubscriptionSelector from './components/SubscriptionSelector/SubscriptionSelector.jsx';
+import useStore from './stores/useStore.js';
 import styles from './index.module.css';
 
 const Home = () => {
-  const [userData, setUserData] = useState({ apiKey: '', channelId: '' });
+  const { apiKey, channelId, setApiKey, setChannelId } = useStore();
+
   const [subscriptions, setSubscriptions] = useState([]);
   const [selectedSubscriptions, setSelectedSubscriptions] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
-  const handleSubmitAuth = formData => {
-    setUserData(formData);
+  useEffect(() => {
+    if (apiKey && channelId && subscriptions?.length === 0) {
+      handleSubmitAuth({ apiKey, channelId });
+    }
+  }, []);
 
-    getSubscriptions({ ...formData })
+  const handleSubmitAuth = formData => {
+    setApiKey(formData.apiKey);
+    setChannelId(formData.channelId);
+
+    getSubscriptions({ apiKey: formData.apiKey, channelId: formData.channelId })
       .then(res => {
         setSubscriptions(res);
       })
@@ -30,7 +39,7 @@ const Home = () => {
     getSearchResults({
       selectedSubscriptions,
       subscriptions,
-      apiKey: userData.apiKey,
+      apiKey,
       searchTerm: formData.searchTerm,
       maxResultsPerChannel: formData.maxResults
     })
@@ -45,7 +54,6 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <AppHeader
-        userData={userData}
         handleSubmitAuth={handleSubmitAuth}
         handleSubmitSearch={handleSubmitSearch}
         className={styles.header}
