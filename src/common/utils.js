@@ -33,8 +33,12 @@ export const getSubscriptions = async ({ channelId, apiKey }) => {
 
   do {
     const res = await fetchSubscriptionData({ channelId, apiKey, pageToken });
+
+    // Propagate API errors
+    if (res.error) throw new Error(res.error.message);
+
     pageToken = res.nextPageToken;
-    subscriptionsList.push(...res.items);
+    if (res?.items?.length) subscriptionsList.push(...res.items);
   } while (pageToken);
 
   return subscriptionsList;
@@ -52,8 +56,7 @@ export const fetchChannelResults = async ({ channelId, apiKey, searchTerm, maxRe
   const res = await fetch(
     `${BASE_URL}/search?key=${apiKey}&channelId=${channelId}&maxResults=${maxResultsPerChannel}&q=${searchTerm}&part=snippet&safeSearch=none&type=video`
   );
-  const resJson = await res.json();
-  return resJson.items;
+  return await res.json();
 };
 
 /**
@@ -76,9 +79,13 @@ export const getSearchResults = async ({
   const channelResults = [];
 
   for (const subId of selectedSubscriptions) {
-    const channelVideos = await fetchChannelResults({ channelId: subId, apiKey, searchTerm, maxResultsPerChannel });
-    const id = channelVideos[0].snippet.channelId;
-    const items = channelVideos.map(video => ({ videoId: video.id.videoId, ...video.snippet }));
+    const res = await fetchChannelResults({ channelId: subId, apiKey, searchTerm, maxResultsPerChannel });
+
+    // Propagate API errors
+    if (res.error) throw new Error(res.error.message);
+
+    const id = res.items[0].snippet.channelId;
+    const items = res.items.map(video => ({ videoId: video.id.videoId, ...video.snippet }));
 
     const channelData = subscriptions.find(sub => sub.snippet.resourceId.channelId === id);
     const title = channelData.snippet.title;

@@ -10,6 +10,7 @@ import styles from './index.module.css';
 const Home = () => {
   const { apiKey, channelId, setApiKey, setChannelId } = useStore();
 
+  const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
   const [subscriptions, setSubscriptions] = useState([]);
   const [selectedSubscriptions, setSelectedSubscriptions] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
@@ -21,15 +22,20 @@ const Home = () => {
   }, []);
 
   const handleSubmitAuth = formData => {
-    setApiKey(formData.apiKey);
-    setChannelId(formData.channelId);
-
     getSubscriptions({ apiKey: formData.apiKey, channelId: formData.channelId })
       .then(res => {
         setSubscriptions(res);
+
+        setApiKey(formData.apiKey);
+        setChannelId(formData.channelId);
+        setIsUserAuthenticated(true);
       })
       .catch(err => {
-        console.log('Subscriptions error', err);
+        alert(`Subscription Error: ${err}`);
+
+        setApiKey('');
+        setChannelId('');
+        setIsUserAuthenticated(false);
       });
   };
 
@@ -47,7 +53,7 @@ const Home = () => {
         setSearchResults(results);
       })
       .catch(err => {
-        console.log('Search error', err);
+        alert(`Search Error: ${err}`);
       });
   };
 
@@ -56,6 +62,7 @@ const Home = () => {
       <AppHeader
         handleSubmitAuth={handleSubmitAuth}
         handleSubmitSearch={handleSubmitSearch}
+        isUserAuthenticated={isUserAuthenticated}
         className={styles.header}
       />
 

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import useStore from '../../stores/useStore.js';
 import AuthForm from '../AuthForm/AuthForm.jsx';
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import { SearchIcon, SettingsIcon, YouTubeIcon } from '../Icon/Icon.jsx';
@@ -11,12 +10,14 @@ import styles from './AppHeader.module.css';
  * @param {function} handleSubmitAuth - Handle auth form submit
  * @param {string} className - CSS class name
  */
-const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, className }) => {
-  const { apiKey, channelId } = useStore();
-  const isUserAuthenticated = apiKey && channelId;
-
+const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, className }) => {
   const [isAuthFormOpen, setIsAuthFormOpen] = useState(!isUserAuthenticated);
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(isUserAuthenticated);
+
+  useEffect(() => {
+    setIsAuthFormOpen(!isUserAuthenticated);
+    setIsSearchBarOpen(isUserAuthenticated);
+  }, [isUserAuthenticated]);
 
   const handleAuthFormSubmit = e => {
     e.preventDefault();
@@ -26,10 +27,6 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, className }) => {
     formData.forEach((value, key) => (formDataObj[key] = value));
 
     handleSubmitAuth(formDataObj);
-
-    // FIXME: Only do this if auth is successful
-    setIsAuthFormOpen(false);
-    setIsSearchBarOpen(true);
   };
 
   const handleSearchBarSubmit = e => {
@@ -81,6 +78,7 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, className }) => {
 AppHeader.propTypes = {
   handleSubmitAuth: PropTypes.func,
   handleSubmitSearch: PropTypes.func,
+  isUserAuthenticated: PropTypes.bool,
   className: PropTypes.string
 };
 
