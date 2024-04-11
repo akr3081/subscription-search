@@ -6,12 +6,14 @@ import styles from './Gallery.module.css';
 /**
  * Gallery container for displaying a list of
  */
-const Gallery = ({ title, image, items }) => {
+const Gallery = ({ title, image, link, items }) => {
   return (
     <div className={styles.gallery}>
       <div className={styles.header}>
-        <img src={image?.url} alt={title} />
-        <h2>{title}</h2>
+        <a href={link} target="_blank" className={styles.channelLink}>
+          <img src={image?.url} alt={title} />
+          <h2>{title}</h2>
+        </a>
       </div>
 
       <div className={styles.items}>
@@ -26,6 +28,7 @@ const Gallery = ({ title, image, items }) => {
 Gallery.propTypes = {
   title: PropTypes.string,
   image: PropTypes.object,
+  link: PropTypes.string,
   items: PropTypes.array
 };
 

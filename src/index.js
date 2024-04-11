@@ -76,7 +76,12 @@ const Home = () => {
 
       <div className={styles.pageBody}>
         {searchResults?.map(channel => (
-          <Gallery title={channel.title} image={channel.image} items={channel.items} />
+          <Gallery
+            title={channel.title}
+            image={channel.image}
+            link={`https://www.youtube.com/@${channel.title}`}
+            items={channel.items}
+          />
         ))}
       </div>
     </div>

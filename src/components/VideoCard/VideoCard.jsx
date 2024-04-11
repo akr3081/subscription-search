@@ -10,7 +10,7 @@ import styles from './VideoCard.module.css';
  */
 const VideoCard = ({ videoId, title, thumbnails }) => {
   return (
-    <a href={`https://youtube.com/watch?v=${videoId}`} className={styles.videoCard}>
+    <a href={`https://youtube.com/watch?v=${videoId}`} target="_blank" className={styles.videoCard}>
       <img src={thumbnails?.medium?.url} />
 
       <div className={styles.cardContent}>
