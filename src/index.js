@@ -18,6 +18,7 @@ const Home = () => {
   useEffect(() => {
     if (apiKey && channelId && subscriptions?.length === 0) {
       handleSubmitAuth({ apiKey, channelId });
+      handleSubmitSearch({}); // TODO: Remove after testing UI
     }
   }, []);
 
