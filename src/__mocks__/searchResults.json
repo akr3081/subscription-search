@@ -1,0 +1,182 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "WyWWwF7xahctzAASgU4Qvum8PgA",
+  "nextPageToken": "CAUQAA",
+  "regionCode": "US",
+  "pageInfo": {
+    "totalResults": 127,
+    "resultsPerPage": 5
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "MCODVLw7D3FdYWa2T2xHaqnQx08",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "6HZ-nfMfu8o"
+      },
+      "snippet": {
+        "publishedAt": "2017-12-10T17:00:01Z",
+        "channelId": "UCDm-nYAJuqrBIy57EgWAymw",
+        "title": "VG Myths - Can You Beat Super Mario Odyssey Without Jumping?",
+        "description": "Presenting the successor to Hyrule Myths: VG Myths! Inspired by the SM64 A button challenge, I made it my mission to beat Super ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/6HZ-nfMfu8o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/6HZ-nfMfu8o/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/6HZ-nfMfu8o/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Gamechamp3000",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-12-10T17:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "S5pFW7pwwH0_LMooAThHHmTYgxk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "7hyftA7vRp4"
+      },
+      "snippet": {
+        "publishedAt": "2018-10-13T15:00:00Z",
+        "channelId": "UCDm-nYAJuqrBIy57EgWAymw",
+        "title": "VG Myths - Can You Beat New Super Mario Bros. 2 Without Collecting Any Coins?",
+        "description": "In today's episode of VG Myths, we decide to beat the most coin-littered Mario game without collecting a single one. It's possible a ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7hyftA7vRp4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7hyftA7vRp4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7hyftA7vRp4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Gamechamp3000",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-10-13T15:00:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "AXOb9JrAUNWrcr4fADL3Z61b0MU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ahyd-tw2s0Q"
+      },
+      "snippet": {
+        "publishedAt": "2018-07-09T15:00:00Z",
+        "channelId": "UCDm-nYAJuqrBIy57EgWAymw",
+        "title": "VG Myths - Can You Beat Super Mario 3D World Without Jumping?",
+        "description": "In this episode of VG Myths we take on another jumpless challenge, this time in the Wii U classic Super Mario 3D World! If you'd ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ahyd-tw2s0Q/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ahyd-tw2s0Q/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ahyd-tw2s0Q/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Gamechamp3000",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-07-09T15:00:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "PppADa0RINRfuJ8lP-tijlRUx-o",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "32lx_B8HQbk"
+      },
+      "snippet": {
+        "publishedAt": "2023-12-23T15:00:07Z",
+        "channelId": "UCDm-nYAJuqrBIy57EgWAymw",
+        "title": "VG Myths - Can You Beat Super Mario Bros. Wonder Without Collecting Coins?",
+        "description": "Tonight on VG Myths, we try to beat Super Mario Bros. Wonder for the Nintendo Switch coinless. How original! Special Guest ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/32lx_B8HQbk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/32lx_B8HQbk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/32lx_B8HQbk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Gamechamp3000",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-12-23T15:00:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "noD-QYuRpQlDndnsHm5ItBaib2U",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "q7EbdAxWQ9g"
+      },
+      "snippet": {
+        "publishedAt": "2021-02-20T15:00:17Z",
+        "channelId": "UCDm-nYAJuqrBIy57EgWAymw",
+        "title": "VG Myths - Can You Beat Bowser's Fury Without Jumping?",
+        "description": "Tonight on VG Myths: another Nintendo game! A minimum jump challenge in the Switch version of Super Mario 3D World's extra ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/q7EbdAxWQ9g/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/q7EbdAxWQ9g/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/q7EbdAxWQ9g/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Gamechamp3000",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-02-20T15:00:17Z"
+      }
+    }
+  ]
+}

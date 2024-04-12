@@ -59,3 +59,19 @@
   grid-template-columns: repeat(3, 1fr);
   row-gap: 20px;
 }
+
+.loadMore {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.loadMore button {
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+}

@@ -1,4 +1,5 @@
 import { BASE_URL } from './constants';
+import SearchResultsMock from '../__mocks__/searchResults.json';
 import SubscriptionMock from '../__mocks__/subscriptions.json';
 import MappedSearchResultsMock from '../__mocks__/mappedSearchResults.json';
 
@@ -52,9 +53,11 @@ export const getSubscriptions = async ({ channelId, apiKey }) => {
  * @param {number} maxResultsPerChannel - The max number of results to return for each channel
  * @returns {object} List of videos
  */
-export const fetchChannelResults = async ({ channelId, apiKey, searchTerm, maxResultsPerChannel }) => {
+export const fetchChannelResults = async ({ channelId, apiKey, searchTerm, maxResultsPerChannel, pageToken = '' }) => {
+  if (MOCK_API_CALLS) return { ...SearchResultsMock, items: SearchResultsMock.items.slice(0, maxResultsPerChannel) };
+
   const res = await fetch(
-    `${BASE_URL}/search?key=${apiKey}&channelId=${channelId}&maxResults=${maxResultsPerChannel}&q=${searchTerm}&part=snippet&safeSearch=none&type=video`
+    `${BASE_URL}/search?key=${apiKey}&channelId=${channelId}&maxResults=${maxResultsPerChannel}&q=${searchTerm}&part=snippet&safeSearch=none&type=video&pageToken=${pageToken}`
   );
   return await res.json();
 };
@@ -72,26 +75,32 @@ export const getSearchResults = async ({
   subscriptions,
   apiKey,
   searchTerm,
-  maxResultsPerChannel
+  maxResultsPerChannel,
+  pageToken
 }) => {
-  if (MOCK_API_CALLS) return MappedSearchResultsMock;
-
   const channelResults = [];
 
   for (const subId of selectedSubscriptions) {
-    const res = await fetchChannelResults({ channelId: subId, apiKey, searchTerm, maxResultsPerChannel });
+    const res = await fetchChannelResults({
+      channelId: subId,
+      apiKey,
+      searchTerm,
+      maxResultsPerChannel,
+      pageToken
+    });
 
     // Propagate API errors
     if (res.error) throw new Error(res.error.message);
 
     const id = res.items[0].snippet.channelId;
+    const nextPageToken = res?.nextPageToken;
     const items = res.items.map(video => ({ videoId: video.id.videoId, ...video.snippet }));
 
     const channelData = subscriptions.find(sub => sub.snippet.resourceId.channelId === id);
     const title = channelData.snippet.title;
     const image = channelData.snippet.thumbnails.medium;
 
-    channelResults.push({ id, title, image, items });
+    channelResults.push({ id, title, image, pageToken: nextPageToken, items });
   }
 
   return channelResults;

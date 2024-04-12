@@ -8,7 +8,7 @@ import useStore from './stores/useStore.js';
 import styles from './index.module.css';
 
 const Home = () => {
-  const { apiKey, channelId, setApiKey, setChannelId } = useStore();
+  const { apiKey, channelId, prevSearch, setApiKey, setChannelId, setPrevSearch } = useStore();
 
   const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
   const [subscriptions, setSubscriptions] = useState([]);
@@ -51,10 +51,41 @@ const Home = () => {
       maxResultsPerChannel: formData.maxResults
     })
       .then(results => {
+        setPrevSearch({ searchTerm: formData.searchTerm, maxResults: formData.maxResults });
         setSearchResults(results);
       })
       .catch(err => {
         alert(`Search Error: ${err}`);
+      });
+  };
+
+  const loadMoreChannelVideos = channel => {
+    const channelId = channel?.id;
+
+    getSearchResults({
+      selectedSubscriptions: [channelId],
+      subscriptions,
+      apiKey,
+      searchTerm: prevSearch.searchTerm,
+      maxResultsPerChannel: prevSearch.maxResults,
+      pageToken: channel.pageToken
+    })
+      .then(results => {
+        const oldChannelResults = searchResults.find(channelRes => channelRes.id === channelId);
+        const newChannelResults = results.find(channelRes => channelRes.id === channelId);
+        const updatedChannelResults = {
+          ...newChannelResults,
+          items: [...oldChannelResults.items, ...newChannelResults.items]
+        };
+
+        const newResults = searchResults.map(channelRes =>
+          channelRes.id === channelId ? updatedChannelResults : channelRes
+        );
+
+        setSearchResults(newResults);
+      })
+      .catch(err => {
+        alert(`Load More Error: ${err}`);
       });
   };
 
@@ -82,6 +113,9 @@ const Home = () => {
             image={channel.image}
             link={`https://www.youtube.com/@${channel.title}`}
             items={channel.items}
+            loadMoreItems={() => {
+              loadMoreChannelVideos(channel);
+            }}
           />
         ))}
       </div>

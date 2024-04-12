@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { ArrowIcon } from '../Icon/Icon.jsx';
+import { ArrowIcon, MoreIcon } from '../Icon/Icon.jsx';
 import VideoCard from '../VideoCard/VideoCard.jsx';
 import styles from './Gallery.module.css';
 
 /**
  * Gallery container for displaying a list of
  */
-const Gallery = ({ title, image, link, items }) => {
-  const [isOpen, setIsOpen] = useState(true);
+const Gallery = ({ id, title, image, link, items, loadMoreItems }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={styles.gallery}>
@@ -28,10 +28,18 @@ const Gallery = ({ title, image, link, items }) => {
       </div>
 
       {isOpen ? (
-        <div className={styles.items}>
-          {items.map(item => (
-            <VideoCard videoId={item.videoId} title={item.title} thumbnails={item.thumbnails} />
-          ))}
+        <div>
+          <div className={styles.items}>
+            {items.map(item => (
+              <VideoCard videoId={item.videoId} title={item.title} thumbnails={item.thumbnails} />
+            ))}
+          </div>
+          <div className={styles.loadMore}>
+            <button onClick={loadMoreItems}>
+              <h3>Load More</h3>
+              <MoreIcon />
+            </button>
+          </div>
         </div>
       ) : null}
     </div>
@@ -42,7 +50,8 @@ Gallery.propTypes = {
   title: PropTypes.string,
   image: PropTypes.object,
   link: PropTypes.string,
-  items: PropTypes.array
+  items: PropTypes.array,
+  loadMoreItems: PropTypes.func
 };
 
 export default Gallery;
