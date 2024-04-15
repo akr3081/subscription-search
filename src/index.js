@@ -8,16 +8,16 @@ import useStore from './stores/useStore.js';
 import styles from './index.module.css';
 
 const Home = () => {
-  const { apiKey, channelId, searchTerm, setApiKey, setChannelId, setSearchTerm } = useStore();
+  const { apiKey, channelId, searchTerm, subscriptions, setApiKey, setChannelId, setSearchTerm, setSubscriptions } =
+    useStore();
 
   const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
-  const [subscriptions, setSubscriptions] = useState([]);
   const [selectedSubscriptions, setSelectedSubscriptions] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    if (apiKey && channelId && subscriptions?.length === 0) {
-      handleSubmitAuth({ apiKey, channelId });
+    if (apiKey && channelId) {
+      setIsUserAuthenticated(true);
     }
   }, []);
 
@@ -100,6 +100,10 @@ const Home = () => {
           subscriptions={subscriptions}
           selectedSubscriptions={selectedSubscriptions}
           setSelectedSubscriptions={setSelectedSubscriptions}
+          handleRefresh={() => {
+            setSelectedSubscriptions([]);
+            handleSubmitAuth({ apiKey, channelId });
+          }}
         />
       </div>
 

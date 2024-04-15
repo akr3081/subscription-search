@@ -3,11 +3,30 @@
   width: 100%;
 }
 
-.info {
-  background: #b7b7b7;
+.header {
+  align-items: center;
+  background: #d5d5d5;
   border: 1px solid black;
-  height: 1.5em;
+  display: flex;
+  height: 3em;
+  justify-content: space-around;
   width: 100%;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.iconButton svg {
+  background: #e5e5e5;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.iconButton svg:hover {
+  opacity: 50%;
 }
 
 .selections {
