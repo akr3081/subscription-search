@@ -1,7 +1,6 @@
 import { BASE_URL } from './constants';
 import SearchResultsMock from '../__mocks__/searchResults.json';
 import SubscriptionMock from '../__mocks__/subscriptions.json';
-import MappedSearchResultsMock from '../__mocks__/mappedSearchResults.json';
 
 // FIXME: Remove this once testing is done
 const MOCK_API_CALLS = true;
@@ -50,14 +49,13 @@ export const getSubscriptions = async ({ channelId, apiKey }) => {
  * @param {string} channelId - The channel for which videos are searched
  * @param {string} apiKey - The api key used to fetch data
  * @param {string} searchTerm - Input for search results
- * @param {number} maxResultsPerChannel - The max number of results to return for each channel
  * @returns {object} List of videos
  */
-export const fetchChannelResults = async ({ channelId, apiKey, searchTerm, maxResultsPerChannel, pageToken = '' }) => {
-  if (MOCK_API_CALLS) return { ...SearchResultsMock, items: SearchResultsMock.items.slice(0, maxResultsPerChannel) };
+export const fetchChannelResults = async ({ channelId, apiKey, searchTerm, pageToken = '' }) => {
+  if (MOCK_API_CALLS) return { ...SearchResultsMock, items: SearchResultsMock.items.slice(0, 3) };
 
   const res = await fetch(
-    `${BASE_URL}/search?key=${apiKey}&channelId=${channelId}&maxResults=${maxResultsPerChannel}&q=${searchTerm}&part=snippet&safeSearch=none&type=video&pageToken=${pageToken}`
+    `${BASE_URL}/search?key=${apiKey}&channelId=${channelId}&maxResults=3&q=${searchTerm}&part=snippet&safeSearch=none&type=video&pageToken=${pageToken}`
   );
   return await res.json();
 };
@@ -67,17 +65,9 @@ export const fetchChannelResults = async ({ channelId, apiKey, searchTerm, maxRe
  * @param {string} subscriptionIds - List of channel ids from your subscriptions
  * @param {string} apiKey - The api key used to fetch data
  * @param {string} searchTerm - Input for search results
- * @param {number} maxResultsPerChannel - The max number of results to return for each channel
  * @returns {array} List of channels with associated videos
  */
-export const getSearchResults = async ({
-  selectedSubscriptions,
-  subscriptions,
-  apiKey,
-  searchTerm,
-  maxResultsPerChannel,
-  pageToken
-}) => {
+export const getSearchResults = async ({ selectedSubscriptions, subscriptions, apiKey, searchTerm, pageToken }) => {
   const channelResults = [];
 
   for (const subId of selectedSubscriptions) {
@@ -85,7 +75,6 @@ export const getSearchResults = async ({
       channelId: subId,
       apiKey,
       searchTerm,
-      maxResultsPerChannel,
       pageToken
     });
 

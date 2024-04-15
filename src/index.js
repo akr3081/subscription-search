@@ -8,7 +8,7 @@ import useStore from './stores/useStore.js';
 import styles from './index.module.css';
 
 const Home = () => {
-  const { apiKey, channelId, prevSearch, setApiKey, setChannelId, setPrevSearch } = useStore();
+  const { apiKey, channelId, searchTerm, setApiKey, setChannelId, setSearchTerm } = useStore();
 
   const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
   const [subscriptions, setSubscriptions] = useState([]);
@@ -18,7 +18,6 @@ const Home = () => {
   useEffect(() => {
     if (apiKey && channelId && subscriptions?.length === 0) {
       handleSubmitAuth({ apiKey, channelId });
-      handleSubmitSearch({}); // TODO: Remove after testing UI
     }
   }, []);
 
@@ -47,11 +46,10 @@ const Home = () => {
       selectedSubscriptions,
       subscriptions,
       apiKey,
-      searchTerm: formData.searchTerm,
-      maxResultsPerChannel: formData.maxResults
+      searchTerm: formData.searchTerm
     })
       .then(results => {
-        setPrevSearch({ searchTerm: formData.searchTerm, maxResults: formData.maxResults });
+        setSearchTerm(formData.searchTerm);
         setSearchResults(results);
       })
       .catch(err => {
@@ -66,8 +64,7 @@ const Home = () => {
       selectedSubscriptions: [channelId],
       subscriptions,
       apiKey,
-      searchTerm: prevSearch.searchTerm,
-      maxResultsPerChannel: prevSearch.maxResults,
+      searchTerm,
       pageToken: channel.pageToken
     })
       .then(results => {

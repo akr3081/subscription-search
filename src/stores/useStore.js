@@ -15,9 +15,9 @@ const state = set => ({
     set({ channelId: value });
   },
 
-  prevSearch: { searchTerm: '', maxResults: 3 },
-  setPrevSearch: value => {
-    set({ prevSearch: { searchTerm: value.searchTerm, maxResults: value.maxResults } });
+  searchTerm: '',
+  setSearchTerm: value => {
+    set({ searchTerm: value });
   },
 
   reset: () => {

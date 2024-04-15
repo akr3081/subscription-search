@@ -7,7 +7,7 @@ import styles from './Gallery.module.css';
 /**
  * Gallery container for displaying a list of
  */
-const Gallery = ({ id, title, image, link, items, loadMoreItems }) => {
+const Gallery = ({ title, image, link, items, loadMoreItems }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
