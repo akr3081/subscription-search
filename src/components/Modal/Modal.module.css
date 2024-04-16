@@ -1,0 +1,29 @@
+.veil {
+    background: rgb(0, 0, 0, 0.5);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.modal {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 50%;
+    min-height: 25%;
+    min-width: 25%;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+
+.body {
+    padding: 10px;
+}
