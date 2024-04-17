@@ -38,33 +38,32 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, 
   };
 
   return (
-    <div className={`${styles.header} ${className}`}>
-      <YouTubeIcon className={styles.headerIcon} />
-
-      <div id="modals">
-        <AuthModal
-          isOpen={isAuthModalOpen}
-          handleClose={() => {
-            setIsAuthModalOpen(false);
-          }}
-          handleSubmit={handleAuthFormSubmit}
-          className={styles.form}
-        />
+    <>
+      <div className={`${styles.header} ${className}`}>
+        <YouTubeIcon className={styles.headerIcon} />
 
         {isUserAuthenticated ? (<SearchBar handleSubmit={handleSearchBarSubmit} />) : null}
-      </div>
 
-      <div id="buttons">
-        <button
-          className={styles.iconButton}
-          onClick={() => {
-            setIsAuthModalOpen(true);
-          }}
-        >
-          <SettingsIcon />
-        </button>
+        <div id="icons">
+          <button
+            className={styles.iconButton}
+            onClick={() => {
+              setIsAuthModalOpen(true);
+            }}
+          >
+            <SettingsIcon />
+          </button>
+        </div>
       </div>
-    </div>
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        handleClose={() => {
+          setIsAuthModalOpen(false);
+        }}
+        handleSubmit={handleAuthFormSubmit}
+        className={styles.form}
+      />
+    </>
   );
 };
 
