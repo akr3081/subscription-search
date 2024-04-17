@@ -5,6 +5,7 @@ import AppHeader from './components/AppHeader/AppHeader.jsx';
 import Gallery from './components/Gallery/Gallery.jsx';
 import SubscriptionSelector from './components/SubscriptionSelector/SubscriptionSelector.jsx';
 import useStore from './stores/useStore.js';
+import './styles/global.css';
 import styles from './index.module.css';
 
 const Home = () => {
