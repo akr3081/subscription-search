@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import AuthForm from '../AuthForm/AuthForm.jsx';
+import AuthModal from '../AuthModal/AuthModal.jsx';
 import SearchBar from '../SearchBar/SearchBar.jsx';
-import { SearchIcon, SettingsIcon, YouTubeIcon } from '../Icon/Icon.jsx';
+import { SettingsIcon, YouTubeIcon } from '../Icon/Icon.jsx';
 import styles from './AppHeader.module.css';
 
 /**
@@ -11,12 +11,10 @@ import styles from './AppHeader.module.css';
  * @param {string} className - CSS class name
  */
 const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, className }) => {
-  const [isAuthFormOpen, setIsAuthFormOpen] = useState(!isUserAuthenticated);
-  const [isSearchBarOpen, setIsSearchBarOpen] = useState(isUserAuthenticated);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(!isUserAuthenticated);
 
   useEffect(() => {
-    setIsAuthFormOpen(!isUserAuthenticated);
-    setIsSearchBarOpen(isUserAuthenticated);
+    setIsAuthModalOpen(!isUserAuthenticated);
   }, [isUserAuthenticated]);
 
   const handleAuthFormSubmit = e => {
@@ -43,29 +41,24 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, 
     <div className={`${styles.header} ${className}`}>
       <YouTubeIcon className={styles.headerIcon} />
 
-      <div id="form">
-        {isAuthFormOpen ? <AuthForm handleSubmit={handleAuthFormSubmit} className={styles.form} /> : null}
+      <div id="modals">
+        <AuthModal
+          isOpen={isAuthModalOpen}
+          handleClose={() => {
+            setIsAuthModalOpen(false);
+          }}
+          handleSubmit={handleAuthFormSubmit}
+          className={styles.form}
+        />
 
-        {isSearchBarOpen ? <SearchBar handleSubmit={handleSearchBarSubmit} /> : null}
+        {isUserAuthenticated ? (<SearchBar handleSubmit={handleSearchBarSubmit} />) : null}
       </div>
 
       <div id="buttons">
         <button
-          disabled={!isUserAuthenticated}
           className={styles.iconButton}
           onClick={() => {
-            setIsAuthFormOpen(false);
-            setIsSearchBarOpen(true);
-          }}
-        >
-          <SearchIcon />
-        </button>
-
-        <button
-          className={styles.iconButton}
-          onClick={() => {
-            setIsAuthFormOpen(true);
-            setIsSearchBarOpen(false);
+            setIsAuthModalOpen(true);
           }}
         >
           <SettingsIcon />

@@ -22,6 +22,8 @@ const Home = () => {
   }, []);
 
   const handleSubmitAuth = formData => {
+    setIsUserAuthenticated(false);
+
     getSubscriptions({ apiKey: formData.apiKey, channelId: formData.channelId })
       .then(res => {
         setSubscriptions(res);
@@ -35,7 +37,6 @@ const Home = () => {
 
         setApiKey('');
         setChannelId('');
-        setIsUserAuthenticated(false);
       });
   };
 

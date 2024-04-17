@@ -6,9 +6,7 @@ const Modal = ({ isOpen, handleClose, children, className }) => {
   return isOpen ? (
     <div>
       <div className={`${styles.modal} ${className}`}>
-        <div className={styles.body}>
-          {children}
-        </div>
+        {children}
       </div>
 
       <div className={styles.veil} onClick={handleClose} />
