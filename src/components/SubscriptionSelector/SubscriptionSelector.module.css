@@ -1,5 +1,7 @@
 .subscriptionSelector {
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -9,7 +11,8 @@
   border: 1px solid black;
   display: flex;
   height: 3em;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 10px;
   width: 100%;
 }
 
@@ -38,6 +41,20 @@
   width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+  .selections {
+    gap: 20px;
+    grid-auto-flow: column;
+    grid-auto-columns: 30%;
+  }
+}
+
 .divider {
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .divider {
+    display: none;
+  }
 }

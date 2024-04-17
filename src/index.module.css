@@ -9,6 +9,21 @@
   height: 100vh;
 }
 
+@media screen and (max-width: 768px) {
+  .home {
+    /* background: red !important; */
+    grid-template-areas:
+    'header'
+    'leftRail'
+    'pageBody';
+    gap: 20px;
+
+    grid-template-columns: 100%;
+    grid-template-rows: min-content 15% auto;
+    /* height: 100%; */
+  }
+}
+
 .header {
   grid-area: header;
   max-height: 100%;
