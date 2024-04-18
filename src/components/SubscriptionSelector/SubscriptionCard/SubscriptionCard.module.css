@@ -7,20 +7,38 @@
   justify-content: space-between;
   max-width: 100%;
   overflow: hidden;
-  padding: 0 10px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .subscriptionCard {
+    align-items: flex-start;
+    overflow: unset;
+    padding: 0;
+  }
 }
 
 .channel {
   align-items: center;
   display: flex;
   gap: 10px;
+  height: 100%;
+  justify-content: center;
   width: 80%;
 }
 
+@media screen and (max-width: 768px) {
+  .channel {
+    flex-direction: column;
+  }
+}
+
 .channel h4 {
+  margin: 5px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 80%;
 }
 
 .channel img {
@@ -29,10 +47,18 @@
   width: 2em;
 }
 
+@media screen and (max-width: 768px) {
+  .channel img {
+    height: 4em;
+    width: 4em;
+  }
+}
+
 .button {
   background: none;
   border: none;
   cursor: pointer;
+  width: 20%;
 }
 
 .button svg {
@@ -43,10 +69,6 @@
   height: 1.5rem;
   stroke-width: 5rem;
   width: 1.5rem;
-}
-
-.button svg:hover {
-  opacity: 50%;
 }
 
 .isSelected svg {

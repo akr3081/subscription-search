@@ -11,7 +11,7 @@ import styles from './VideoCard.module.css';
 const VideoCard = ({ videoId, title, thumbnails }) => {
   return (
     <a href={`https://youtube.com/watch?v=${videoId}`} target="_blank" className={styles.videoCard}>
-      <img src={thumbnails?.medium?.url} />
+      <img src={thumbnails?.medium?.url} referrerPolicy="no-referrer" />
 
       <div className={styles.cardContent}>
         <h3>{title}</h3>

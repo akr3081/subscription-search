@@ -22,7 +22,7 @@ const Gallery = ({ title, image, link, items, loadMoreItems }) => {
           <ArrowIcon />
         </button>
         <a href={link} target="_blank" className={styles.channelLink}>
-          <img src={image?.url} alt={title} />
+          <img src={image?.url} alt={title} referrerPolicy="no-referrer" />
           <h2>{`${title} (${items.length})`}</h2>
         </a>
       </div>
