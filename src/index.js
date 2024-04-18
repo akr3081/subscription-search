@@ -88,6 +88,15 @@ const Home = () => {
       });
   };
 
+  const handleRemoveChannel = channelId => {
+    // FIXME: Add this once empty channel gallerys are added
+    // const newSelectedSubscriptions = selectedSubscriptions.filter(sub => sub !== channelId);
+    // setSelectedSubscriptions(newSelectedSubscriptions)
+
+    const newResults = searchResults?.filter(channelResult => channelResult.id !== channelId);
+    setSearchResults(newResults);
+  };
+
   return (
     <div className={styles.home}>
       <AppHeader
@@ -119,6 +128,7 @@ const Home = () => {
             loadMoreItems={() => {
               loadMoreChannelVideos(channel);
             }}
+            handleRemove={() => { handleRemoveChannel(channel?.id); }}
           />
         ))}
       </div>

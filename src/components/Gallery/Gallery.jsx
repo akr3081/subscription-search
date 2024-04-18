@@ -7,7 +7,7 @@ import styles from './Gallery.module.css';
 /**
  * Gallery container for displaying a list of
  */
-const Gallery = ({ title, image, link, items, loadMoreItems }) => {
+const Gallery = ({ title, image, link, items, loadMoreItems, handleRemove }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -36,7 +36,7 @@ const Gallery = ({ title, image, link, items, loadMoreItems }) => {
           </button>
 
 
-          <button className={styles.iconButton}>
+          <button onClick={handleRemove} className={styles.iconButton}>
             <RemoveIcon />
           </button>
         </div>
@@ -65,7 +65,8 @@ Gallery.propTypes = {
   image: PropTypes.object,
   link: PropTypes.string,
   items: PropTypes.array,
-  loadMoreItems: PropTypes.func
+  loadMoreItems: PropTypes.func,
+  handleRemove: PropTypes.func
 };
 
 export default Gallery;

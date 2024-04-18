@@ -11,7 +11,6 @@
   align-items: center;
   background: #f7f7f7;
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
   width: 100%;
@@ -22,9 +21,9 @@
   color: black;
   cursor: pointer;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-wrap: nowrap;
   justify-self: center;
+  overflow: hidden;
   padding-left: 10px;
 }
 
@@ -32,6 +31,13 @@
   border-radius: 50%;
   height: 2.5em;
   width: 2.5em;
+}
+
+.channel h2 {
+  overflow: hidden;
+  padding-left: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .icons {
@@ -64,6 +70,12 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   row-gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .items {
+    grid-template-columns: 1fr;
+  }
 }
 
 .loadMore {
