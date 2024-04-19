@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import AuthModal from '../AuthModal/AuthModal.jsx';
+import InfoModal from '../InfoModal/InfoModal.jsx';
 import SearchBar from '../SearchBar/SearchBar.jsx';
-import { SettingsIcon, YouTubeIcon } from '../Icon/Icon.jsx';
+import { InfoIcon, SettingsIcon, YouTubeIcon } from '../Icon/Icon.jsx';
 import styles from './AppHeader.module.css';
 
 /**
@@ -12,6 +13,7 @@ import styles from './AppHeader.module.css';
  */
 const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, className }) => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(!isUserAuthenticated);
+  const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
 
   useEffect(() => {
     setIsAuthModalOpen(!isUserAuthenticated);
@@ -44,9 +46,15 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, 
 
         {isUserAuthenticated ? (<SearchBar handleSubmit={handleSearchBarSubmit} />) : null}
 
-        <div id="icons">
+        <div className={styles.icons}>
           <button
-            className={styles.iconButton}
+            onClick={() => {
+              setIsInfoModalOpen(true);
+            }}
+          >
+            <InfoIcon />
+          </button>
+          <button
             onClick={() => {
               setIsAuthModalOpen(true);
             }}
@@ -55,14 +63,25 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, 
           </button>
         </div>
       </div>
-      <AuthModal
-        isOpen={isAuthModalOpen}
-        handleClose={() => {
-          setIsAuthModalOpen(false);
-        }}
-        handleSubmit={handleAuthFormSubmit}
-        className={styles.form}
-      />
+
+      <div id="modals">
+        <AuthModal
+          isOpen={isAuthModalOpen}
+          handleClose={() => {
+            setIsAuthModalOpen(false);
+          }}
+          handleSubmit={handleAuthFormSubmit}
+          className={styles.form}
+        />
+
+        <InfoModal
+          isOpen={isInfoModalOpen}
+          handleClose={() => {
+            setIsInfoModalOpen(false);
+          }}
+          className={styles.form}
+        />
+      </div>
     </>
   );
 };

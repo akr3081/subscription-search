@@ -13,7 +13,12 @@
   width: 50px;
 }
 
-.iconButton {
+.icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icons button {
   cursor: pointer;
   height: 50px;
   width: 50px;
