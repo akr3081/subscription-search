@@ -48,15 +48,10 @@
   padding-right: 10px;
 }
 
-.iconButton {
+.linkButton {
   background: none;
   border: none;
   cursor: pointer;
-}
-
-.iconButton svg {
-  min-height: 2em;
-  min-width: 2em;
 }
 
 .open svg {

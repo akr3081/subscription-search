@@ -1,5 +1,5 @@
 import React from 'react';
-import { AddIcon, SubtractIcon } from '../../Icon/Icon.jsx';
+import IconButton from '../IconButton/IconButton.jsx';
 import styles from './SubscriptionCard.module.css';
 
 const SubscriptionCard = ({ name, image, isSelected, handleSelect }) => {
@@ -10,9 +10,11 @@ const SubscriptionCard = ({ name, image, isSelected, handleSelect }) => {
         <h4>{name}</h4>
       </span>
 
-      <button onClick={handleSelect} className={`${styles.button} ${isSelected && styles.isSelected}`}>
-        {isSelected ? <SubtractIcon /> : <AddIcon />}
-      </button>
+      <IconButton
+        iconName={isSelected ? 'subtract' : 'add'}
+        className={`${styles.button} ${isSelected && styles.isSelected}`}
+        onClick={handleSelect}
+      />
     </div>
   );
 };

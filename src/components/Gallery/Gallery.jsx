@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { ArrowIcon, NewTabIcon, RemoveIcon } from '../Icon/Icon.jsx';
+import { NewTabIcon } from '../Icon/Icon.jsx';
+import IconButton from '../IconButton/IconButton.jsx';
 import VideoCard from '../VideoCard/VideoCard.jsx';
 import styles from './Gallery.module.css';
 
@@ -16,29 +17,26 @@ const Gallery = ({ title, image, link, items, loadMoreItems, handleRemove }) => 
         <div className={styles.channel} onClick={() => {
           setIsOpen(!isOpen);
         }}>
-          <button
+          <IconButton
+            iconName="arrow"
+            className={isOpen ? styles.open : ''}
             onClick={() => {
               setIsOpen(!isOpen);
             }}
-            className={`${styles.iconButton} ${isOpen ? styles.open : ''}`}
-          >
-            <ArrowIcon />
-          </button>
+          />
           <img src={image?.url} alt={title} referrerPolicy="no-referrer" />
           <h2>{`${title} (${items.length})`}</h2>
         </div>
 
         <div className={styles.icons}>
-          <button className={styles.iconButton}>
+          <button className={styles.linkButton}>
             <a href={link} target="_blank" tabIndex="-1">
               <NewTabIcon />
             </a>
           </button>
 
 
-          <button onClick={handleRemove} className={styles.iconButton}>
-            <RemoveIcon />
-          </button>
+          <IconButton iconName="remove" onClick={handleRemove} />
         </div>
       </div>
 

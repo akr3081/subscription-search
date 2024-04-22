@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import AuthModal from '../AuthModal/AuthModal.jsx';
+import IconButton from '../IconButton/IconButton.jsx';
 import InfoModal from '../InfoModal/InfoModal.jsx';
 import SearchBar from '../SearchBar/SearchBar.jsx';
-import { InfoIcon, SettingsIcon, YouTubeIcon } from '../Icon/Icon.jsx';
+import { YouTubeIcon } from '../Icon/Icon.jsx';
 import styles from './AppHeader.module.css';
 
 /**
@@ -47,20 +48,21 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, 
         {isUserAuthenticated ? (<SearchBar handleSubmit={handleSearchBarSubmit} />) : null}
 
         <div className={styles.icons}>
-          <button
+          <IconButton
+            iconName="info"
+            className={styles.icon}
             onClick={() => {
               setIsInfoModalOpen(true);
             }}
-          >
-            <InfoIcon />
-          </button>
-          <button
+          />
+
+          <IconButton
+            iconName="settings"
+            className={styles.icon}
             onClick={() => {
               setIsAuthModalOpen(true);
             }}
-          >
-            <SettingsIcon />
-          </button>
+          />
         </div>
       </div>
 

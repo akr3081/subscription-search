@@ -18,8 +18,13 @@
   gap: 10px;
 }
 
-.icons button {
-  cursor: pointer;
+.icon {
+  background: #efefef;
+  border: 1px solid black;
   height: 50px;
   width: 50px;
+}
+
+.icon:hover {
+  opacity: 50%;
 }

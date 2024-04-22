@@ -1,0 +1,9 @@
+.iconButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.iconButton:hover {
+    opacity: 75%;
+}

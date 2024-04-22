@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import SubscriptionCard from './SubscriptionCard/SubscriptionCard.jsx';
-import { SyncIcon } from '../Icon/Icon.jsx';
+import IconButton from '../IconButton/IconButton.jsx';
+import SubscriptionCard from '../SubscriptionCard/SubscriptionCard.jsx';
 import styles from './SubscriptionSelector.module.css';
 
 /**
@@ -48,9 +48,13 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
     <div className={styles.subscriptionSelector}>
       <div className={styles.header}>
         <p>{`Subscriptions to Search (${selectedCount}/${totalCount})`}</p>
-        <button className={styles.iconButton} onClick={handleRefreshClick} disabled={isLoadingSubscriptions}>
-          <SyncIcon />
-        </button>
+        <IconButton
+          iconName="sync"
+          className={styles.iconButton}
+          onClick={handleRefreshClick}
+          disabled={isLoadingSubscriptions}
+        />
+
       </div>
 
       {subscriptions.length ? (
