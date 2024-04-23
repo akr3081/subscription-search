@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import AuthModal from '../AuthModal/AuthModal.jsx';
 import IconButton from '../IconButton/IconButton.jsx';
@@ -13,21 +13,18 @@ import styles from './AppHeader.module.css';
  * @param {string} className - CSS class name
  */
 const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, className }) => {
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(!isUserAuthenticated);
-  const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [isInfoModalOpen, setIsInfoModalOpen] = useState(!isUserAuthenticated);
 
-  useEffect(() => {
-    setIsAuthModalOpen(!isUserAuthenticated);
-  }, [isUserAuthenticated]);
-
-  const handleAuthFormSubmit = e => {
+  const handleAuthFormSubmit = async e => {
     e.preventDefault();
     const formDataObj = {};
 
     const formData = new FormData(e.currentTarget);
     formData.forEach((value, key) => (formDataObj[key] = value));
 
-    handleSubmitAuth(formDataObj);
+    const isAuthenticated = await handleSubmitAuth(formDataObj);
+    if (isAuthenticated) setIsAuthModalOpen(false);
   };
 
   const handleSearchBarSubmit = e => {
@@ -51,17 +48,13 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, 
           <IconButton
             iconName="info"
             className={styles.icon}
-            onClick={() => {
-              setIsInfoModalOpen(true);
-            }}
+            onClick={() => { setIsInfoModalOpen(true) }}
           />
 
           <IconButton
             iconName="settings"
             className={styles.icon}
-            onClick={() => {
-              setIsAuthModalOpen(true);
-            }}
+            onClick={() => { setIsAuthModalOpen(true) }}
           />
         </div>
       </div>
@@ -69,18 +62,15 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, 
       <div id="modals">
         <AuthModal
           isOpen={isAuthModalOpen}
-          handleClose={() => {
-            setIsAuthModalOpen(false);
-          }}
+          handleClose={() => { setIsAuthModalOpen(false) }}
           handleSubmit={handleAuthFormSubmit}
           className={styles.form}
+          isUserAuthenticated={isUserAuthenticated}
         />
 
         <InfoModal
           isOpen={isInfoModalOpen}
-          handleClose={() => {
-            setIsInfoModalOpen(false);
-          }}
+          handleClose={() => { setIsInfoModalOpen(false) }}
           className={styles.form}
         />
       </div>

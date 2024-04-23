@@ -12,33 +12,25 @@ const Home = () => {
   const { apiKey, channelId, searchTerm, subscriptions, setApiKey, setChannelId, setSearchTerm, setSubscriptions } =
     useStore();
 
-  const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
+  const [isUserAuthenticated, setIsUserAuthenticated] = useState(apiKey && channelId);
   const [selectedSubscriptions, setSelectedSubscriptions] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
-  useEffect(() => {
-    if (apiKey && channelId) {
+  const handleSubmitAuth = async formData => {
+    let isAuthenticated = false;
+
+    try {
+      const subs = await getSubscriptions({ apiKey: formData.apiKey, channelId: formData.channelId });
+      setSubscriptions(subs);
+      setApiKey(formData.apiKey);
+      setChannelId(formData.channelId);
       setIsUserAuthenticated(true);
+      isAuthenticated = true;
+    } catch (err) {
+      alert(`Subscription Error: ${err}`);
     }
-  }, []);
 
-  const handleSubmitAuth = formData => {
-    setIsUserAuthenticated(false);
-
-    getSubscriptions({ apiKey: formData.apiKey, channelId: formData.channelId })
-      .then(res => {
-        setSubscriptions(res);
-
-        setApiKey(formData.apiKey);
-        setChannelId(formData.channelId);
-        setIsUserAuthenticated(true);
-      })
-      .catch(err => {
-        alert(`Subscription Error: ${err}`);
-
-        setApiKey('');
-        setChannelId('');
-      });
+    return isAuthenticated;
   };
 
   const handleSubmitSearch = formData => {
@@ -115,6 +107,7 @@ const Home = () => {
             setSelectedSubscriptions([]);
             handleSubmitAuth({ apiKey, channelId });
           }}
+          isUserAuthenticated={isUserAuthenticated}
         />
       </div>
 

@@ -12,6 +12,16 @@
   }
 }
 
+.clearButton {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
+  min-height: 40px;
+}
+
 .form {
     align-items: center;
     display: flex;

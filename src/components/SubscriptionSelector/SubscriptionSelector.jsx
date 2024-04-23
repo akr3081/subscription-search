@@ -10,7 +10,7 @@ import styles from './SubscriptionSelector.module.css';
  * @param {array} selectedSubscriptions - List of selected channel ids
  * @param {function} setSelectedSubscriptions - Updates selectedSubscriptions state hook
  */
-const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelectedSubscriptions, handleRefresh }) => {
+const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelectedSubscriptions, handleRefresh, isUserAuthenticated }) => {
   const [isLoadingSubscriptions, setIsLoadingSubscriptions] = useState(false);
 
   const sortedItems = subscriptions.sort((a, b) => a.snippet.title.localeCompare(b.snippet.title));
@@ -44,7 +44,7 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
     handleRefresh();
   };
 
-  return (
+  return isUserAuthenticated ? (
     <div className={styles.subscriptionSelector}>
       <div className={styles.header}>
         <p>{`Subscriptions to Search (${selectedCount}/${totalCount})`}</p>
@@ -54,7 +54,6 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
           onClick={handleRefreshClick}
           disabled={isLoadingSubscriptions}
         />
-
       </div>
 
       {subscriptions.length ? (
@@ -87,14 +86,15 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
         <div>Please enter a valid API Key and Channel ID to view your subscriptions</div>
       )}
     </div>
-  );
+  ) : null;
 };
 
 SubscriptionSelector.propTypes = {
   subscriptions: PropTypes.arrayOf(PropTypes.object),
   selectedSubscriptions: PropTypes.arrayOf(PropTypes.string),
   setSelectedSubscriptions: PropTypes.func,
-  handleRefresh: PropTypes.func
+  handleRefresh: PropTypes.func,
+  isUserAuthenticated: PropTypes.bool
 };
 
 SubscriptionSelector.defaultProps = {

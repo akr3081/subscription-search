@@ -5,6 +5,6 @@ export const USAGE_STEPS = [
     {text: 'Generate a <a target="_blank" href="https://support.google.com/googleapi/answer/6158862">Google Cloud API key</a>', image: {url: 'usage_image_01.png', altText: 'Generate API Key'}},
     {text: 'Enable <a target="_blank" href="https://console.cloud.google.com/marketplace/product/google/youtube.googleapis.com">YouTube Data API v3</a>', image: {url: 'usage_image_02.png', altText: 'Enable YouTube Data API v3'}},
     {text: 'Ensure your subscriptions are not <a target="_blank" href="https://www.youtube.com/account_privacy">set to private</a>', image: {url: 'usage_image_03.png', altText: 'Set your subscriptions to public'}},
-    {text: 'Copy your YouTube Channel ID <a target="_blank" href="https://www.youtube.com/account_advanced">set to private</a>', image: {url: 'usage_image_04.png', altText: 'Copy channel ID'}},
+    {text: 'Copy your YouTube Channel ID', image: {url: 'usage_image_04.png', altText: 'Copy channel ID'}},
     {text: `Select the ${SETTINGS_ICON} settings icon and enter your API Key and Channel ID`},
 ];
