@@ -3,7 +3,7 @@ import SearchResultsMock from '../__mocks__/searchResults.json';
 import SubscriptionMock from '../__mocks__/subscriptions.json';
 
 // FIXME: Remove this once testing is done
-const MOCK_API_CALLS = false;
+const MOCK_API_CALLS = process.env.MOCK_API_CALLS === 'true';
 
 /**
  * Gets subscriptions based on the current pageToken
