@@ -30,7 +30,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      favicon: './public/favicon.ico'
     }),
     new Dotenv({
       path: `./.env.${process.env.NODE_ENV === "production" ? "prod" : "dev"}`,
