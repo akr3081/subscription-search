@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { NewTabIcon } from '../Icon/Icon.jsx';
 import IconButton from '../IconButton/IconButton.jsx';
 import VideoCard from '../VideoCard/VideoCard.jsx';
+import { LOAD_MORE_CTA } from '../../common/constants.js';
 import styles from './Gallery.module.css';
 
 /**
@@ -49,7 +50,7 @@ const Gallery = ({ title, image, link, items, loadMoreItems, handleRemove }) => 
           </div>
           <div className={styles.loadMore}>
             <button onClick={loadMoreItems}>
-              <h3>Load More</h3>
+              <h3>{LOAD_MORE_CTA}</h3>
             </button>
           </div>
         </div>

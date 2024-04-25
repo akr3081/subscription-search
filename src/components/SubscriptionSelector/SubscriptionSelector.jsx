@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import IconButton from '../IconButton/IconButton.jsx';
 import SubscriptionCard from '../SubscriptionCard/SubscriptionCard.jsx';
+import { SUBS_HEADER } from '../../common/constants.js';
 import styles from './SubscriptionSelector.module.css';
 
 /**
@@ -47,7 +48,7 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
   return isUserAuthenticated ? (
     <div className={styles.subscriptionSelector}>
       <div className={styles.header}>
-        <p>{`Subscriptions to Search (${selectedCount}/${totalCount})`}</p>
+        <p>{`${SUBS_HEADER} (${selectedCount}/${totalCount})`}</p>
         <IconButton
           iconName="sync"
           className={styles.iconButton}

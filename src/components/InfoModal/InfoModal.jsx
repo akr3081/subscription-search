@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { USAGE_STEPS } from '../../common/constants.js';
-import useStore from '../../stores/useStore.js';
+import { CLOSE_CTA, USAGE_STEPS } from '../../common/constants.js';
 import Modal from '../Modal/Modal.jsx';
 import styles from './InfoModal.module.css';
 
@@ -23,7 +22,7 @@ const InfoModal = ({ isOpen, handleClose, className }) => {
         </ol >
 
       </div >
-      <button className={styles.submitButton} onClick={handleClose}>Close</button>
+      <button className={styles.submitButton} onClick={handleClose}>{CLOSE_CTA}</button>
     </Modal >
   );
 };
