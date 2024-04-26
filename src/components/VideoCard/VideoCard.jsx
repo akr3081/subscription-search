@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { YOUTUBE_BASE_URL } from '../../common/constants.js';
 import styles from './VideoCard.module.css';
 
 /**
@@ -8,17 +9,16 @@ import styles from './VideoCard.module.css';
  * @param {string} title - Video title
  * @param {object} thumbnails - Contains image data
  */
-const VideoCard = ({ videoId, title, thumbnails }) => {
-  return (
-    <a href={`https://youtube.com/watch?v=${videoId}`} target="_blank" className={styles.videoCard}>
-      <img src={thumbnails?.medium?.url} referrerPolicy="no-referrer" />
+const VideoCard = ({ videoId, title, thumbnails }) => (
+  <a href={`${YOUTUBE_BASE_URL}${videoId}`} target="_blank" className={styles.videoCard}>
+    <img src={thumbnails?.medium?.url} referrerPolicy="no-referrer" />
 
-      <div className={styles.cardContent}>
-        <h3>{title}</h3>
-      </div>
-    </a>
-  );
-};
+    <div className={styles.cardContent}>
+      <h3>{title}</h3>
+    </div>
+  </a>
+);
+
 
 VideoCard.propTypes = {
   videoId: PropTypes.string,
