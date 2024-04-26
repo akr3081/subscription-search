@@ -60,18 +60,18 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, 
       </div>
 
       <div id="modals">
+        <InfoModal
+          isOpen={isInfoModalOpen}
+          handleClose={() => { setIsInfoModalOpen(false) }}
+          className={styles.form}
+        />
+
         <AuthModal
           isOpen={isAuthModalOpen}
           handleClose={() => { setIsAuthModalOpen(false) }}
           handleSubmit={handleAuthFormSubmit}
           className={styles.form}
           isUserAuthenticated={isUserAuthenticated}
-        />
-
-        <InfoModal
-          isOpen={isInfoModalOpen}
-          handleClose={() => { setIsInfoModalOpen(false) }}
-          className={styles.form}
         />
       </div>
     </>

@@ -2,6 +2,7 @@ export const BASE_URL = 'https://youtube.googleapis.com/youtube/v3';
 export const CLEAR_DATA_CTA = 'Clear Local Data';
 export const CLOSE_CTA = 'Close';
 export const LOAD_MORE_CTA = 'Load More';
+export const SAVE_CTA = 'Save';
 export const SUBS_HEADER = 'Subscriptions to Search';
 export const USAGE_STEPS = [
   {

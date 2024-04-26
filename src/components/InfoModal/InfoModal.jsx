@@ -9,8 +9,8 @@ const InfoModal = ({ isOpen, handleClose, className }) => {
     <Modal isOpen={isOpen} handleClose={handleClose} className={`${styles.modal} ${className}`}>
       <div className={`${styles.body} ${className}`}>
         <ol className={styles.steps}>
-          {USAGE_STEPS.map(step => (
-            <li>
+          {USAGE_STEPS.map((step, index) => (
+            <li key={`usage_${index}`}>
               <div className={styles.step}>
                 <div dangerouslySetInnerHTML={{ __html: step.text }} />
                 {step?.image ? (<img src={step.image.url} alt={step.image.altText} referrerPolicy="no-referrer" />) : null}

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import useStore from '../../stores/useStore.js';
 import Modal from '../Modal/Modal.jsx';
-import { CLEAR_DATA_CTA } from '../../common/constants.js';
+import { CLEAR_DATA_CTA, SAVE_CTA } from '../../common/constants.js';
 import styles from './AuthModal.module.css';
 
 const AuthModal = ({ isOpen, handleClose, handleSubmit, className, isUserAuthenticated }) => {
@@ -32,7 +32,7 @@ const AuthModal = ({ isOpen, handleClose, handleSubmit, className, isUserAuthent
           </div>
         </div>
 
-        <button className={styles.submitButton} type="submit">Save</button>
+        <button className={styles.submitButton} type="submit">{SAVE_CTA}</button>
       </form>
     </Modal>
   );
