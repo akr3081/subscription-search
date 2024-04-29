@@ -2,9 +2,6 @@ import { BASE_URL } from './constants';
 import SearchResultsMock from '../__mocks__/searchResults.json';
 import SubscriptionMock from '../__mocks__/subscriptions.json';
 
-// FIXME: Remove this once testing is done
-const MOCK_API_CALLS = process.env.MOCK_API_CALLS === 'true';
-
 /**
  * Gets subscriptions based on the current pageToken
  * @param {string} channelId - The channel for which subscriptions are fetched
@@ -13,7 +10,7 @@ const MOCK_API_CALLS = process.env.MOCK_API_CALLS === 'true';
  * @returns {object} Subscription payload
  */
 export const fetchSubscriptionData = async ({ channelId, apiKey, pageToken }) => {
-  if (MOCK_API_CALLS) return pageToken === '' ? SubscriptionMock : { items: [] };
+  if (process.env.MOCK_API_CALLS === 'true') return pageToken === '' ? SubscriptionMock : { items: [] };
 
   const res = await fetch(
     `${BASE_URL}/subscriptions?key=${apiKey}&part=snippet&channelId=${channelId}&order=alphabetical&maxResults=50&pageToken=${pageToken}`
@@ -52,7 +49,8 @@ export const getSubscriptions = async ({ channelId, apiKey }) => {
  * @returns {object} List of videos
  */
 export const fetchChannelResults = async ({ channelId, apiKey, searchTerm, pageToken = '' }) => {
-  if (MOCK_API_CALLS) return { ...SearchResultsMock, items: SearchResultsMock.items.slice(0, 3) };
+  if (process.env.MOCK_API_CALLS === 'true')
+    return { ...SearchResultsMock, items: SearchResultsMock.items.slice(0, 3) };
 
   const res = await fetch(
     `${BASE_URL}/search?key=${apiKey}&channelId=${channelId}&maxResults=3&q=${searchTerm}&part=snippet&safeSearch=none&type=video&pageToken=${pageToken}`
