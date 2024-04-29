@@ -4,28 +4,26 @@ import { CLOSE_CTA, USAGE_STEPS } from '../../common/constants.js';
 import Modal from '../Modal/Modal.jsx';
 import styles from './InfoModal.module.css';
 
-const InfoModal = ({ isOpen, handleClose, className }) => {
-  return (
-    <Modal isOpen={isOpen} handleClose={handleClose} className={`${styles.modal} ${className}`}>
-      <div className={`${styles.body} ${className}`}>
-        <ol className={styles.steps}>
-          {USAGE_STEPS.map((step, index) => (
-            <li key={`usage_${index}`}>
-              <div className={styles.step}>
-                <div dangerouslySetInnerHTML={{ __html: step.text }} />
-                {step?.image ? (<img src={step.image.url} alt={step.image.altText} referrerPolicy="no-referrer" />) : null}
+const InfoModal = ({ isOpen, handleClose, className }) => (
+  <Modal isOpen={isOpen} handleClose={handleClose} className={`${styles.modal} ${className}`}>
+    <div className={`${styles.body} ${className}`}>
+      <ol className={styles.steps}>
+        {USAGE_STEPS.map((step, index) => (
+          <li key={`usage_${index}`}>
+            <div className={styles.step}>
+              <div dangerouslySetInnerHTML={{ __html: step.text }} />
+              {step?.image ? (<img src={step.image.url} alt={step.image.altText} referrerPolicy="no-referrer" />) : null}
 
-              </div>
-            </li>
-          ))
-          }
-        </ol >
+            </div>
+          </li>
+        ))
+        }
+      </ol >
 
-      </div >
-      <button className={styles.submitButton} onClick={handleClose}>{CLOSE_CTA}</button>
-    </Modal >
-  );
-};
+    </div >
+    <button className={styles.submitButton} onClick={handleClose}>{CLOSE_CTA}</button>
+  </Modal >
+);
 
 InfoModal.propTypes = {
   isOpen: PropTypes.bool,
