@@ -26,7 +26,7 @@ const state = set => ({
   },
 
   reset: () => {
-    set({ apiKey: '', channelId: '' });
+    set({ apiKey: '', channelId: '', searchTerm: '', subscriptions: [] });
   }
 });
 

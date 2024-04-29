@@ -69,10 +69,8 @@ describe('AppHeader', () => {
     fireEvent.submit(authForm);
 
     // Should call handleSubmitAuth and still find save cta if it returns false
-    await waitFor(() => {
-      expect(handleSubmitAuthMock).toHaveBeenCalled();
-      expect(screen.queryByText(SAVE_CTA)).toBeNull();
-    });
+    expect(handleSubmitAuthMock).toHaveBeenCalled();
+    expect(screen.getByText(SAVE_CTA)).toBeDefined();
   });
 
   it('should call handleSubmitSearch when search bar is submitted', async () => {
