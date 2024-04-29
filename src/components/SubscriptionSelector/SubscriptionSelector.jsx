@@ -59,7 +59,7 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
 
       {subscriptions.length ? (
         <div className={styles.selections}>
-          {selected.map(subscription => (
+          {selected.map((subscription, index) => (
             <SubscriptionCard
               name={subscription.snippet.title}
               image={subscription.snippet.thumbnails.default.url}
@@ -67,12 +67,13 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
               handleSelect={() => {
                 handleSelect(subscription);
               }}
+              key={`selected_sub_${index}`}
             />
           ))}
 
           {selected?.length ? <hr className={styles.divider} /> : null}
 
-          {unSelected.map(subscription => (
+          {unSelected.map((subscription, index) => (
             <SubscriptionCard
               name={subscription.snippet.title}
               image={subscription.snippet.thumbnails.default.url}
@@ -80,6 +81,7 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
               handleSelect={() => {
                 handleSelect(subscription);
               }}
+              key={`unselected_sub_${index}`}
             />
           ))}
         </div>

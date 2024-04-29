@@ -23,23 +23,7 @@ const VideoCard = ({ videoId, title, thumbnails }) => (
 VideoCard.propTypes = {
   videoId: PropTypes.string,
   title: PropTypes.string,
-  thumbnails: PropTypes.objectOf({
-    default: PropTypes.objectOf({
-      url: PropTypes.string,
-      height: PropTypes.number,
-      width: PropTypes.number
-    }),
-    medium: PropTypes.objectOf({
-      url: PropTypes.string,
-      height: PropTypes.number,
-      width: PropTypes.number
-    }),
-    high: PropTypes.objectOf({
-      url: PropTypes.string,
-      height: PropTypes.number,
-      width: PropTypes.number
-    })
-  })
+  thumbnails: PropTypes.object
 };
 
 export default VideoCard;
