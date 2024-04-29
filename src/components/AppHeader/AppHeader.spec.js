@@ -1,11 +1,11 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { CLOSE_CTA, SAVE_CTA } from '../../common/constants.js';
 import AppHeader from './AppHeader.jsx';
-import { CLOSE_CTA, SAVE_CTA, USAGE_STEPS } from '../../common/constants.js';
 
 describe('AppHeader', () => {
-  const props = { handleSubmitAuth: jest.fn(), handleSubmitSearch: jest.fn(), isUserAuthenticated: true };
+  const props = { handleSubmitSearch: jest.fn(), isUserAuthenticated: true };
 
   it('should open/close the info modal', async () => {
     const user = userEvent.setup();
@@ -39,26 +39,40 @@ describe('AppHeader', () => {
     expect(screen.queryByText(SAVE_CTA)).toEqual(null);
   });
 
-  // FIXME: Add this test back once form validation issue is resolved
-  it.skip('should call handleSubmitAuth when settings modal is submitted', async () => {
+  it('should call handleSubmitAuth when settings modal is submitted', async () => {
     const user = userEvent.setup();
-    render(<AppHeader {...props} />);
+    const handleSubmitAuthMock = jest.fn(() => true);
+    render(<AppHeader {...props} handleSubmitAuth={handleSubmitAuthMock} />);
 
     const settingsButton = screen.getByTestId('icon_button_settings');
     await user.click(settingsButton);
 
-    // Update required fields
-    const apiKeyField = await screen.getAllByRole('textbox')[0];
-    fireEvent.change(apiKeyField, { target: { value: 'mock-api-key' } });
+    const authForm = screen.getByTestId('auth_form');
+    fireEvent.submit(authForm);
 
-    const channelIdField = await screen.getAllByRole('textbox')[1];
-    fireEvent.change(channelIdField, { target: { value: 'mock-channel-id' } });
+    // Should call handleSubmitAuth and not find save cta as modal is closed
+    await waitFor(() => {
+      expect(handleSubmitAuthMock).toHaveBeenCalled();
+      expect(screen.queryByText(SAVE_CTA)).toBeNull();
+    });
+  });
 
-    const settingsModalSaveButton = screen.queryByText(SAVE_CTA);
-    await user.click(settingsModalSaveButton);
+  it('should not close auth modal if handleSubmitAuth returns false', async () => {
+    const user = userEvent.setup();
+    const handleSubmitAuthMock = jest.fn(() => false);
+    render(<AppHeader {...props} handleSubmitAuth={handleSubmitAuthMock} />);
 
-    // Should not find settings modal save button after modal has been closed
-    expect(props.handleSubmitAuth).toHaveBeenCalled();
+    const settingsButton = screen.getByTestId('icon_button_settings');
+    await user.click(settingsButton);
+
+    const authForm = screen.getByTestId('auth_form');
+    fireEvent.submit(authForm);
+
+    // Should call handleSubmitAuth and still find save cta if it returns false
+    await waitFor(() => {
+      expect(handleSubmitAuthMock).toHaveBeenCalled();
+      expect(screen.queryByText(SAVE_CTA)).toBeNull();
+    });
   });
 
   it('should call handleSubmitSearch when search bar is submitted', async () => {

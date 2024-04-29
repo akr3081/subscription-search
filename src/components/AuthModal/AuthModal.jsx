@@ -19,7 +19,7 @@ const AuthModal = ({ isOpen, handleClose, handleSubmit, className, isUserAuthent
         </button>
       ) : null}
 
-      <form className={`${styles.form} ${className}`} onSubmit={handleSubmit}>
+      <form className={`${styles.form} ${className}`} onSubmit={handleSubmit} data-testid="auth_form">
         <div className={styles.fields}>
           <div className={styles.field}>
             <label htmlFor="apiKey">API Key</label>
