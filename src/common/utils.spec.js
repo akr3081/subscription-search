@@ -37,8 +37,24 @@ describe('utils', () => {
   });
 
   describe('getSubscriptions', () => {
-    it('should get subscriptions', () => {
-      expect(getSubscriptions).toBeDefined();
+    it('should get subscriptions', async () => {
+      process.env.MOCK_API_CALLS = 'true';
+      const subs = await getSubscriptions({ apiKey: 'mock-api-key', channelId: 'mock-channel-id' });
+      expect(subs).toEqual(SubscriptionsMock.items);
+    });
+
+    it('should throw if there is an error in the fetch response', async () => {
+      process.env.MOCK_API_CALLS = 'false';
+      global.fetch = jest.fn().mockImplementationOnce(() =>
+        Promise.resolve({
+          status: 500,
+          json: () => Promise.resolve({ error: 'mock error description' })
+        })
+      );
+
+      expect(async () => {
+        await getSubscriptions({ apiKey: 'mock-api-key', channelId: 'mock-channel-id' });
+      }).rejects.toThrow();
     });
   });
 
@@ -73,8 +89,39 @@ describe('utils', () => {
   });
 
   describe('getSearchResults', () => {
-    it('should get search results', () => {
-      expect(getSearchResults).toBeDefined();
+    it('should get search results', async () => {
+      process.env.MOCK_API_CALLS = 'true';
+
+      const results = await getSearchResults({
+        selectedSubscriptions: ['mock-selected-sub-1'],
+        subscriptions: SubscriptionsMock.items,
+        apiKey: 'mock-api-key',
+        searchTerm: 'mock-search-term'
+      });
+      expect(typeof results[0].id).toEqual('string');
+      expect(typeof results[0].title).toEqual('string');
+      expect(typeof results[0].image).toEqual('object');
+      expect(typeof results[0].pageToken).toEqual('string');
+      expect(typeof results[0].items[0]).toEqual('object');
+    });
+
+    it('should throw if there is an error in the fetch response', async () => {
+      process.env.MOCK_API_CALLS = 'false';
+      global.fetch = jest.fn().mockImplementationOnce(() =>
+        Promise.resolve({
+          status: 500,
+          json: () => Promise.resolve({ error: 'mock error description' })
+        })
+      );
+
+      expect(async () => {
+        await getSearchResults({
+          selectedSubscriptions: ['mock-selected-sub-1'],
+          subscriptions: SubscriptionsMock.items,
+          apiKey: 'mock-api-key',
+          searchTerm: 'mock-search-term'
+        });
+      }).rejects.toThrow();
     });
   });
 });
