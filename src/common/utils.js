@@ -83,7 +83,7 @@ export const getSearchResults = async ({ selectedSubscriptions, subscriptions, a
     const items = res?.items?.map(video => ({ videoId: video.id.videoId, ...video.snippet })) ?? [];
 
     const channelData = subscriptions.find(sub => sub.snippet.resourceId.channelId === subId);
-    const title = channelData.snippet.title;
+    const title = items?.[0]?.channelTitle ?? channelData.snippet.title;
     const image = channelData.snippet.thumbnails.medium;
 
     channelResults.push({ id: subId, title, image, pageToken: nextPageToken, items });
