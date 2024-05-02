@@ -11,6 +11,7 @@ describe('Gallery', () => {
     image: MappedSearchResults[0].image,
     link: `${YOUTUBE_BASE_URL}${MappedSearchResults[0].id}`,
     items: MappedSearchResults[0].items,
+    showLoadMore: true,
     loadMoreItems: jest.fn(),
     handleRemove: jest.fn()
   };
@@ -41,6 +42,17 @@ describe('Gallery', () => {
 
     await user.click(screen.getByText(LOAD_MORE_CTA));
     expect(props.loadMoreItems).toHaveBeenCalled();
+  });
+
+  it('should not render loadMore button if showLoadMore is false', async () => {
+    const user = userEvent.setup();
+    render(<Gallery {...props} showLoadMore={false} />);
+
+    // Gallery body is not rendered until arrow icon is clicked
+    await user.click(screen.getByTestId('icon_button_arrow'));
+
+    const loadMoreButton = screen.queryByText(LOAD_MORE_CTA);
+    expect(loadMoreButton).toBeNull();
   });
 
   it('should call handleRemove when header remove icon button is clicked', async () => {

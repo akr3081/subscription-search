@@ -93,7 +93,7 @@ describe('utils', () => {
       process.env.MOCK_API_CALLS = 'true';
 
       const results = await getSearchResults({
-        selectedSubscriptions: ['mock-selected-sub-1'],
+        selectedSubscriptions: [SubscriptionsMock.items[0].snippet.resourceId.channelId],
         subscriptions: SubscriptionsMock.items,
         apiKey: 'mock-api-key',
         searchTerm: 'mock-search-term'
@@ -103,6 +103,29 @@ describe('utils', () => {
       expect(typeof results[0].image).toEqual('object');
       expect(typeof results[0].pageToken).toEqual('string');
       expect(typeof results[0].items[0]).toEqual('object');
+    });
+
+    it('should handle if a search returns no videos', async () => {
+      process.env.MOCK_API_CALLS = 'false';
+      global.fetch = jest.fn().mockImplementationOnce(() =>
+        Promise.resolve({
+          status: 200,
+          json: () => Promise.resolve({ nextPageToken: '', items: null })
+        })
+      );
+
+      const results = await getSearchResults({
+        selectedSubscriptions: [SubscriptionsMock.items[0].snippet.resourceId.channelId],
+        subscriptions: SubscriptionsMock.items,
+        apiKey: 'mock-api-key',
+        searchTerm: 'mock-search-term'
+      });
+
+      expect(typeof results[0].id).toEqual('string');
+      expect(typeof results[0].title).toEqual('string');
+      expect(typeof results[0].image).toEqual('object');
+      expect(typeof results[0].pageToken).toEqual('string');
+      expect(results[0].items).toEqual([]);
     });
 
     it('should throw if there is an error in the fetch response', async () => {
@@ -116,7 +139,7 @@ describe('utils', () => {
 
       expect(async () => {
         await getSearchResults({
-          selectedSubscriptions: ['mock-selected-sub-1'],
+          selectedSubscriptions: [SubscriptionsMock.items[0].snippet.resourceId.channelId],
           subscriptions: SubscriptionsMock.items,
           apiKey: 'mock-api-key',
           searchTerm: 'mock-search-term'

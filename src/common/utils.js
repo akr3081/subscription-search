@@ -79,15 +79,14 @@ export const getSearchResults = async ({ selectedSubscriptions, subscriptions, a
     // Propagate API errors
     if (res.error) throw new Error(res.error.message);
 
-    const id = res.items[0].snippet.channelId;
     const nextPageToken = res?.nextPageToken;
-    const items = res.items.map(video => ({ videoId: video.id.videoId, ...video.snippet }));
+    const items = res?.items?.map(video => ({ videoId: video.id.videoId, ...video.snippet })) ?? [];
 
-    const channelData = subscriptions.find(sub => sub.snippet.resourceId.channelId === id);
+    const channelData = subscriptions.find(sub => sub.snippet.resourceId.channelId === subId);
     const title = channelData.snippet.title;
     const image = channelData.snippet.thumbnails.medium;
 
-    channelResults.push({ id, title, image, pageToken: nextPageToken, items });
+    channelResults.push({ id: subId, title, image, pageToken: nextPageToken, items });
   }
 
   return channelResults;

@@ -9,7 +9,7 @@ import styles from './Gallery.module.css';
 /**
  * Gallery container for displaying a list of
  */
-const Gallery = ({ title, image, link, items, loadMoreItems, handleRemove }) => {
+const Gallery = ({ title, image, link, items, showLoadMore, loadMoreItems, handleRemove }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -48,11 +48,13 @@ const Gallery = ({ title, image, link, items, loadMoreItems, handleRemove }) => 
               <VideoCard videoId={item.videoId} title={item.title} thumbnails={item.thumbnails} />
             ))}
           </div>
-          <div className={styles.loadMore}>
-            <button onClick={loadMoreItems}>
-              <h3>{LOAD_MORE_CTA}</h3>
-            </button>
-          </div>
+          {showLoadMore ? (
+            <div className={styles.loadMore}>
+              <button onClick={loadMoreItems}>
+                <h3>{LOAD_MORE_CTA}</h3>
+              </button>
+            </div>
+          ) : null}
         </div>
       ) : null}
     </div>
@@ -64,6 +66,7 @@ Gallery.propTypes = {
   image: PropTypes.object,
   link: PropTypes.string,
   items: PropTypes.array,
+  showLoadMore: PropTypes.bool,
   loadMoreItems: PropTypes.func,
   handleRemove: PropTypes.func
 };
