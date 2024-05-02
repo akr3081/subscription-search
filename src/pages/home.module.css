@@ -1,0 +1,44 @@
+.home {
+  align-items: flex-start;
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'leftRail pageBody';
+  grid-template-columns: 20% 80%;
+  grid-template-rows: min-content auto;
+  height: 100vh;
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    grid-template-areas:
+    'header'
+    'leftRail'
+    'pageBody';
+    grid-template-columns: 100%;
+    grid-template-rows: min-content min-content auto;
+  }
+}
+
+.header {
+  grid-area: header;
+  max-height: 100%;
+}
+
+.leftRail {
+  border-radius: 5px;
+  grid-area: leftRail;
+  max-height: 100%;
+}
+
+.pageBody {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  grid-area: pageBody;
+  max-height: 100%;
+  padding-top: 10px;
+  overflow-y: scroll;
+  width: 100%;
+}
