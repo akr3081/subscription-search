@@ -14,7 +14,7 @@ import styles from './SubscriptionSelector.module.css';
 const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelectedSubscriptions, handleRefresh, isUserAuthenticated }) => {
   const [isLoadingSubscriptions, setIsLoadingSubscriptions] = useState(false);
 
-  const sortedItems = subscriptions.sort((a, b) => a.snippet.title.localeCompare(b.snippet.title));
+  const sortedItems = subscriptions.sort((a, b) => a?.snippet?.title?.localeCompare(b.snippet.title));
 
   const selected = sortedItems.filter(item => selectedSubscriptions.includes(item.snippet.resourceId.channelId));
   const unSelected = sortedItems.filter(item => !selected.includes(item));

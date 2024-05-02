@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { NewTabIcon } from '../Icon/Icon.jsx';
 import IconButton from '../IconButton/IconButton.jsx';
 import VideoCard from '../VideoCard/VideoCard.jsx';
-import { LOAD_MORE_CTA } from '../../common/constants.js';
+import { FALLBACK_CHANNEL_TITLE, LOAD_MORE_CTA } from '../../common/constants.js';
 import styles from './Gallery.module.css';
 
 /**
- * Gallery container for displaying a list of
+ * Gallery container for displaying a list of items
  */
 const Gallery = ({ title, image, link, items, showLoadMore, loadMoreItems, handleRemove }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +26,7 @@ const Gallery = ({ title, image, link, items, showLoadMore, loadMoreItems, handl
             }}
           />
           <img src={image?.url} alt={title} referrerPolicy="no-referrer" />
-          <h2>{`${title} (${items.length})`}</h2>
+          <h2>{`${title ?? FALLBACK_CHANNEL_TITLE} (${items.length})`}</h2>
         </div>
 
         <div className={styles.icons}>

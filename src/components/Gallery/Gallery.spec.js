@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import MappedSearchResults from '../../__mocks__/mappedSearchResults.json';
-import { LOAD_MORE_CTA, YOUTUBE_BASE_URL } from '../../common/constants.js';
+import { FALLBACK_CHANNEL_TITLE, LOAD_MORE_CTA, YOUTUBE_BASE_URL } from '../../common/constants.js';
 import Gallery from './Gallery.jsx';
 
 describe('Gallery', () => {
@@ -31,6 +31,11 @@ describe('Gallery', () => {
     await user.click(arrowIconButton);
 
     expect(screen.queryByText(LOAD_MORE_CTA)).not.toBeNull();
+  });
+
+  it('should show fallback constant if channel title is null', () => {
+    render(<Gallery {...props} title={null} />);
+    expect(screen.getByText(`${FALLBACK_CHANNEL_TITLE} (${props.items.length})`).tagName).toEqual('H2');
   });
 
   it('should call loadMoreItems when load more cta is clicked', async () => {

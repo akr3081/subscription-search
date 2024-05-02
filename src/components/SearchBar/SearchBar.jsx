@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import IconButton from '../IconButton/IconButton.jsx';
+import { SEARCH_VALIDATION_ERROR } from '../../common/constants.js';
 import styles from './SearchBar.module.css';
 
 const SearchBar = ({ handleSubmit, isSearchEnabled, className }) => {
@@ -8,7 +9,7 @@ const SearchBar = ({ handleSubmit, isSearchEnabled, className }) => {
     e.preventDefault();
 
     if (!isSearchEnabled) {
-      alert('Please select subscriptions to search');
+      alert(SEARCH_VALIDATION_ERROR);
       return false;
     }
 
