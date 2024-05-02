@@ -12,7 +12,7 @@ import styles from './AppHeader.module.css';
  * @param {function} handleSubmitAuth - Handle auth form submit
  * @param {string} className - CSS class name
  */
-const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, className }) => {
+const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, isSearchEnabled, className }) => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(!isUserAuthenticated);
 
@@ -27,22 +27,12 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, 
     if (isAuthenticated) setIsAuthModalOpen(false);
   };
 
-  const handleSearchBarSubmit = e => {
-    e.preventDefault();
-    const formDataObj = {};
-
-    const formData = new FormData(e.currentTarget);
-    formData.forEach((value, key) => (formDataObj[key] = value));
-
-    handleSubmitSearch(formDataObj);
-  };
-
   return (
     <>
       <div className={`${styles.header} ${className}`}>
         <YouTubeIcon className={styles.headerIcon} />
 
-        {isUserAuthenticated ? (<SearchBar handleSubmit={handleSearchBarSubmit} />) : null}
+        {isUserAuthenticated ? (<SearchBar handleSubmit={handleSubmitSearch} isSearchEnabled={isSearchEnabled} />) : null}
 
         <div className={styles.icons}>
           <IconButton
@@ -82,6 +72,7 @@ AppHeader.propTypes = {
   handleSubmitAuth: PropTypes.func,
   handleSubmitSearch: PropTypes.func,
   isUserAuthenticated: PropTypes.bool,
+  isSearchEnabled: PropTypes.bool,
   className: PropTypes.string
 };
 

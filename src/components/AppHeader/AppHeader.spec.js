@@ -5,7 +5,7 @@ import { CLOSE_CTA, SAVE_CTA } from '../../common/constants.js';
 import AppHeader from './AppHeader.jsx';
 
 describe('AppHeader', () => {
-  const props = { handleSubmitSearch: jest.fn(), isUserAuthenticated: true };
+  const props = { handleSubmitSearch: jest.fn(), isUserAuthenticated: true, isSearchEnabled: true };
 
   it('should open/close the info modal', async () => {
     const user = userEvent.setup();

@@ -94,6 +94,7 @@ const HomePage = () => {
         handleSubmitAuth={handleSubmitAuth}
         handleSubmitSearch={handleSubmitSearch}
         isUserAuthenticated={isUserAuthenticated}
+        isSearchEnabled={selectedSubscriptions?.length}
         className={styles.header}
       />
 
