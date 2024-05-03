@@ -50,7 +50,7 @@ export const getSubscriptions = async ({ channelId, apiKey }) => {
  */
 export const fetchChannelResults = async ({ channelId, apiKey, searchTerm, pageToken = '' }) => {
   if (process.env.MOCK_API_CALLS === 'true')
-    return { ...SearchResultsMock, items: SearchResultsMock.items.slice(0, 3) };
+    return { ...SearchResultsMock, items: SearchResultsMock.items.slice(0, 4) };
 
   const res = await fetch(
     `${BASE_URL}/search?key=${apiKey}&channelId=${channelId}&maxResults=3&q=${searchTerm}&part=snippet&safeSearch=none&type=video&pageToken=${pageToken}`

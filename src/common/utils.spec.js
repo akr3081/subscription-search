@@ -67,7 +67,7 @@ describe('utils', () => {
         searchTerm: 'mockSearchTerm',
         pageToken: ''
       });
-      expect(res).toEqual({ ...SearchResultsMock, items: SearchResultsMock.items.slice(0, 3) });
+      expect(res).toEqual({ ...SearchResultsMock, items: SearchResultsMock.items.slice(0, 4) });
     });
 
     it('should fetch subscription data', async () => {
