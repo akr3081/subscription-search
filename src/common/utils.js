@@ -53,7 +53,7 @@ export const fetchChannelResults = async ({ channelId, apiKey, searchTerm, pageT
     return { ...SearchResultsMock, items: SearchResultsMock.items.slice(0, 4) };
 
   const res = await fetch(
-    `${BASE_URL}/search?key=${apiKey}&channelId=${channelId}&maxResults=3&q=${searchTerm}&part=snippet&safeSearch=none&type=video&pageToken=${pageToken}`
+    `${BASE_URL}/search?key=${apiKey}&channelId=${channelId}&maxResults=4&q=${searchTerm}&part=snippet&safeSearch=none&type=video&pageToken=${pageToken}`
   );
   return await res.json();
 };
