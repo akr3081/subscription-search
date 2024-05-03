@@ -8,10 +8,25 @@
   width: 80%;
 }
 
-.videoCard img {
+.imageContainer {
+  position: relative;
+}
+
+.imageContainer img {
   border-radius: 10px;
   height: auto;
   width: 100%;
+}
+
+.imageContainer p {
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  bottom: 0;
+  color: white;
+  margin: 8px;
+  padding: 2px;
+  position: absolute;
+  right: 0;
 }
 
 .cardContent {

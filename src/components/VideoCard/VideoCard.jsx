@@ -9,7 +9,7 @@ import styles from './VideoCard.module.css';
  * @param {string} title - Video title
  * @param {object} thumbnails - Contains image data
  */
-const VideoCard = ({ videoId, title, views, publishedDate, thumbnails }) => {
+const VideoCard = ({ videoId, title, views, publishedDate, duration, thumbnails }) => {
   /**
    * Returns a formatted string for how many views a given video has.
    * @param {number} views - The number of views for a given video
@@ -39,11 +39,11 @@ const VideoCard = ({ videoId, title, views, publishedDate, thumbnails }) => {
     if (daysAgo > 1) return `${daysAgo} days ago`;
     if (daysAgo === 1) return `${daysAgo} days ago`;
 
-    const hoursAgo = Math.floor(hoursAgo / 3600);
+    const hoursAgo = Math.floor(secondsAgo / 3600);
     if (hoursAgo > 1) return `${hoursAgo} hours ago`;
     if (hoursAgo === 1) return `${hoursAgo} hour ago`;
 
-    const minutesAgo = Math.floor(minutesAgo / 60);
+    const minutesAgo = Math.floor(secondsAgo / 60);
     if (minutesAgo > 1) return `${minutesAgo} minutes ago`;
     if (minutesAgo === 1) return `${minutesAgo} minutes ago`;
 
@@ -52,7 +52,10 @@ const VideoCard = ({ videoId, title, views, publishedDate, thumbnails }) => {
 
   return (
     <a href={`${YOUTUBE_BASE_URL}${videoId}`} target="_blank" className={styles.videoCard}>
-      <img src={thumbnails?.medium?.url} referrerPolicy="no-referrer" />
+      <div className={styles.imageContainer}>
+        <img src={thumbnails?.medium?.url} referrerPolicy="no-referrer" />
+        {duration ? (<p className={styles.imageOverlay}>{duration}</p>) : null}
+      </div>
 
       <div className={styles.cardContent}>
         <h3 className={styles.title}>{title}</h3>
@@ -72,6 +75,7 @@ VideoCard.propTypes = {
   title: PropTypes.string,
   views: PropTypes.number,
   publishedDate: PropTypes.string,
+  duration: PropTypes.string,
   thumbnails: PropTypes.object
 };
 
