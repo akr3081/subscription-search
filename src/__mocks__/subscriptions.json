@@ -1,45 +1,18 @@
 {
   "kind": "youtube#SubscriptionListResponse",
-  "etag": "nX7Cr-gGTyB1MrVvoOn-by9TAis",
+  "etag": "Cu3ZUvRm-81k018ap17Y2oBsAZ8",
   "nextPageToken": "CDIQAA",
   "pageInfo": {
-    "totalResults": 145,
+    "totalResults": 146,
     "resultsPerPage": 50
   },
   "items": [
     {
       "kind": "youtube#subscription",
-      "etag": "NNEAHtRce9mye84veEWm3_BhKTQ",
-      "id": "ziwIEodEFoS3wFxj9zy9z7QFaiggWpn3mMlXdD3P70s",
-      "snippet": {
-        "publishedAt": "2022-11-07T01:18:14.357046Z",
-        "title": "gabi belle",
-        "description": "i am ver y funny please subscribe",
-        "resourceId": {
-          "kind": "youtube#channel",
-          "channelId": "UC-oYqxpi6TO1J7BjQksSuOA"
-        },
-        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
-        "thumbnails": {
-          "default": {
-            "url": "https://yt3.ggpht.com/ft0EeiISRsp5CHN1vHnMUeWQcXya6G5QuLaME4wVcKjoWUmOK7Y8RI8NyoACbH6MJFrfDq6GjmY=s88-c-k-c0x00ffffff-no-rj"
-          },
-          "medium": {
-            "url": "https://yt3.ggpht.com/ft0EeiISRsp5CHN1vHnMUeWQcXya6G5QuLaME4wVcKjoWUmOK7Y8RI8NyoACbH6MJFrfDq6GjmY=s240-c-k-c0x00ffffff-no-rj"
-          },
-          "high": {
-            "url": "https://yt3.ggpht.com/ft0EeiISRsp5CHN1vHnMUeWQcXya6G5QuLaME4wVcKjoWUmOK7Y8RI8NyoACbH6MJFrfDq6GjmY=s800-c-k-c0x00ffffff-no-rj"
-          }
-        }
-      }
-    },
-    {
-      "kind": "youtube#subscription",
-      "etag": "DvufKkKEolCe7f2d0kwb7P0-DPs",
+      "etag": "FEFjA0KVTspH_4tgAc0NPSjwSmk",
       "id": "ziwIEodEFoTyKHSOwdlD4CH3C9g9cYsCg7Pffehpfu8",
       "snippet": {
         "publishedAt": "2013-11-09T03:18:19Z",
-        "title": "Wrath Club",
         "description": "Here to make you laugh and scream",
         "resourceId": {
           "kind": "youtube#channel",
@@ -61,63 +34,10 @@
     },
     {
       "kind": "youtube#subscription",
-      "etag": "x_JYCb-KZZ9dr__0QbXWzgraNjE",
-      "id": "ziwIEodEFoTyKHSOwdlD4FBDaq2Z306uZsRdwlOoXWM",
-      "snippet": {
-        "publishedAt": "2023-01-17T02:54:10.802367Z",
-        "title": "TheBackyardScientist",
-        "description": "Aloha YouTubers, I am The Backyard Scientist!\n\nI like to make videos on all the crazy stuff I do. From exploding arrows, to making instruments, molten aluminum to science/chemistry experiments - I do it so you don't have to! I'm always thinking of more stuff to do, if you have an idea, id love to hear it!",
-        "resourceId": {
-          "kind": "youtube#channel",
-          "channelId": "UC06E4Y_-ybJgBUMtXx8uNNw"
-        },
-        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
-        "thumbnails": {
-          "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJW_hYjnbNL8sM51wyO8ZdgTY6V5P7SjHvvt8vK1eQ=s88-c-k-c0x00ffffff-no-rj"
-          },
-          "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJW_hYjnbNL8sM51wyO8ZdgTY6V5P7SjHvvt8vK1eQ=s240-c-k-c0x00ffffff-no-rj"
-          },
-          "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJW_hYjnbNL8sM51wyO8ZdgTY6V5P7SjHvvt8vK1eQ=s800-c-k-c0x00ffffff-no-rj"
-          }
-        }
-      }
-    },
-    {
-      "kind": "youtube#subscription",
-      "etag": "u5TFuJMs8R5wojOL5_VQzH-N7dk",
-      "id": "ziwIEodEFoTyKHSOwdlD4J4nb8iNwNFh_n4dRX0BiEI",
-      "snippet": {
-        "publishedAt": "2022-08-31T00:16:09.70196Z",
-        "title": "SmallAnt",
-        "description": "",
-        "resourceId": {
-          "kind": "youtube#channel",
-          "channelId": "UC0VVYtw21rg2cokUystu2Dw"
-        },
-        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
-        "thumbnails": {
-          "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWdTv_A-fBD7kY6_Ne2WvhtPJK-YhAyV3bm8KdRcQ=s88-c-k-c0x00ffffff-no-rj"
-          },
-          "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWdTv_A-fBD7kY6_Ne2WvhtPJK-YhAyV3bm8KdRcQ=s240-c-k-c0x00ffffff-no-rj"
-          },
-          "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWdTv_A-fBD7kY6_Ne2WvhtPJK-YhAyV3bm8KdRcQ=s800-c-k-c0x00ffffff-no-rj"
-          }
-        }
-      }
-    },
-    {
-      "kind": "youtube#subscription",
-      "etag": "l5NjJ9LEdASd_vhx7-Mi6ymI2Dc",
+      "etag": "sKjhFC-0VARjfUzWFSFyxFrp7zA",
       "id": "ziwIEodEFoTyKHSOwdlD4Pgk8n3UGJjIZ9kUH3TJ51c",
       "snippet": {
         "publishedAt": "2013-11-09T03:24:08Z",
-        "title": "Egoraptor",
         "description": "I make CARTOONS! Are you a fan of CARTOONS?! Then watch my CARTOONS!\n\nMAIL ME STUFF!\n\nEgoraptor\nPO Box 3770\nGlendale, CA 91221",
         "resourceId": {
           "kind": "youtube#channel",
@@ -126,24 +46,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVcYUygxbq0ql9u2OnVBTRT40XhzSJ5sV3-WhAqRA=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_ny0tbJ767aZmDQ8BrOh1jSOV3xEs2ZdnYEywSD_r5OlMQ=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVcYUygxbq0ql9u2OnVBTRT40XhzSJ5sV3-WhAqRA=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_ny0tbJ767aZmDQ8BrOh1jSOV3xEs2ZdnYEywSD_r5OlMQ=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVcYUygxbq0ql9u2OnVBTRT40XhzSJ5sV3-WhAqRA=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_ny0tbJ767aZmDQ8BrOh1jSOV3xEs2ZdnYEywSD_r5OlMQ=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "NuDW9rNFDTWvmjAk6X67fz6fcZs",
+      "etag": "1wkX1OdsJLpL8jcRDwQW1bEoEK0",
       "id": "ziwIEodEFoTyKHSOwdlD4K0r1uRGkkzlRhY6t56c3lE",
       "snippet": {
         "publishedAt": "2019-01-28T01:46:36.776445Z",
-        "title": "Barry Kramer",
         "description": "Videos related to games.  Probably.\n\nThanks for reading this description it means a lot to me alright take care now",
         "resourceId": {
           "kind": "youtube#channel",
@@ -152,25 +71,24 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVpqJ7U5dkjrujU0a8SgJ1Vn4Pm_EAOnVqtWdNp=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nxtKgtfM31aSdR-QJCMAreKoX3oTnrOi5s7Fumqwa_3g=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVpqJ7U5dkjrujU0a8SgJ1Vn4Pm_EAOnVqtWdNp=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nxtKgtfM31aSdR-QJCMAreKoX3oTnrOi5s7Fumqwa_3g=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVpqJ7U5dkjrujU0a8SgJ1Vn4Pm_EAOnVqtWdNp=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nxtKgtfM31aSdR-QJCMAreKoX3oTnrOi5s7Fumqwa_3g=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "s9onsOd_PCVSeyIEDG-ZWW9gGAQ",
+      "etag": "392LzWhf6YyL17HoN1eCBXQNTxA",
       "id": "ziwIEodEFoTyKHSOwdlD4MKuNAxhyFJ1eVStFLLB4Jg",
       "snippet": {
         "publishedAt": "2021-08-23T00:35:38.486998Z",
-        "title": "KingK",
-        "description": "Hello, my name is KingK!\n\nI make comprehensive retrospectives on video games. There isn't a whole lot else to say, enjoy!\n\nHave some well-deserved fun today, of course!\n\nDirector/Channel Owner: Daniel McElhone",
+        "description": "I make some cool videos about video games, I suppose.\n\nChannel art by Matt Braly: https://twitter.com/Radrappy",
         "resourceId": {
           "kind": "youtube#channel",
           "channelId": "UC18YhnNvyrU2kTwCyj9p5ag"
@@ -178,24 +96,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWn_HbqW_EGvqkHNne0_w9mDq6_OgDl16Vi5q2ItQ=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/1Nk1py_NXf0SVZGIwfRU7wAwmq8kQ8m4_l0JAhYnQNYYHQmsR0kDWYDHahPELe7N8GWjXRv9xhY=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWn_HbqW_EGvqkHNne0_w9mDq6_OgDl16Vi5q2ItQ=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/1Nk1py_NXf0SVZGIwfRU7wAwmq8kQ8m4_l0JAhYnQNYYHQmsR0kDWYDHahPELe7N8GWjXRv9xhY=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWn_HbqW_EGvqkHNne0_w9mDq6_OgDl16Vi5q2ItQ=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/1Nk1py_NXf0SVZGIwfRU7wAwmq8kQ8m4_l0JAhYnQNYYHQmsR0kDWYDHahPELe7N8GWjXRv9xhY=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "Q4xm10_dw0pHPjv9QPOEfwJUt3o",
+      "etag": "GVOxZVyVwDO_WHLpAMJqJFaeUVo",
       "id": "ziwIEodEFoTyKHSOwdlD4CCbRRoxyYkln8kPrDYmkKQ",
       "snippet": {
         "publishedAt": "2022-06-28T16:08:49.457428Z",
-        "title": "CGP Grey",
         "description": "",
         "resourceId": {
           "kind": "youtube#channel",
@@ -204,24 +121,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWQi0o_S98g8MHaMtdKKnZf2woZA6zqGDbQ49kCdg=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nxrDGcxMGo8yKf2_Dw0eaGEWj39IAIdZQjAuz-_mBHjUI=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWQi0o_S98g8MHaMtdKKnZf2woZA6zqGDbQ49kCdg=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nxrDGcxMGo8yKf2_Dw0eaGEWj39IAIdZQjAuz-_mBHjUI=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWQi0o_S98g8MHaMtdKKnZf2woZA6zqGDbQ49kCdg=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nxrDGcxMGo8yKf2_Dw0eaGEWj39IAIdZQjAuz-_mBHjUI=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "eqn9YWwKK_JyHhSWb8OCx3i5jBc",
+      "etag": "U18L3g0uGo7XtHdH9hKPwULgdHI",
       "id": "ziwIEodEFoTyKHSOwdlD4CLYcINxuL3JdlBe-UX9K2g",
       "snippet": {
         "publishedAt": "2014-03-06T11:55:00Z",
-        "title": "Little Kuriboh",
         "description": "You've activated my YouTube card!\n\nWelcome to my channel! I'm LittleKuriboh, creator of Yu-Gi-Oh The Abridged Series. I'm currently working on a bunch of different shows for YouTube that you'll be seeing in the coming weeks, while also moonlighting as a professional voice actor.\n\nIf you came for YGOTAS, you'll get to see new episodes right here! If you watch them on our site, however, you'll get to see them a week before they get put on YouTube! YAY!\n\nAnd if you came for any of my other shows, I want to thank all three of you!\n\nThanks and have a great day!\n\nWatch us on Twitter - http://twitter.com/yugiohtas\n\nCheck out our Facebook page - http://www.facebook.com/pages/Yu-Gi-Oh-The-Abridged-Series-Official/196256618506\n\nT-shirts, Hoodies and more at:\nhttp://sharkrobot.com/yugioh-abridged",
         "resourceId": {
           "kind": "youtube#channel",
@@ -230,24 +146,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUPBI-j-8rhH-vhLpVLCnC4pybqvrcpEv9pYHI3lA=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_ng3HrdzS7yo4fi0_aQRhR1KHhjN4-dvC_NVAIcZsfqDKU=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUPBI-j-8rhH-vhLpVLCnC4pybqvrcpEv9pYHI3lA=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_ng3HrdzS7yo4fi0_aQRhR1KHhjN4-dvC_NVAIcZsfqDKU=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUPBI-j-8rhH-vhLpVLCnC4pybqvrcpEv9pYHI3lA=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_ng3HrdzS7yo4fi0_aQRhR1KHhjN4-dvC_NVAIcZsfqDKU=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "sySZWvVxuvMXUqiN9dz2UgbZm9c",
+      "etag": "jmmn62KbfFHMsBW3u1sprggzrFo",
       "id": "ziwIEodEFoTyKHSOwdlD4CI3IR_06Jaa5Fx4cAawBH0",
       "snippet": {
         "publishedAt": "2023-01-15T05:27:42.680309Z",
-        "title": "Sample",
         "description": "I make videos. Watch them.",
         "resourceId": {
           "kind": "youtube#channel",
@@ -256,50 +171,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVv3buTwvA9DfJtJ8PeXkk641XEBrRG8-JbSLpu_w=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ctJUMNZKDOp9trd_u9_mhnIqH1IljtuXwLqs6oOMotrSI7KxFsLEvSRQOZxHeJ3SxzffQ-75BaQ=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVv3buTwvA9DfJtJ8PeXkk641XEBrRG8-JbSLpu_w=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ctJUMNZKDOp9trd_u9_mhnIqH1IljtuXwLqs6oOMotrSI7KxFsLEvSRQOZxHeJ3SxzffQ-75BaQ=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVv3buTwvA9DfJtJ8PeXkk641XEBrRG8-JbSLpu_w=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ctJUMNZKDOp9trd_u9_mhnIqH1IljtuXwLqs6oOMotrSI7KxFsLEvSRQOZxHeJ3SxzffQ-75BaQ=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "3PyslB_HnobGB8m_-PfpGJ-NhgE",
-      "id": "ziwIEodEFoTyzzbLAgeX8GDPw01DQxatvIYgWK9UqaI",
-      "snippet": {
-        "publishedAt": "2023-02-10T01:00:10.180481Z",
-        "title": "Internet Pitstop",
-        "description": "Welcome to the corner of the internet \n ~ INTERNET PITSTOP",
-        "resourceId": {
-          "kind": "youtube#channel",
-          "channelId": "UC2SVUGk_kWw62xkFxOGI7Ig"
-        },
-        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
-        "thumbnails": {
-          "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUkliz_GLR4ujRkq3v9dGeRCvci3kERMDNhK2VX=s88-c-k-c0x00ffffff-no-rj"
-          },
-          "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUkliz_GLR4ujRkq3v9dGeRCvci3kERMDNhK2VX=s240-c-k-c0x00ffffff-no-rj"
-          },
-          "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUkliz_GLR4ujRkq3v9dGeRCvci3kERMDNhK2VX=s800-c-k-c0x00ffffff-no-rj"
-          }
-        }
-      }
-    },
-    {
-      "kind": "youtube#subscription",
-      "etag": "u2MuQJbrfgq47gPRYEE_wycYuT8",
+      "etag": "iqhNiGnyYJKsYp25gE-dZPBKqiE",
       "id": "ziwIEodEFoTyKHSOwdlD4N6eQ7JtL9gBti7yDQeBMxM",
       "snippet": {
         "publishedAt": "2018-02-27T03:25:25.755801Z",
-        "title": "LastWeekTonight",
         "description": "Breaking news on a weekly basis. Sundays at 11PM - only on HBO.\nSubscribe to the Last Week Tonight channel for the latest videos from John Oliver and the LWT team.",
         "resourceId": {
           "kind": "youtube#channel",
@@ -308,50 +196,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/PFZVDwDcjBYoTloENpGt1Cmig6xTp8W1DVH5llFv22RLuy4rWIYu9A-OrFu17sVBEmfrw9OVwp0=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/qg5Rha7Rm_CWTiIZyisLT_13jr65Xr2fNOWPLQazI5QaoUUlskyMS8yvqG2DSPD6Y0Dil7z4NEI=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/PFZVDwDcjBYoTloENpGt1Cmig6xTp8W1DVH5llFv22RLuy4rWIYu9A-OrFu17sVBEmfrw9OVwp0=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/qg5Rha7Rm_CWTiIZyisLT_13jr65Xr2fNOWPLQazI5QaoUUlskyMS8yvqG2DSPD6Y0Dil7z4NEI=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/PFZVDwDcjBYoTloENpGt1Cmig6xTp8W1DVH5llFv22RLuy4rWIYu9A-OrFu17sVBEmfrw9OVwp0=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/qg5Rha7Rm_CWTiIZyisLT_13jr65Xr2fNOWPLQazI5QaoUUlskyMS8yvqG2DSPD6Y0Dil7z4NEI=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "aA8Lqis-ky8-M1JG_NAe0mVUDno",
-      "id": "ziwIEodEFoTyKHSOwdlD4JsA717JlreN1kfqZBGl_X8",
-      "snippet": {
-        "publishedAt": "2019-08-17T07:30:57.922539Z",
-        "title": "Hamon Beat",
-        "description": "The goal of my channel is to be the most definitive source on all things JoJo.\n\nI cover a wide variety of content focussed on JoJo's Bizarre Adventure. I have catalogued the various music and movie references in the series, and extensively listed all of the differences between the anime and manga. I also have more analytical videos covering various topics about JoJo.\n\nMy videos are all edited using Sony Vegas.",
-        "resourceId": {
-          "kind": "youtube#channel",
-          "channelId": "UC3i5vvIhzN7spFp9eqqXJXQ"
-        },
-        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
-        "thumbnails": {
-          "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVYzS38q3yLVLt5FMJUvkaDNppvlQ53NV_jnL_yUQ=s88-c-k-c0x00ffffff-no-rj"
-          },
-          "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVYzS38q3yLVLt5FMJUvkaDNppvlQ53NV_jnL_yUQ=s240-c-k-c0x00ffffff-no-rj"
-          },
-          "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVYzS38q3yLVLt5FMJUvkaDNppvlQ53NV_jnL_yUQ=s800-c-k-c0x00ffffff-no-rj"
-          }
-        }
-      }
-    },
-    {
-      "kind": "youtube#subscription",
-      "etag": "vZAWYCOi9zvAoZTTsOqbf_EeEeI",
+      "etag": "1YjMQ7ggbko0V_7KiPJ7Z6XZU4A",
       "id": "ziwIEodEFoTyKHSOwdlD4IFD8a6RDejezUvE2ISPflM",
       "snippet": {
         "publishedAt": "2022-04-19T04:53:30.771153Z",
-        "title": "Iron Pineapple",
         "description": "I make Dark Souls videos. Some people think they're funny.",
         "resourceId": {
           "kind": "youtube#channel",
@@ -360,51 +221,24 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUZF5gvabDnXc6S9MHmWGjI6Ik0SoZTJGucPH_O8A=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_lJviQ9VVg8jrATiXYynEAXszVLhpS74f88PjYlVLi6qKE=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUZF5gvabDnXc6S9MHmWGjI6Ik0SoZTJGucPH_O8A=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_lJviQ9VVg8jrATiXYynEAXszVLhpS74f88PjYlVLi6qKE=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUZF5gvabDnXc6S9MHmWGjI6Ik0SoZTJGucPH_O8A=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_lJviQ9VVg8jrATiXYynEAXszVLhpS74f88PjYlVLi6qKE=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "8a0vOjgNdITBPKMqtdP7IfTydi8",
-      "id": "ziwIEodEFoTyKHSOwdlD4N0zb-3vFk4Slbp9R8gwT8c",
-      "snippet": {
-        "publishedAt": "2020-01-07T13:56:26.031435Z",
-        "title": "iDubbbzTV",
-        "description": "YO YO YO YO YO YO YO YO YOOOOOOOOOOOOOOOOOO, WUDDDDUPPPPPP! \n\nChannel Art by: @mushbuh\n\nWebsite: idubbbz.com\n\nTwitter: Twitter.com/idubbbz\nFacebook: Facebook.com/idubbbz",
-        "resourceId": {
-          "kind": "youtube#channel",
-          "channelId": "UC4USoIAL9qcsx5nCZV_QRnA"
-        },
-        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
-        "thumbnails": {
-          "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWaK-tkhISNQj7NIjZFXiG6bGsHmKtBSe_ut-9fJA=s88-c-k-c0x00ffffff-no-rj"
-          },
-          "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWaK-tkhISNQj7NIjZFXiG6bGsHmKtBSe_ut-9fJA=s240-c-k-c0x00ffffff-no-rj"
-          },
-          "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWaK-tkhISNQj7NIjZFXiG6bGsHmKtBSe_ut-9fJA=s800-c-k-c0x00ffffff-no-rj"
-          }
-        }
-      }
-    },
-    {
-      "kind": "youtube#subscription",
-      "etag": "eCv6zIL9FUWayRojAidIb0InkGs",
+      "etag": "_buikrk2F9NOOnYGw-FhiqVhfLQ",
       "id": "ziwIEodEFoTyKHSOwdlD4AWsYq3GNS_GIllDjHlHYfk",
       "snippet": {
         "publishedAt": "2018-12-13T04:05:23.839017Z",
-        "title": "Scott The Woz",
-        "description": "Hey all, Scott here.\n\nScott The Woz is a comedic video game centric variety show that focuses on reviews, editorials, retrospectives, and much, much more. New episodes are uploaded 2-4 times each month.\n\nOther original content, mainly comedic shorts, can be found here as well. New originals are uploaded sporadically.\n\n\"Scott The Woz\" Logo/Banner by Nico Vliek (@WhaddupNico)",
+        "description": "Hey all, Scott here.\n\nScott The Woz is a comedic video game centric variety show that focuses on reviews, editorials, retrospectives and much more. New episodes are uploaded 2-4 times each month.\n\nOther original content, mainly comedic shorts, can be found here as well. New originals are uploaded sporadically.\n\n\"Scott The Woz\" Logo/Banner by Nico Vliek (@WhaddupNico)",
         "resourceId": {
           "kind": "youtube#channel",
           "channelId": "UC4rqhyiTs7XyuODcECvuiiQ"
@@ -412,76 +246,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXK4g6cGzJ9JyXzWqLU_hijsQd94tTbtUxEp6X9Xw=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mIkb4KUR9VjGmN_yrh0YcXZGiCAz-u8ghugXJIqA5CyYY=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXK4g6cGzJ9JyXzWqLU_hijsQd94tTbtUxEp6X9Xw=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mIkb4KUR9VjGmN_yrh0YcXZGiCAz-u8ghugXJIqA5CyYY=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXK4g6cGzJ9JyXzWqLU_hijsQd94tTbtUxEp6X9Xw=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mIkb4KUR9VjGmN_yrh0YcXZGiCAz-u8ghugXJIqA5CyYY=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "Ri6MDJ1e5Ao_SPJf4vviPRfnVv8",
-      "id": "ziwIEodEFoTyKHSOwdlD4C4mXXoV9GkEOXoIQgCzEB8",
-      "snippet": {
-        "publishedAt": "2014-04-01T04:46:45Z",
-        "title": "McLeodGaming",
-        "description": "We're a community of worker-owned game development teams, and we make the engine that powers Super Smash Flash 2, the internet's most popular Super Smash Bros. fangame. We're currently working on our new game, Fraymakers!\n\nWe use this channel to keep you up to date on what's going on with our projects. Make sure to subscribe!",
-        "resourceId": {
-          "kind": "youtube#channel",
-          "channelId": "UC5pN-rOIuHkdrYMaXDZtfuw"
-        },
-        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
-        "thumbnails": {
-          "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJW5ruYYsF-E59tsTlas1AO_j42bfBh0IsbbBN3L=s88-c-k-c0x00ffffff-no-rj"
-          },
-          "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJW5ruYYsF-E59tsTlas1AO_j42bfBh0IsbbBN3L=s240-c-k-c0x00ffffff-no-rj"
-          },
-          "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJW5ruYYsF-E59tsTlas1AO_j42bfBh0IsbbBN3L=s800-c-k-c0x00ffffff-no-rj"
-          }
-        }
-      }
-    },
-    {
-      "kind": "youtube#subscription",
-      "etag": "vdG3gcjhvMPBnUBOsNWTwxxyejQ",
-      "id": "ziwIEodEFoTyKHSOwdlD4J0AaNFHOJMXkpNvjYPwFzA",
-      "snippet": {
-        "publishedAt": "2017-04-26T05:42:53Z",
-        "title": "Wisecrack",
-        "description": "Wisecrack is a collective of academics, filmmakers, artists, and pop culture junkies who are curious and contemplative about the world around us. Our channel explores big ideas like philosophy and critical thinking through the lens of movies, TV shows, video games, current events, books, and more.\n(New Episodes Fridays and Mondays):\n\nREAD OUR ADVERTISING POLICY: https://wscrk.com/adpolicy\n\n---\n\nCover art by Mike Perry.",
-        "resourceId": {
-          "kind": "youtube#channel",
-          "channelId": "UC6-ymYjG0SU0jUWnWh9ZzEQ"
-        },
-        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
-        "thumbnails": {
-          "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVwR0m_ASqB41IkOLlo3wc4y6LT9NaegrMlksJDpA=s88-c-k-c0x00ffffff-no-rj"
-          },
-          "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVwR0m_ASqB41IkOLlo3wc4y6LT9NaegrMlksJDpA=s240-c-k-c0x00ffffff-no-rj"
-          },
-          "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVwR0m_ASqB41IkOLlo3wc4y6LT9NaegrMlksJDpA=s800-c-k-c0x00ffffff-no-rj"
-          }
-        }
-      }
-    },
-    {
-      "kind": "youtube#subscription",
-      "etag": "5n0wjz5zr42uLY-w_wYIw-BrFc4",
+      "etag": "0k7CJnWEvjF676qYQw5Tv9kkAJc",
       "id": "ziwIEodEFoTyKHSOwdlD4LP2M17BHSIe8-81HgPRUr0",
       "snippet": {
         "publishedAt": "2022-08-06T06:23:01.585531Z",
-        "title": "ProZD",
         "description": "I'm a voice actor. If you're in need of my services, shoot me a message or email me at prozdkp@gmail.com\n\nYou can mail stuff to\n\nSungWon Cho\nPO Box 7426\nBurbank, CA 91510",
         "resourceId": {
           "kind": "youtube#channel",
@@ -490,24 +271,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVUfcoHnUfK1FmTXti239cU_wmi8ZvoN6l0hs6ojA=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mSRvPp0ZHRKIm19_3pHM0mSkwUrl5b8tAKq7h5_xejM6w=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVUfcoHnUfK1FmTXti239cU_wmi8ZvoN6l0hs6ojA=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mSRvPp0ZHRKIm19_3pHM0mSkwUrl5b8tAKq7h5_xejM6w=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVUfcoHnUfK1FmTXti239cU_wmi8ZvoN6l0hs6ojA=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mSRvPp0ZHRKIm19_3pHM0mSkwUrl5b8tAKq7h5_xejM6w=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "YMeNnYf2g_QiYpRs5LFcQTZINWo",
+      "etag": "bpGLMSWVzEqVab0HJfs7MmG9wXo",
       "id": "ziwIEodEFoTyKHSOwdlD4E-Cvxw40dQxN-nJMgsyw2Y",
       "snippet": {
         "publishedAt": "2013-11-09T03:18:08Z",
-        "title": "Vsauce",
         "description": "Our World is Amazing. \n\nQuestions? Ideas? Tweet me: http://www.twitter.com/tweetsauce\n\nVsauce was created by Michael Stevens in the summer of 2010.\n\nVsauce is...\n\nMichael Stevens: Producer/Host of Vsauce1\nKevin Lieber: Producer/Host of Vsauce2\nJake Roper: Producer/Host of Vsauce3\nEric Langlay: VFX for Vsauce1/2/3\nYou: Thanks for watching!!!",
         "resourceId": {
           "kind": "youtube#channel",
@@ -516,24 +296,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWvTe2XC80z6_cZh5GZoYhRWaONosagXi6OnhiZGA=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mpYedipdXUXCKkwjQEeFrepFlDHZ0LiczqWeKyG0YmJvA=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWvTe2XC80z6_cZh5GZoYhRWaONosagXi6OnhiZGA=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mpYedipdXUXCKkwjQEeFrepFlDHZ0LiczqWeKyG0YmJvA=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWvTe2XC80z6_cZh5GZoYhRWaONosagXi6OnhiZGA=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mpYedipdXUXCKkwjQEeFrepFlDHZ0LiczqWeKyG0YmJvA=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "yaO9APouZpxBX7eIYrjZGYr8wSM",
+      "etag": "0S_pKRR3OQTDGKcI4NNd9JxGnT4",
       "id": "ziwIEodEFoS3wFxj9zy9z9lgiDrPCNwT-kQTbsojyIw",
       "snippet": {
         "publishedAt": "2020-08-25T18:30:07.389697Z",
-        "title": "TetraBitPlus",
         "description": "Second channel for TetraBitGaming! This is mostly where I'll be uploading some shorts and extra content! Welcome aboard :)",
         "resourceId": {
           "kind": "youtube#channel",
@@ -555,11 +334,10 @@
     },
     {
       "kind": "youtube#subscription",
-      "etag": "O2JVXwqHESktsHwKawwCfv9DvKk",
+      "etag": "nibQ_qYN3SOxqffiFeH8-5UWWes",
       "id": "ziwIEodEFoTyzzbLAgeX8AptP-gq5y-gKetDlsvualI",
       "snippet": {
         "publishedAt": "2022-11-20T20:00:06.334362Z",
-        "title": "Safety Third",
         "description": "Safety Third is a weekly show hosted by William Osman, NileRed, The Backyard Scientist, Allen Pan, Peter Sripol, and a couple other YouTube \"Scientists\". Sometimes we have guests, sometimes it's just us, but always: safety is our number three priority.",
         "resourceId": {
           "kind": "youtube#channel",
@@ -581,11 +359,10 @@
     },
     {
       "kind": "youtube#subscription",
-      "etag": "2cnqCNpWZIq21DDkKxF7VcdPshI",
+      "etag": "z8MJwtCDOcLlPX45uTRDED2Iw0c",
       "id": "ziwIEodEFoTyKHSOwdlD4B-ECkNXnlxletaLvQgqOwE",
       "snippet": {
         "publishedAt": "2021-09-11T19:20:08.702899Z",
-        "title": "Kurtis Conner",
         "description": "Subscribe to become a citizen of KurtisTown!",
         "resourceId": {
           "kind": "youtube#channel",
@@ -607,12 +384,11 @@
     },
     {
       "kind": "youtube#subscription",
-      "etag": "-TYQtGp2wlYkGE4OfwfrTA8nmCg",
+      "etag": "UddoXGXwp7VufHpDQxIKRSRirDw",
       "id": "ziwIEodEFoTyKHSOwdlD4NdBMH-7-Y2Cn3QgYL68z00",
       "snippet": {
         "publishedAt": "2014-01-01T08:10:08Z",
-        "title": "boburnham",
-        "description": "stay inside",
+        "description": "",
         "resourceId": {
           "kind": "youtube#channel",
           "channelId": "UC81hVmI5eEBIt3s3HQpJd_w"
@@ -620,50 +396,48 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/H5k_2FU27i7OhO_1o87mduO5VAD_fuwCJ4ugcxXLHqN7xEh_qLCO5YLMcgwxOhAM8GmbQE0oRg=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/SMdP2iXq8AHo4_VC3RCqrKobUL3B2MXiPtV8KrJVkQ0noqB4O2ooCnKJrj06xQhA7d4-gK24eg4=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/H5k_2FU27i7OhO_1o87mduO5VAD_fuwCJ4ugcxXLHqN7xEh_qLCO5YLMcgwxOhAM8GmbQE0oRg=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/SMdP2iXq8AHo4_VC3RCqrKobUL3B2MXiPtV8KrJVkQ0noqB4O2ooCnKJrj06xQhA7d4-gK24eg4=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/H5k_2FU27i7OhO_1o87mduO5VAD_fuwCJ4ugcxXLHqN7xEh_qLCO5YLMcgwxOhAM8GmbQE0oRg=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/SMdP2iXq8AHo4_VC3RCqrKobUL3B2MXiPtV8KrJVkQ0noqB4O2ooCnKJrj06xQhA7d4-gK24eg4=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "QzA6UajzvZf_eLdBIbpStBK5kIg",
-      "id": "ziwIEodEFoTyKHSOwdlD4O193KOzIJ7D4R-D77GCBqU",
+      "etag": "uN0-X4VEKXftScmfvVgPneBvG58",
+      "id": "ziwIEodEFoTck86LaGCq2AEZCqsQkzq9n3l5mxiD-4E",
       "snippet": {
-        "publishedAt": "2019-08-07T21:09:25.963576Z",
-        "title": "IntroSpecktive",
-        "description": "My channel revolves around Super Smash Bros Ultimate and other Nintendo games! For business inquiries please email introspecktive@viralnationtalent.com.",
+        "publishedAt": "2024-03-01T22:54:40.421265Z",
+        "description": "So, we've got a pitch for you... \n\nNew episodes released every Thursday!",
         "resourceId": {
           "kind": "youtube#channel",
-          "channelId": "UC8ePqyIj7evFoeFnBbPN2cQ"
+          "channelId": "UC9Kq-yEt1iYsbUzNOoIRK0g"
         },
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXSYZ3xefloDIHZUwGkS4LSYSUyJzBo2RiAQ4coKQ=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/agdQznSAhEyIdMr2e3z36hfMgMBmjeWej0-KGftGfsMPUcEBIn8pnQ-cpLkx-ufX8rM65zvxV7c=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXSYZ3xefloDIHZUwGkS4LSYSUyJzBo2RiAQ4coKQ=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/agdQznSAhEyIdMr2e3z36hfMgMBmjeWej0-KGftGfsMPUcEBIn8pnQ-cpLkx-ufX8rM65zvxV7c=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXSYZ3xefloDIHZUwGkS4LSYSUyJzBo2RiAQ4coKQ=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/agdQznSAhEyIdMr2e3z36hfMgMBmjeWej0-KGftGfsMPUcEBIn8pnQ-cpLkx-ufX8rM65zvxV7c=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "DlLsa0Dz_QHgqkRzghU2ORQGfSc",
+      "etag": "rPwv5AMsKVjEx_6ZDiiWjwtwHRQ",
       "id": "ziwIEodEFoTyKHSOwdlD4A-pmBu45sjPPQASOSai69o",
       "snippet": {
         "publishedAt": "2017-04-10T05:39:12Z",
-        "title": "Bizkit047",
         "description": "I mostly upload gaming videos that consist of speedruns, no damage fights, display videos, guides, and highlights from Twitch. Check me out on Twitch at http://www.twitch.tv/Bizkit047.\n\nI do accept donations if you wish to support me: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YEPTKRG7CWSX8\n\nTo view what videos I have done, look through the Playlists section of this page. I neatly organized every video I've ever done into a section. (a little behind on this lately)\n\nTWITCH: http://www.twitch.tv/Bizkit047\nTWITTER: http://www.twitter.com/Bizkit047\n\nBusiness: bizkit047@yahoo.com",
         "resourceId": {
           "kind": "youtube#channel",
@@ -685,12 +459,11 @@
     },
     {
       "kind": "youtube#subscription",
-      "etag": "BArTqEwuuhC9oM5eSTmvnsLZRAQ",
+      "etag": "23N2MstIpKhlyn1nZmQJ13a6-PU",
       "id": "ziwIEodEFoTyKHSOwdlD4CCSW8ToVEpCgSK2PzCkHZM",
       "snippet": {
         "publishedAt": "2015-02-15T17:45:02Z",
-        "title": "DEATH BATTLE!",
-        "description": "Death Battle is one of many shows among the Rooster Teeth family! BECOME A FIRST Member to watch all our videos early and get access to exclusive content. Try it FREE for 30 days: http://bit.ly/SponsorSA\n\nHave an idea for a Death Battle? Request your match-up here: http://bit.ly/DBRequest2019 \n\nVisit our website: http://www.RoosterTeeth.com\nVisit our Facebook: http://www.facebook.com/OfficialDeathBattle/\nVisit our Twitter: https://twitter.com/DEATHBATTLE\n\nConnect with us on Twitter:\nBen B. Singer - https://twitter.com/BenBSinger\nChad James - https://twitter.com/ChadJamesRT\nLiam Swan - https://twitter.com/LiamRichardSwan\nLuis Cruz - https://twitter.com/CVAnimation\nJosh Kazemi - https://twitter.com/JoshuaKazemi\nBilly Burson - https://twitter.com/BillyBurson",
+        "description": "Death Battle is one of many shows among the Rooster Teeth family! BECOME A CHAMPION to get access to exclusive content!\n\nHave an idea for a Death Battle? Request your match-up here: http://bit.ly/DBRequest2019 \n\nVisit our website: http://www.RoosterTeeth.com\nVisit our Facebook: http://www.facebook.com/OfficialDeathBattle/\nVisit our Twitter: https://twitter.com/DEATHBATTLE\n\nConnect with us on Twitter:\nBen B. Singer - https://twitter.com/BenBSinger\nChad James - https://twitter.com/ChadJamesRT\nLuis Cruz - https://twitter.com/CVAnimation\nLiam Swan - https://twitter.com/LiamRichardSwan\nJoshua Kazemi - https://twitter.com/JoshuaKazemi\nBilly B Burson - https://twitter.com/BillyBurson",
         "resourceId": {
           "kind": "youtube#channel",
           "channelId": "UCB9_VH_CNbbH4GfKu8qh63w"
@@ -698,24 +471,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUqNbk01XgYYGhWp3UVDM5KStwyAy-EfCoaZdFh=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_l-hVSmrquD7iSpVqIJenfBSWWR-knx__Mk5YPUpGaMUQ=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUqNbk01XgYYGhWp3UVDM5KStwyAy-EfCoaZdFh=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_l-hVSmrquD7iSpVqIJenfBSWWR-knx__Mk5YPUpGaMUQ=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUqNbk01XgYYGhWp3UVDM5KStwyAy-EfCoaZdFh=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_l-hVSmrquD7iSpVqIJenfBSWWR-knx__Mk5YPUpGaMUQ=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "lDTvffafjaLJ8BXOsVP9WtZzUAY",
+      "etag": "bVNHN4GyBnJu-CKju5KUrSt5H50",
       "id": "ziwIEodEFoTyKHSOwdlD4MgNyzTNAaeQZ4BSoasY7UM",
       "snippet": {
         "publishedAt": "2020-07-11T07:05:00.931984Z",
-        "title": "Marques Brownlee",
         "description": "MKBHD: Quality Tech Videos | YouTuber | Geek | Consumer Electronics | Tech Head | Internet Personality!\n\nbusiness@MKBHD.com\n\nNYC",
         "resourceId": {
           "kind": "youtube#channel",
@@ -737,11 +509,35 @@
     },
     {
       "kind": "youtube#subscription",
-      "etag": "uPwu_VG9mP2JyMOe557AiInjqEk",
+      "etag": "-P2t2fRhs1pxkvXLWgzdZB7A-_U",
+      "id": "ziwIEodEFoTyKHSOwdlD4MoebZkUe_eTWN0zxB7Ge8A",
+      "snippet": {
+        "publishedAt": "2024-02-08T17:10:06.382234Z",
+        "description": "professionally unemployed",
+        "resourceId": {
+          "kind": "youtube#channel",
+          "channelId": "UCBODyKF0JMbUd6D9Bklyzbw"
+        },
+        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
+        "thumbnails": {
+          "default": {
+            "url": "https://yt3.ggpht.com/MZovomS0bsPwKvCRJJMdul5vdsu-Urn5evgDHeNMvrTK07tQGQDBgnPhC0jwZnAvWPDt0CVf=s88-c-k-c0x00ffffff-no-rj"
+          },
+          "medium": {
+            "url": "https://yt3.ggpht.com/MZovomS0bsPwKvCRJJMdul5vdsu-Urn5evgDHeNMvrTK07tQGQDBgnPhC0jwZnAvWPDt0CVf=s240-c-k-c0x00ffffff-no-rj"
+          },
+          "high": {
+            "url": "https://yt3.ggpht.com/MZovomS0bsPwKvCRJJMdul5vdsu-Urn5evgDHeNMvrTK07tQGQDBgnPhC0jwZnAvWPDt0CVf=s800-c-k-c0x00ffffff-no-rj"
+          }
+        }
+      }
+    },
+    {
+      "kind": "youtube#subscription",
+      "etag": "-k6SYEalF335pbWY6Tabvsyz9gE",
       "id": "ziwIEodEFoTyKHSOwdlD4GgY4LMub62J5ovtuCWwKVg",
       "snippet": {
         "publishedAt": "2019-02-13T16:39:59.642553Z",
-        "title": "Tom Scott",
         "description": "Hi, I'm Tom Scott. These are some of the things I've made and done. They'll probably come back to haunt me in a few years' time.\n\nContact me: https://www.tomscott.com/contact/\n\n• • •\n\nThis channel is a production of Pad 26 Limited, registered in England and Wales, № 11662641.\nRegistered office: Amelia House, Crescent Road, Worthing, West Sussex, BN11 1QR\n(This address is only for legal documents; no other mail will be forwarded.)",
         "resourceId": {
           "kind": "youtube#channel",
@@ -750,24 +546,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWHmhcQS96K_zfJWE9EsU0ci1skOoVNq3R7h-IJ9Q=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_k8W5CNSqxeITAoBY5JkpW3SVJlWitSOStGnvKYulDn21w=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWHmhcQS96K_zfJWE9EsU0ci1skOoVNq3R7h-IJ9Q=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_k8W5CNSqxeITAoBY5JkpW3SVJlWitSOStGnvKYulDn21w=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWHmhcQS96K_zfJWE9EsU0ci1skOoVNq3R7h-IJ9Q=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_k8W5CNSqxeITAoBY5JkpW3SVJlWitSOStGnvKYulDn21w=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "wEQ9H7QTtCV8jC_d64Un9BVc60Y",
+      "etag": "LwY532mMndttADwN8dqHNM3K2Zc",
       "id": "ziwIEodEFoTyKHSOwdlD4PpKQX8DvkjXTOeD-smMmDQ",
       "snippet": {
         "publishedAt": "2019-02-08T05:21:50.898062Z",
-        "title": "Sunburned Albino",
         "description": "Boss ranking pioneer, plus tons of other comedy videos and stream highlights about the one and only ultimate hobby of GAMING (some music stuff too).\n\nA saint, a sinner, and everything in between. Discord server for channel members (check the first members-only post in the community tab for link)",
         "resourceId": {
           "kind": "youtube#channel",
@@ -776,24 +571,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJW2yxypD22G9Sv59j7ec5O2Er4kJqSTTwqtW5dS-w=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nqUPFbNmvO_CgjE25l14bZUaKcijq42XS4XeQjdKxFAbo=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJW2yxypD22G9Sv59j7ec5O2Er4kJqSTTwqtW5dS-w=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nqUPFbNmvO_CgjE25l14bZUaKcijq42XS4XeQjdKxFAbo=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJW2yxypD22G9Sv59j7ec5O2Er4kJqSTTwqtW5dS-w=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nqUPFbNmvO_CgjE25l14bZUaKcijq42XS4XeQjdKxFAbo=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "7-Cm6sOssiz7Ojws19G8CHnkoj4",
+      "etag": "vTTJyEYyY2j4bcAQOkActMUOfMM",
       "id": "ziwIEodEFoTyKHSOwdlD4HOC56JxtecxeTyHcP7EQGY",
       "snippet": {
         "publishedAt": "2018-10-08T21:08:26.255784Z",
-        "title": "Mother's Basement",
         "description": "Geoff Thew, makes a living analyzing anime and other pop culture from the comfort of his mother's basement. Well, okay, actually he lives in a nice apartment now, but don't tell anyone, alright? He's known for his detailed breakdowns of the hidden secrets in anime openings, his fight scene analysis, and the Public Service Anime series, which provides helpful advice for everyday problems, like being caught up in a harem, or being transported to another world.\n\nJoin him every Tuesday and Saturday for deep dives into art that will give you a new appreciation for your favourite anime, video games, and films.",
         "resourceId": {
           "kind": "youtube#channel",
@@ -802,24 +596,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXpOiw3zIPRm5YercMbLvUjDDD_SCVlc1dk4Py03w=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mf9reSjYm5GJHCk_cfF6KUHlw978Qt1aKVnp0eMCScaA4=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXpOiw3zIPRm5YercMbLvUjDDD_SCVlc1dk4Py03w=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mf9reSjYm5GJHCk_cfF6KUHlw978Qt1aKVnp0eMCScaA4=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXpOiw3zIPRm5YercMbLvUjDDD_SCVlc1dk4Py03w=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mf9reSjYm5GJHCk_cfF6KUHlw978Qt1aKVnp0eMCScaA4=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "gLFDLzQlczS8CYqC2LszL4PqOZ0",
+      "etag": "iHfHrVeEcLkaXzYfvtYx8sxwbLg",
       "id": "ziwIEodEFoTyKHSOwdlD4OSxvUTcu58Db-A2e-0O-14",
       "snippet": {
         "publishedAt": "2014-07-04T22:31:19Z",
-        "title": "thelonelyisland",
         "description": "The Lonely Island are Andy Samberg, Akiva Schaffer and Jorma Taccone. They've been making videos together since September of 2000. They met in Junior High. Nice, right?",
         "resourceId": {
           "kind": "youtube#channel",
@@ -828,24 +621,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUE-69UA20LZPjOq9lHUPewa0_y7XaHwFxwl9YCkQ=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mwpPZiDzeEy8MJSFFzOOREA8CjZRMp1LRBVPfkISIRR4E=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUE-69UA20LZPjOq9lHUPewa0_y7XaHwFxwl9YCkQ=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mwpPZiDzeEy8MJSFFzOOREA8CjZRMp1LRBVPfkISIRR4E=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJUE-69UA20LZPjOq9lHUPewa0_y7XaHwFxwl9YCkQ=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mwpPZiDzeEy8MJSFFzOOREA8CjZRMp1LRBVPfkISIRR4E=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "3CxSS-OMOeyl0PCNR1kcxkspqSc",
+      "etag": "joH-Nm2KLt6pnlPDMWTdvaByAFc",
       "id": "ziwIEodEFoTyKHSOwdlD4G9Imr4vg0y7sXVKMzCjgPw",
       "snippet": {
         "publishedAt": "2014-03-11T23:39:34Z",
-        "title": "Project M",
         "description": "Official Project M YouTube Channel, run by the Project M Development Team.\n\nWhat is Project M? Project M is the premier Brawl modification inspired by Super Smash Bros. Melee's gameplay designed to add rich, technical gameplay to a balanced cast of characters while additionally enhancing the speed of play. Project M employs new codes which seamlessly add in new, universal features to the entire cast to add technical variety to all characters.\n\nCheck our website below for more information!",
         "resourceId": {
           "kind": "youtube#channel",
@@ -854,51 +646,24 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWSGAcW5Gkxcqv_lq-Ectzjyq3S1q7tYpl93kBe=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nGJRHGcK6I1evqt0KceBGuxVCpI0laJXb3999gUO51-g=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWSGAcW5Gkxcqv_lq-Ectzjyq3S1q7tYpl93kBe=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nGJRHGcK6I1evqt0KceBGuxVCpI0laJXb3999gUO51-g=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWSGAcW5Gkxcqv_lq-Ectzjyq3S1q7tYpl93kBe=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nGJRHGcK6I1evqt0KceBGuxVCpI0laJXb3999gUO51-g=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "3p-Pt9W_cyYB4zGC3nkWkGWGgLw",
-      "id": "ziwIEodEFoTyKHSOwdlD4B_yMwSvdtQclZwZqcrTFA8",
-      "snippet": {
-        "publishedAt": "2013-11-09T03:18:25Z",
-        "title": "LORE",
-        "description": "LORE is your one-stop shop for the history, plot, backstory -- you name it --  of your favorite franchises from video games and anime to comics and movies, and more. LORE pairs your favorite YouTubers like Dodger, Octopimp, Comicstorian, Stampy, Ricepirate, Markiplier with talented animators all over the world. \n\nFind out the top facts and easter eggs of games like Fallout 4, Overwatch, Gears of War, Dark Souls all the way to classics like Pokemon, Elder Scrolls, Mario, Bioshock, Half-Life, Zelda. We also cover movies, comics, cartoons,  anime, and TV Shows, so be sure to check out our library for Adventure Time, Steven Universe, Batman, Avengers, Dragon Ball Z, Naruto, and more!\n\n\nBe sure to subscribe for new episodes every Tuesday and Thursday!\nhttp://bit.ly/LoreSubscribe",
-        "resourceId": {
-          "kind": "youtube#channel",
-          "channelId": "UCCqnN6ApN4VO9uKOpCoDxww"
-        },
-        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
-        "thumbnails": {
-          "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJU9Cji1Cpy_IkQ5LU77_C2IorKDNoQWnDMIuQ=s88-c-k-c0x00ffffff-no-rj"
-          },
-          "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJU9Cji1Cpy_IkQ5LU77_C2IorKDNoQWnDMIuQ=s240-c-k-c0x00ffffff-no-rj"
-          },
-          "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJU9Cji1Cpy_IkQ5LU77_C2IorKDNoQWnDMIuQ=s800-c-k-c0x00ffffff-no-rj"
-          }
-        }
-      }
-    },
-    {
-      "kind": "youtube#subscription",
-      "etag": "r5FQo9KyqP5mB9gmqh_khC-Z4h8",
+      "etag": "ofLiIQAace8KOPgYgmeCHaMVot4",
       "id": "ziwIEodEFoTyKHSOwdlD4F5E5R-fEuQgRWHhgHRveFo",
       "snippet": {
         "publishedAt": "2022-02-25T21:40:24.657694Z",
-        "title": "Leo Vader",
-        "description": "i travel around the universe and make comedic video essays about it, posted around once a month. exclusive videos on patreon also once a month.\ni stream every monday at 6 PM Central here and on twitch.\ni'm on gaming stuff over at youtube.com/minnmax, head there if you're a major gamer!\n\nfor business/collab inquiries DM me on twitter, i'll see it but i might pretend i didn't and i hope that's ok.",
+        "description": "i travel around the universe and make comedic video essays about it, posted once every month or two. exclusive videos on patreon between every video here.\ni stream every monday at 6 PM Central here and on twitch. archives are under the playlists tab.\ni'm on gaming stuff over at youtube.com/minnmax, head there if you're a major gamer!\n\nfor business/collab inquiries email leovaderspam@gmail.com (it's real)",
         "resourceId": {
           "kind": "youtube#channel",
           "channelId": "UCDT-KKAV1iTIoD1j7AZKkYw"
@@ -919,12 +684,11 @@
     },
     {
       "kind": "youtube#subscription",
-      "etag": "ydX1z2YVrdKfMKnh7pOUgpP5BxA",
+      "etag": "DB8t4VfF2EWCsRUYW8Z-CrKacYw",
       "id": "ziwIEodEFoTfeyvSY8ovfe5XnZ_iXCwkbk_S8Xn_3c8",
       "snippet": {
         "publishedAt": "2022-03-13T03:46:58.03242Z",
-        "title": "GingerOfOz",
-        "description": "I build portable video game consoles!  I am not taking commissions at this time",
+        "description": "I build portable video game consoles!  Check my website for info on whether or not I'm currently selling portables.",
         "resourceId": {
           "kind": "youtube#channel",
           "channelId": "UCDfr25a1fzOgWZFwvIIRuHg"
@@ -945,12 +709,11 @@
     },
     {
       "kind": "youtube#subscription",
-      "etag": "F-3bQyJEb1Ghw3pH1pBFK070TkQ",
+      "etag": "tcg1Zph3mrrVLiIkZxcbYAg4iI4",
       "id": "ziwIEodEFoTyKHSOwdlD4K8_xBqjaEUKMGGhQpX-Tkc",
       "snippet": {
         "publishedAt": "2020-04-16T14:09:01.879613Z",
-        "title": "Gamechamp3000",
-        "description": "I'm a non-binary (she/her pronouns, please~) completionist-focused gamer who makes videos testing the limits of games with challenges, analyzing game design, and making really dumb jokes.\n\nIf you'd like to support the channel, you can back on Patreon, with both text and vocal shoutout tiers. https://www.patreon.com/Gamechamp\n\nAdditionally, I do livestreams regularly at http://www.twitch.tv/gamechamp3k, where I sometimes record new challenges for VG Myths and sometimes stream casual playthroughs for fun~\n\nProfile avatar by https://twitter.com/palmtreehero\n\nBanner art by https://twitter.com/Kav_Linn",
+        "description": "I'm a non-binary completionist-focused gamer who makes videos testing the limits of games with challenges, analyzing game design, and making really dumb jokes.\n\nIf you'd like to support the channel, you can back on Patreon, with both text and vocal shoutout tiers. https://www.patreon.com/Gamechamp\n\nAdditionally, I do livestreams regularly at http://www.twitch.tv/gamechamp3k, where I sometimes record new challenges for VG Myths and sometimes stream casual playthroughs for fun~\n\nProfile avatar by https://twitter.com/palmtreehero\n\nBanner art by https://twitter.com/Kav_Linn",
         "resourceId": {
           "kind": "youtube#channel",
           "channelId": "UCDm-nYAJuqrBIy57EgWAymw"
@@ -958,24 +721,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWMwrINjRZh_h5a6g01xpDCbOGIm-xjYMa7cJHcrw=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_lJoRhmNaDX67e9tCXHJA4US-aBHQ50Gbc87lsSI_igyPM=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWMwrINjRZh_h5a6g01xpDCbOGIm-xjYMa7cJHcrw=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_lJoRhmNaDX67e9tCXHJA4US-aBHQ50Gbc87lsSI_igyPM=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWMwrINjRZh_h5a6g01xpDCbOGIm-xjYMa7cJHcrw=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_lJoRhmNaDX67e9tCXHJA4US-aBHQ50Gbc87lsSI_igyPM=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "ODunFstmbjSZsN4mbtR7WP3orUs",
+      "etag": "R6rguXvBBgiotc9eNCtZdxkhlTQ",
       "id": "ziwIEodEFoTyKHSOwdlD4HelRI0yD-iybXfDsQf2lZA",
       "snippet": {
         "publishedAt": "2020-08-27T17:23:00.512132Z",
-        "title": "Meti『Not The Bad Guy』",
         "description": "Go home, fuck you. Why are you here?",
         "resourceId": {
           "kind": "youtube#channel",
@@ -984,24 +746,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXvUnM_V4_P27h2zOd8GMj0k1B545TpKlUfidDilw=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_ms6URGxegBIcaJx-z_43oBbNT_yepi7KQ8UBexbtLBfZ0=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXvUnM_V4_P27h2zOd8GMj0k1B545TpKlUfidDilw=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_ms6URGxegBIcaJx-z_43oBbNT_yepi7KQ8UBexbtLBfZ0=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXvUnM_V4_P27h2zOd8GMj0k1B545TpKlUfidDilw=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_ms6URGxegBIcaJx-z_43oBbNT_yepi7KQ8UBexbtLBfZ0=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "37siGSVmUkNlI54IxZFY0zgLZGs",
+      "etag": "OahcRmpBhxwwk412pVNrg4GLymw",
       "id": "ziwIEodEFoTyKHSOwdlD4LyKl2hdXcQ47oDws9atVnE",
       "snippet": {
         "publishedAt": "2016-03-04T13:28:57Z",
-        "title": "BotanicSage [BS]",
         "description": "Welcome, one and all, to my channel, where I upload all of my mashups. If you have a request, please send it to me in a message. I won't take requests if they're in the form of a comment. Thank you for visiting.",
         "resourceId": {
           "kind": "youtube#channel",
@@ -1010,24 +771,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJV2YaQxdwi2aihEiHqZDexQPx4joqOFlyPlRdqejw=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mQLGbnuEok7ynkYqaeBcGBSXdK0Yn1cFlFQJcpS2jU1r0=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJV2YaQxdwi2aihEiHqZDexQPx4joqOFlyPlRdqejw=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mQLGbnuEok7ynkYqaeBcGBSXdK0Yn1cFlFQJcpS2jU1r0=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJV2YaQxdwi2aihEiHqZDexQPx4joqOFlyPlRdqejw=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mQLGbnuEok7ynkYqaeBcGBSXdK0Yn1cFlFQJcpS2jU1r0=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "xSIwI72qW1014v0FQHxMp--dOrE",
+      "etag": "uq6MlmsZsfEMkEx2w4nXnQbmcdw",
       "id": "ziwIEodEFoS3wFxj9zy9z7xyPv00cmKTI51e19PlMNY",
       "snippet": {
         "publishedAt": "2021-05-20T03:53:21.098405Z",
-        "title": "NormalBoots",
         "description": "NormalBoots is a collective of influential internet creators with a thriving community of people who love entertainment. With millions of engaged viewers on their individual channels, Did You Know Gaming?, Peanut Butter Gamer, The Completionist, Chadtronic, Lady Pelvic, and Proton Jon leverage a multitude of social platforms to provide fun and enjoyable videos, livestreams, and live events around the world.",
         "resourceId": {
           "kind": "youtube#channel",
@@ -1049,37 +809,35 @@
     },
     {
       "kind": "youtube#subscription",
-      "etag": "YyRZMz3PIgJkwk_JAisn7sJ5qQs",
-      "id": "ziwIEodEFoTyKHSOwdlD4J_bTG9uY5bep8nBEahXYPc",
+      "etag": "emWnKRBu_nf2FaydJXL33cVTnnw",
+      "id": "ziwIEodEFoTyKHSOwdlD4C7iLPB6n4bZLUikwC2Jl9s",
       "snippet": {
-        "publishedAt": "2022-02-15T16:52:32.528748Z",
-        "title": "Ninten",
-        "description": "",
+        "publishedAt": "2024-03-19T01:33:25.556444Z",
+        "description": "hi it's jaiden and bird\n\nchannel profile picture made by: me\nchannel banner art made by: https://twitter.com/motiCHIKUBI",
         "resourceId": {
           "kind": "youtube#channel",
-          "channelId": "UCH2_-u_8-8jn_MhdO_Wh_GA"
+          "channelId": "UCGwu0nbY2wSkW8N-cghnLpA"
         },
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWlBZJD5YWegad3ST7zvKa8ogPDfbJ_iR5OANsFdA=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/gopbHeiDtEB932rIFqLlR4D_hFtd-BcdGrQgGeyDpkD3guskkbT74DsJYPGo3x7MqkyqtgL-=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWlBZJD5YWegad3ST7zvKa8ogPDfbJ_iR5OANsFdA=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/gopbHeiDtEB932rIFqLlR4D_hFtd-BcdGrQgGeyDpkD3guskkbT74DsJYPGo3x7MqkyqtgL-=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJWlBZJD5YWegad3ST7zvKa8ogPDfbJ_iR5OANsFdA=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/gopbHeiDtEB932rIFqLlR4D_hFtd-BcdGrQgGeyDpkD3guskkbT74DsJYPGo3x7MqkyqtgL-=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "W5_I-W7c-a-BgH7A3xVZ8vmOolA",
+      "etag": "7hNzUpDNVnX3je1YjIDLd_KVDEw",
       "id": "ziwIEodEFoTck86LaGCq2Hb0NHjc1rRm2a9j2ba9oCk",
       "snippet": {
         "publishedAt": "2021-07-09T23:53:28.549573Z",
-        "title": "Tom Scott plus",
         "description": "These are some of the things I've made and done, with friends. Unscripted, unrehearsed, experimental: this is Tom Scott, plus everyone.\n\nThis channel is run by Pad 26 Limited, registered in England and Wales, № 11662641.\nRegistered office: Amelia House, Crescent Road, Worthing, West Sussex, BN11 1QR\n(This address is only for legal documents; no other mail will be forwarded.)",
         "resourceId": {
           "kind": "youtube#channel",
@@ -1101,12 +859,11 @@
     },
     {
       "kind": "youtube#subscription",
-      "etag": "s317fhJvdjWp3B9fOdBlOuCXj38",
+      "etag": "E31whUx5rJF7MoK84cGY1AXbAuA",
       "id": "ziwIEodEFoTyKHSOwdlD4LBfgXb4nh9v5bCr8W5K1bw",
       "snippet": {
         "publishedAt": "2013-11-09T03:34:40Z",
-        "title": "How It Should Have Ended",
-        "description": "Welcome to How it Should Have Ended!  A place for animated parody alternate endings to major motion pictures.  We make cartoons as fast as we can and hopefully we can make you laugh along the way.  Thanks for watching our videos and thank YOU for subscribing. \n\nYou can find us also at http://www.howitshouldhaveended.com\n\nCheck out our new channel that's fun for the whole family!  http://www.youtube.com/HISHEKids\nHelp us spread the word!\n\nWant to help support HISHE?  Buy HISHE merchandise from our DFTBA store: http://dftba.com/hishe or our TeeSpring store: https://teespring.com/stores/how-it-should-have-ended?aid=ts-boosted-rt\n\nPlease note that outside of our specific \"written by the fans\" episodes, HISHE has a long standing company policy to not accept or review unsolicited submissions of creative materials. Please do not send us your scripts, story ideas or other creative materials as we will not review them. Thank you!",
+        "description": "Cartoons about MOVIES!!!\nAnimated Alternate Endings, Reviews, Recaps, and other Comedy Sketches about about your favorite films",
         "resourceId": {
           "kind": "youtube#channel",
           "channelId": "UCHCph-_jLba_9atyCZJPLQQ"
@@ -1114,24 +871,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJV7cGM8NLpKlhHgrCC2tiEvsVMI1IRsYWrpAcczjA=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_lJYCzPT4fmsv7OD3wyAWUOJoVcckN7vOBdL95lqExwD48=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJV7cGM8NLpKlhHgrCC2tiEvsVMI1IRsYWrpAcczjA=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_lJYCzPT4fmsv7OD3wyAWUOJoVcckN7vOBdL95lqExwD48=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJV7cGM8NLpKlhHgrCC2tiEvsVMI1IRsYWrpAcczjA=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_lJYCzPT4fmsv7OD3wyAWUOJoVcckN7vOBdL95lqExwD48=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "-kmU6ROrXvGVzd3jstA0mmHWO1o",
+      "etag": "9LdKhT47qIuhIHH_0eHoDTJzlqU",
       "id": "ziwIEodEFoTyKHSOwdlD4Gq6ofq9IUCz7A7rRlgbTCU",
       "snippet": {
         "publishedAt": "2023-01-16T07:51:33.216186Z",
-        "title": "Shesez",
         "description": "\"YouTuber Shesez has recently started a new series called Boundary Break, where he takes us above and beyond the set boundaries of video games. With his help we can see those areas of games that were never meant to be more than scenery or decoration.\" - Molly Maugan, www.Zeldainformer.com",
         "resourceId": {
           "kind": "youtube#channel",
@@ -1140,24 +896,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJV1qVLEC9I3hezlOpdWlk2XwTJlxt4eRQComG1_Dw=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/s0xsoZlNIe27Rl0v84kXB9jO3uBSBdTAq-FLW20lYlcM4o6u-H7YyfItwMQH2TdqYvskt7sg=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJV1qVLEC9I3hezlOpdWlk2XwTJlxt4eRQComG1_Dw=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/s0xsoZlNIe27Rl0v84kXB9jO3uBSBdTAq-FLW20lYlcM4o6u-H7YyfItwMQH2TdqYvskt7sg=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJV1qVLEC9I3hezlOpdWlk2XwTJlxt4eRQComG1_Dw=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/s0xsoZlNIe27Rl0v84kXB9jO3uBSBdTAq-FLW20lYlcM4o6u-H7YyfItwMQH2TdqYvskt7sg=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "Qhd-Z4feFAIW6m6z1xWjIhvvkSU",
+      "etag": "q3PkrDriwB36iknsKZoPEH4KRrs",
       "id": "ziwIEodEFoTyKHSOwdlD4Ibnm3NO1UB9TOe78mfiU5M",
       "snippet": {
         "publishedAt": "2019-02-01T17:20:57.223116Z",
-        "title": "Bl00dyBizkitz",
         "description": "",
         "resourceId": {
           "kind": "youtube#channel",
@@ -1166,24 +921,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJW-7Zda7-GqJ5aWas_OutMl514DEE4tkb7Bqizh=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_lu362DXdc5hCjuHEUhu1GeHXmd-7R9Etk81jase_jK9w=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJW-7Zda7-GqJ5aWas_OutMl514DEE4tkb7Bqizh=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_lu362DXdc5hCjuHEUhu1GeHXmd-7R9Etk81jase_jK9w=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJW-7Zda7-GqJ5aWas_OutMl514DEE4tkb7Bqizh=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_lu362DXdc5hCjuHEUhu1GeHXmd-7R9Etk81jase_jK9w=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "vflrK4Qa5qOXezLZLQ7h_uQi9IA",
+      "etag": "Q4W5GaeOkCprO34aajPpXPFGfLo",
       "id": "ziwIEodEFoTyKHSOwdlD4NeS7JC5R4UNJFu3HWzldFE",
       "snippet": {
         "publishedAt": "2021-07-13T20:44:26.794378Z",
-        "title": "Games Done Quick",
         "description": "Games Done Quick showcases high-level gameplay, through its charity marathons, and its weekly content. \n\nGames Done Quick has a series of charity video game marathons. These events feature high-level gameplay by speedrunners raising money for charity. Teaming up with several charities in its ten-year history, Games Done Quick is currently the largest individual fundraising event globally for both Prevent Cancer Foundation and Doctors Without Borders USA.\n\nTo date, Games Done Quick has raised over 30 million dollars for charity. Our events average over 3000 people in attendance, including staff, volunteers, runners, and attendees!\n\nThe GDQ HOTFIX is our weekly speedrunning content, with over 20 different shows that showcase excellence in speedrunning and the community in different ways. If you're interested in speedruns, or speedrunning adjacent content, such as randomizers, high score challenges, and other challenge runs, check out https://gamesdonequick.com/hotfix",
         "resourceId": {
           "kind": "youtube#channel",
@@ -1192,24 +946,23 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVf-20Hv2PeNPuWwUfOYloI-6pw8_iDskI1khrL=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nrqKqkeFJTaWB1ZJNx2sVfPWt3-SQISiUvvECkWiOZ9Q=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVf-20Hv2PeNPuWwUfOYloI-6pw8_iDskI1khrL=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nrqKqkeFJTaWB1ZJNx2sVfPWt3-SQISiUvvECkWiOZ9Q=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJVf-20Hv2PeNPuWwUfOYloI-6pw8_iDskI1khrL=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nrqKqkeFJTaWB1ZJNx2sVfPWt3-SQISiUvvECkWiOZ9Q=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "1yxKVIyUSHbdvOAD5fyx7NpUCAY",
+      "etag": "kP8Uvugr8cC1tItJAWUKui9xgLY",
       "id": "ziwIEodEFoTyKHSOwdlD4Jv0gD-wQBMdfl9MxCcKWn8",
       "snippet": {
         "publishedAt": "2022-08-11T15:46:43.287946Z",
-        "title": "nathanfielder",
         "description": "These are shorts.  Do you like them?\r\n\r\nThis is Nathan Fielder on youtube.",
         "resourceId": {
           "kind": "youtube#channel",
@@ -1218,24 +971,73 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXNk5lW_MYwTr-Vu41icpet3XIoXFgUtNhgVn6J=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_k7BP8UTZF_APtK1HBA9Xa5suBFV9B96P1ihHdD_TdB-A=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXNk5lW_MYwTr-Vu41icpet3XIoXFgUtNhgVn6J=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_k7BP8UTZF_APtK1HBA9Xa5suBFV9B96P1ihHdD_TdB-A=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXNk5lW_MYwTr-Vu41icpet3XIoXFgUtNhgVn6J=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/ytc/AIdro_k7BP8UTZF_APtK1HBA9Xa5suBFV9B96P1ihHdD_TdB-A=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "evKvlJ344HtLBgASWP0NOZYOx7M",
+      "etag": "NQUlxDJeQ02VAZR9RqtBZ6OfPB8",
+      "id": "ziwIEodEFoTfeyvSY8ovfXe1FyeVgXtodfkkU6batE8",
+      "snippet": {
+        "publishedAt": "2023-04-22T02:46:02.094133Z",
+        "description": "This is where we get a little loose. Don't be weird about it… \n\nBusiness Inquiries: scott@proudmanagement.net",
+        "resourceId": {
+          "kind": "youtube#channel",
+          "channelId": "UCIgkNLUjfOwy7Z4Ucg0tJyg"
+        },
+        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
+        "thumbnails": {
+          "default": {
+            "url": "https://yt3.ggpht.com/DU5As-Ha0pDJsHbCRGfIqTSVhT_IoRuD221sKVcfEns9p8Vpp2MR-0meKRVk8REA-gpVXjprDw=s88-c-k-c0x00ffffff-no-rj"
+          },
+          "medium": {
+            "url": "https://yt3.ggpht.com/DU5As-Ha0pDJsHbCRGfIqTSVhT_IoRuD221sKVcfEns9p8Vpp2MR-0meKRVk8REA-gpVXjprDw=s240-c-k-c0x00ffffff-no-rj"
+          },
+          "high": {
+            "url": "https://yt3.ggpht.com/DU5As-Ha0pDJsHbCRGfIqTSVhT_IoRuD221sKVcfEns9p8Vpp2MR-0meKRVk8REA-gpVXjprDw=s800-c-k-c0x00ffffff-no-rj"
+          }
+        }
+      }
+    },
+    {
+      "kind": "youtube#subscription",
+      "etag": "TLEDAereA9jwTl7bs6EGRGpNI30",
+      "id": "ziwIEodEFoTyKHSOwdlD4DbBJHJQDTLdcEJQRV3dxck",
+      "snippet": {
+        "publishedAt": "2023-08-12T01:24:31.286677Z",
+        "description": "I am Ted.",
+        "resourceId": {
+          "kind": "youtube#channel",
+          "channelId": "UCJGgP4txIUr_7JTDvOGVQrA"
+        },
+        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
+        "thumbnails": {
+          "default": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nqD1NGOFrCc5it2ApDwnyFheCg3TnPEph8HjexGsWdhVw=s88-c-k-c0x00ffffff-no-rj"
+          },
+          "medium": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nqD1NGOFrCc5it2ApDwnyFheCg3TnPEph8HjexGsWdhVw=s240-c-k-c0x00ffffff-no-rj"
+          },
+          "high": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nqD1NGOFrCc5it2ApDwnyFheCg3TnPEph8HjexGsWdhVw=s800-c-k-c0x00ffffff-no-rj"
+          }
+        }
+      }
+    },
+    {
+      "kind": "youtube#subscription",
+      "etag": "jk72YqZ4hmpFutJCwIk2-c3tvGk",
       "id": "ziwIEodEFoTyzzbLAgeX8GAsDkVm3hM3p0-BVEf55Es",
       "snippet": {
         "publishedAt": "2021-03-09T03:14:15.184318Z",
-        "title": "Burback",
         "description": "",
         "resourceId": {
           "kind": "youtube#channel",
@@ -1244,25 +1046,24 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXH08fnzejv8mEerbTg7Dz1Zeoy28R0z7TGliT7=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/dC_Pz7VsBby0yNaKKiKU9t-MQw6fRSGuQP1qrCOSBH8dkC8Zuivqau0beDj0eCqF0W0WHGsm=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXH08fnzejv8mEerbTg7Dz1Zeoy28R0z7TGliT7=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/dC_Pz7VsBby0yNaKKiKU9t-MQw6fRSGuQP1qrCOSBH8dkC8Zuivqau0beDj0eCqF0W0WHGsm=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AL5GRJXH08fnzejv8mEerbTg7Dz1Zeoy28R0z7TGliT7=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/dC_Pz7VsBby0yNaKKiKU9t-MQw6fRSGuQP1qrCOSBH8dkC8Zuivqau0beDj0eCqF0W0WHGsm=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }
     },
     {
       "kind": "youtube#subscription",
-      "etag": "1LyC1sUYoqf3XPSQKasL5KnetCE",
+      "etag": "L4IYWcCdPuAqCFIQiC0TNK_D4dQ",
       "id": "ziwIEodEFoS3wFxj9zy9z53D98syG6JtTMyxOrdVqug",
       "snippet": {
         "publishedAt": "2021-03-10T04:28:10.121439Z",
-        "title": "Daryl Talks Games",
-        "description": "Hello there! My name is Daryl and on this channel I write and create videos on the interaction between psychology, video games, video game design, and life. I have a Bachelor’s degree in psychology and have spent more hours with a controller in my hand than I’d like to admit. Thanks for visiting my channel! I typically release new videos once a month. **This channel's content is intended for those ages 13 and up.**",
+        "description": "Making solid B tier video essays since 2017\n\n \nFor ad integration inquires please contact partnerships@bellvines.com\nFor everything else, daryltalksgames@gmail.com",
         "resourceId": {
           "kind": "youtube#channel",
           "channelId": "UCJfJWct8jN1RpCuVWk3zHTA"
@@ -1270,13 +1071,163 @@
         "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/u4MqDCp7IY-cUxeaYeIaYGU7JcThkcI_SnFSj75ZxZ9Q3_fbYg0QQLGh6912zSA_demc8hkA=s88-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/fYUvEq58R7iWDeaNjZ9UZtxBfjHbattdY2IHXCJVPprgS7wqzxine0gIUTjPzbOh0wmAazcIRQ=s88-c-k-c0x00ffffff-no-rj"
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/u4MqDCp7IY-cUxeaYeIaYGU7JcThkcI_SnFSj75ZxZ9Q3_fbYg0QQLGh6912zSA_demc8hkA=s240-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/fYUvEq58R7iWDeaNjZ9UZtxBfjHbattdY2IHXCJVPprgS7wqzxine0gIUTjPzbOh0wmAazcIRQ=s240-c-k-c0x00ffffff-no-rj"
           },
           "high": {
-            "url": "https://yt3.ggpht.com/u4MqDCp7IY-cUxeaYeIaYGU7JcThkcI_SnFSj75ZxZ9Q3_fbYg0QQLGh6912zSA_demc8hkA=s800-c-k-c0x00ffffff-no-rj"
+            "url": "https://yt3.ggpht.com/fYUvEq58R7iWDeaNjZ9UZtxBfjHbattdY2IHXCJVPprgS7wqzxine0gIUTjPzbOh0wmAazcIRQ=s800-c-k-c0x00ffffff-no-rj"
+          }
+        }
+      }
+    },
+    {
+      "kind": "youtube#subscription",
+      "etag": "SRifo-Kx_2oSBdKAugaF2pzkDKM",
+      "id": "ziwIEodEFoTfeyvSY8ovfZnvdfcQdSA51IEnIjNEZho",
+      "snippet": {
+        "publishedAt": "2020-08-01T15:53:31.152128Z",
+        "description": "Taking the guesswork out of shopping for new tech. \n\nWe've all been down the rabbit hole when it comes to technology. It can be a time-consuming process to figure out if a product is worth your time and money. We create product reviews, step-by-step guides, developer interviews, and a variety of other videos focused on PC and mobile gaming.\n\n\n*I will never send you a comment to contact me outside of YouTube for any purpose unless it is via my official e-mail or Discord server. If you get a comment telling you to contact someone on Telegram or any other chatting service, this is a scam.*",
+        "resourceId": {
+          "kind": "youtube#channel",
+          "channelId": "UCKF5151a6yAooOILrYTvfJg"
+        },
+        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
+        "thumbnails": {
+          "default": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nJIt1F7-6vtiB0X5miCCYzfUbfBz_CWFYZVzcr3PedqRk=s88-c-k-c0x00ffffff-no-rj"
+          },
+          "medium": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nJIt1F7-6vtiB0X5miCCYzfUbfBz_CWFYZVzcr3PedqRk=s240-c-k-c0x00ffffff-no-rj"
+          },
+          "high": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_nJIt1F7-6vtiB0X5miCCYzfUbfBz_CWFYZVzcr3PedqRk=s800-c-k-c0x00ffffff-no-rj"
+          }
+        }
+      }
+    },
+    {
+      "kind": "youtube#subscription",
+      "etag": "piAFfNJ9WkECgGNCOtk-CnTJEsw",
+      "id": "ziwIEodEFoTyKHSOwdlD4MoiLHo8-f4qxUIxJ7Y6pOs",
+      "snippet": {
+        "publishedAt": "2018-06-27T17:40:59.981281Z",
+        "description": "Just a gaymer bread with an odd talking voice. I like helping folks get into games I like through comedy guides, retrospects & reviews. Subscribe or else plz & thank \n\n\n***THE NEXT \"FOR BEGINNERS\" WILL BE ON.....Final Fantasy 7, FF7 Remake and THEN Digital Devil Saga 2***",
+        "resourceId": {
+          "kind": "youtube#channel",
+          "channelId": "UCKn72wsF89-DxlA1jlq_fUA"
+        },
+        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
+        "thumbnails": {
+          "default": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_l77CFOJagUsgnph3uYfqWlt9RntYJCd0_CPIyOzMmEIxk=s88-c-k-c0x00ffffff-no-rj"
+          },
+          "medium": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_l77CFOJagUsgnph3uYfqWlt9RntYJCd0_CPIyOzMmEIxk=s240-c-k-c0x00ffffff-no-rj"
+          },
+          "high": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_l77CFOJagUsgnph3uYfqWlt9RntYJCd0_CPIyOzMmEIxk=s800-c-k-c0x00ffffff-no-rj"
+          }
+        }
+      }
+    },
+    {
+      "kind": "youtube#subscription",
+      "etag": "WQvas-HzhOAho3sAvc98C4QEWME",
+      "id": "ziwIEodEFoS3wFxj9zy9z7MRwa6ULqSz1sqJB2CU1P4",
+      "snippet": {
+        "publishedAt": "2017-04-30T15:37:18Z",
+        "description": "",
+        "resourceId": {
+          "kind": "youtube#channel",
+          "channelId": "UCLignB5Xr1L18PluS0_-Lcw"
+        },
+        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
+        "thumbnails": {
+          "default": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_n1Dq_lAgFjJqDNgkO-1CDvwebkj6F570uX5r3b5tRrSQ=s88-c-k-c0x00ffffff-no-rj"
+          },
+          "medium": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_n1Dq_lAgFjJqDNgkO-1CDvwebkj6F570uX5r3b5tRrSQ=s240-c-k-c0x00ffffff-no-rj"
+          },
+          "high": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_n1Dq_lAgFjJqDNgkO-1CDvwebkj6F570uX5r3b5tRrSQ=s800-c-k-c0x00ffffff-no-rj"
+          }
+        }
+      }
+    },
+    {
+      "kind": "youtube#subscription",
+      "etag": "IojrQocySOMSuo_V1LfyPYPTs5o",
+      "id": "ziwIEodEFoTyKHSOwdlD4MWBI96NNbSzPazkHT8QVpw",
+      "snippet": {
+        "publishedAt": "2020-04-30T15:03:26.091512Z",
+        "description": "We're Dan and Mike, and we make Design Doc! It's a game design channel with video essays on all kinds of gaming topics. Everything's fair game - RPGs, action, racing, adventure, puzzle, retro and modern, AAA and indie - every corner of the gaming world has something worth learning, and we love to guide people to the good stuff, pros and fans alike. \nBusiness email: warbotdesign@gmail.com",
+        "resourceId": {
+          "kind": "youtube#channel",
+          "channelId": "UCNOVwMpD-5A1xzcQGbIHNeA"
+        },
+        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
+        "thumbnails": {
+          "default": {
+            "url": "https://yt3.ggpht.com/jI2N16qlSsdIVoWo_awUM79mqiUY5GcKP5lv-AZcOce7SS22Qbh_Mn6phj99Q36LcCKhI3SH4A=s88-c-k-c0x00ffffff-no-rj"
+          },
+          "medium": {
+            "url": "https://yt3.ggpht.com/jI2N16qlSsdIVoWo_awUM79mqiUY5GcKP5lv-AZcOce7SS22Qbh_Mn6phj99Q36LcCKhI3SH4A=s240-c-k-c0x00ffffff-no-rj"
+          },
+          "high": {
+            "url": "https://yt3.ggpht.com/jI2N16qlSsdIVoWo_awUM79mqiUY5GcKP5lv-AZcOce7SS22Qbh_Mn6phj99Q36LcCKhI3SH4A=s800-c-k-c0x00ffffff-no-rj"
+          }
+        }
+      }
+    },
+    {
+      "kind": "youtube#subscription",
+      "etag": "LjAZMzxsPXKkH0ASs6DFiHdzgxU",
+      "id": "ziwIEodEFoTfeyvSY8ovffBSwvJtkYtkanDNZGxgV3E",
+      "snippet": {
+        "publishedAt": "2023-10-17T15:20:05.998248Z",
+        "description": "Quick Vids (QuiVids) by Nando from Nando v Movies",
+        "resourceId": {
+          "kind": "youtube#channel",
+          "channelId": "UCNSsNByP4GiEFNS-RIPHW7w"
+        },
+        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
+        "thumbnails": {
+          "default": {
+            "url": "https://yt3.ggpht.com/p84R_k7-vOBUppwff0GAPoivFurjIAXEVjNIbybsvx40kSWTtJmFPDVBen-JLYs2oHbLF1xM=s88-c-k-c0x00ffffff-no-rj"
+          },
+          "medium": {
+            "url": "https://yt3.ggpht.com/p84R_k7-vOBUppwff0GAPoivFurjIAXEVjNIbybsvx40kSWTtJmFPDVBen-JLYs2oHbLF1xM=s240-c-k-c0x00ffffff-no-rj"
+          },
+          "high": {
+            "url": "https://yt3.ggpht.com/p84R_k7-vOBUppwff0GAPoivFurjIAXEVjNIbybsvx40kSWTtJmFPDVBen-JLYs2oHbLF1xM=s800-c-k-c0x00ffffff-no-rj"
+          }
+        }
+      }
+    },
+    {
+      "kind": "youtube#subscription",
+      "etag": "Jru8P9W1Zo6lnadm71iKa--fk6k",
+      "id": "ziwIEodEFoTyKHSOwdlD4KUeQBL9CxKla4htXo0FZ7g",
+      "snippet": {
+        "publishedAt": "2013-11-09T03:33:29Z",
+        "description": "Schmoyoho is made by The Gregory Brothers: Michael, Andrew, Sarah, and Evan. This channel is where we Songify® the universe in an attempt to create a cosmic dance party that brings world peace to all.\n\nVideos / series here include Songify the News (previously Auto-Tune the News), Songify This, the Takeo Cinematic Universe, and other strange offerings, that hopefully can help you thrust your pelvis in rhythm.\n\nSend us suggestions here or on other socials for our next video—then we can all sing and dance along together, our true destiny.\n\nbusiness inquiries: schmoyoho@moreyellow.com",
+        "resourceId": {
+          "kind": "youtube#channel",
+          "channelId": "UCNYrK4tc5i1-eL8TXesH2pg"
+        },
+        "channelId": "UCzbYAP0wbeJpPmFCO15ZL1g",
+        "thumbnails": {
+          "default": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mvZqo6nHSCmHFFYUpDjKcKXcltEIljuuDxFrCo48UaW6Y=s88-c-k-c0x00ffffff-no-rj"
+          },
+          "medium": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mvZqo6nHSCmHFFYUpDjKcKXcltEIljuuDxFrCo48UaW6Y=s240-c-k-c0x00ffffff-no-rj"
+          },
+          "high": {
+            "url": "https://yt3.ggpht.com/ytc/AIdro_mvZqo6nHSCmHFFYUpDjKcKXcltEIljuuDxFrCo48UaW6Y=s800-c-k-c0x00ffffff-no-rj"
           }
         }
       }

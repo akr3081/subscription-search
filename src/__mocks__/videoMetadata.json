@@ -1,0 +1,320 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "tnlJVJu7SP1PUwxRPcegUuqA-hs",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "t0__6rTE3gwO6hImZPvg7ZI62BQ",
+      "id": "ahyd-tw2s0Q",
+      "snippet": {
+        "publishedAt": "2018-07-09T15:00:00Z",
+        "channelId": "UCDm-nYAJuqrBIy57EgWAymw",
+        "title": "VG Myths - Can You Beat Super Mario 3D World Without Jumping?",
+        "description": "In this episode of VG Myths we take on another jumpless challenge, this time in the Wii U classic Super Mario 3D World!\n\nIf you'd like to support the channel and make possible shows like VG Myths, Dumb Fun Gaming, A Complete Review, and my general game analysis series, please consider backing on Patreon~ https://patreon.com/Gamechamp\n\nI also often stream games on Twitch. If you'd like to join the funtimes, check in at https://twitch.tv/gamechamp3k\n\nMedia Sources\nSuper Mario 3D World\nSuper Mario Odyssey\nYu-Gi-Oh! (OCG)",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ahyd-tw2s0Q/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ahyd-tw2s0Q/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ahyd-tw2s0Q/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/ahyd-tw2s0Q/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/ahyd-tw2s0Q/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Gamechamp3000",
+        "tags": [
+          "gamechamp",
+          "gamechamp3000",
+          "gaming",
+          "video games",
+          "vg myths",
+          "super mario 3d world",
+          "nintendo",
+          "mario",
+          "jumpless",
+          "without jumping",
+          "cats",
+          "challenge run",
+          "no jumps"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "VG Myths - Can You Beat Super Mario 3D World Without Jumping?",
+          "description": "In this episode of VG Myths we take on another jumpless challenge, this time in the Wii U classic Super Mario 3D World!\n\nIf you'd like to support the channel and make possible shows like VG Myths, Dumb Fun Gaming, A Complete Review, and my general game analysis series, please consider backing on Patreon~ https://patreon.com/Gamechamp\n\nI also often stream games on Twitch. If you'd like to join the funtimes, check in at https://twitch.tv/gamechamp3k\n\nMedia Sources\nSuper Mario 3D World\nSuper Mario Odyssey\nYu-Gi-Oh! (OCG)"
+        },
+        "defaultAudioLanguage": "en"
+      },
+      "contentDetails": {
+        "duration": "PT12M56S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "true",
+        "licensedContent": true,
+        "contentRating": {},
+        "projection": "rectangular"
+      },
+      "statistics": {
+        "viewCount": "7844385",
+        "likeCount": "88927",
+        "favoriteCount": "0",
+        "commentCount": "9110"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "WUKrFSd5NcjQxqzf3lKQKXLQIqs",
+      "id": "6HZ-nfMfu8o",
+      "snippet": {
+        "publishedAt": "2017-12-10T17:00:01Z",
+        "channelId": "UCDm-nYAJuqrBIy57EgWAymw",
+        "title": "VG Myths - Can You Beat Super Mario Odyssey Without Jumping?",
+        "description": "Presenting the successor to Hyrule Myths: VG Myths! Inspired by the SM64 A button challenge, I made it my mission to beat Super Mario Odyssey without jumping. Time to play this game the way it wasn't meant to be played!\n\nIf you'd like to support the channel and make possible shows like VG Myths, A Complete Look, Dumb Fun Gaming, and my general game analysis series, please consider backing on Patreon~ https://www.patreon.com/Gamechamp\n\nEach attempt of this run was recorded live. If you'd like to join the funtimes, I stream at https://www.twitch.tv/gamechamp3k\n\nAdditionally, the archives for each attempt of the No Jump challenge can be viewed in their entirety at the Let's Strem channel: https://www.youtube.com/letsstrem",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/6HZ-nfMfu8o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/6HZ-nfMfu8o/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/6HZ-nfMfu8o/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/6HZ-nfMfu8o/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/6HZ-nfMfu8o/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Gamechamp3000",
+        "tags": [
+          "gamechamp",
+          "gamechamp3k",
+          "gamechamp3000",
+          "gaming",
+          "video games",
+          "super mario odyssey",
+          "nintendo",
+          "nintendo switch",
+          "vg myths",
+          "hyrule myths",
+          "no jump",
+          "no jumping",
+          "jumpless",
+          "no jump run",
+          "mario",
+          "cappy",
+          "bowser",
+          "without jumping",
+          "a press",
+          "can you beat super mario odyssey without jumping"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "VG Myths - Can You Beat Super Mario Odyssey Without Jumping?",
+          "description": "Presenting the successor to Hyrule Myths: VG Myths! Inspired by the SM64 A button challenge, I made it my mission to beat Super Mario Odyssey without jumping. Time to play this game the way it wasn't meant to be played!\n\nIf you'd like to support the channel and make possible shows like VG Myths, A Complete Look, Dumb Fun Gaming, and my general game analysis series, please consider backing on Patreon~ https://www.patreon.com/Gamechamp\n\nEach attempt of this run was recorded live. If you'd like to join the funtimes, I stream at https://www.twitch.tv/gamechamp3k\n\nAdditionally, the archives for each attempt of the No Jump challenge can be viewed in their entirety at the Let's Strem channel: https://www.youtube.com/letsstrem"
+        },
+        "defaultAudioLanguage": "en"
+      },
+      "contentDetails": {
+        "duration": "PT13M55S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "true",
+        "licensedContent": true,
+        "contentRating": {},
+        "projection": "rectangular"
+      },
+      "statistics": {
+        "viewCount": "7513106",
+        "likeCount": "145656",
+        "favoriteCount": "0",
+        "commentCount": "10939"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "0zrOFOEZY39-iIBacRm-5f5aw1Q",
+      "id": "32lx_B8HQbk",
+      "snippet": {
+        "publishedAt": "2023-12-23T15:00:07Z",
+        "channelId": "UCDm-nYAJuqrBIy57EgWAymw",
+        "title": "VG Myths - Can You Beat Super Mario Bros. Wonder Without Collecting Coins?",
+        "description": "Tonight on VG Myths, we try to beat Super Mario Bros. Wonder for the Nintendo Switch coinless. How original!\n\nSpecial Guest Starring:\nyoutube.com/WarioFan63\nhttps://twitch.tv/takaratakedown\n\nIf you'd like to support the channel and make possible shows like VG Myths, Every Change To, Region Freedom, Dumb Fun Gaming, and A Complete Review, please consider backing on Patreon~\nhttps://patreon.com/Gamechamp\n\nThis run was streamed live on Twitch! If you'd like to catch me when I'm live, you can head to:\nhttps://twitch.tv/gamechamp3k\n\nIf you'd like to watch the stream archives, they're on the Let's Strem channel. I stream directly on there too, now!\nhttps://www.youtube.com/letsstrem\n\n*Media Sources*\nSuper Mario Bros. Wonder\nThe Misadventures of Tron Bonne\nyoutube.com/cmeecraftgaming\nyoutube.com/nathanielbandy\nyoutube.com/ceavegaming\nyoutube.com/nicobbq",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/32lx_B8HQbk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/32lx_B8HQbk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/32lx_B8HQbk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/32lx_B8HQbk/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/32lx_B8HQbk/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Gamechamp3000",
+        "tags": [
+          "gamechamp",
+          "gamechamp3000",
+          "gaming",
+          "video games",
+          "vg myths",
+          "challenge",
+          "coinless",
+          "no coins",
+          "nintendo",
+          "switch",
+          "mario",
+          "wonder"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "VG Myths - Can You Beat Super Mario Bros. Wonder Without Collecting Coins?",
+          "description": "Tonight on VG Myths, we try to beat Super Mario Bros. Wonder for the Nintendo Switch coinless. How original!\n\nSpecial Guest Starring:\nyoutube.com/WarioFan63\nhttps://twitch.tv/takaratakedown\n\nIf you'd like to support the channel and make possible shows like VG Myths, Every Change To, Region Freedom, Dumb Fun Gaming, and A Complete Review, please consider backing on Patreon~\nhttps://patreon.com/Gamechamp\n\nThis run was streamed live on Twitch! If you'd like to catch me when I'm live, you can head to:\nhttps://twitch.tv/gamechamp3k\n\nIf you'd like to watch the stream archives, they're on the Let's Strem channel. I stream directly on there too, now!\nhttps://www.youtube.com/letsstrem\n\n*Media Sources*\nSuper Mario Bros. Wonder\nThe Misadventures of Tron Bonne\nyoutube.com/cmeecraftgaming\nyoutube.com/nathanielbandy\nyoutube.com/ceavegaming\nyoutube.com/nicobbq"
+        },
+        "defaultAudioLanguage": "en"
+      },
+      "contentDetails": {
+        "duration": "PT1H28M45S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "true",
+        "licensedContent": true,
+        "contentRating": {},
+        "projection": "rectangular"
+      },
+      "statistics": {
+        "viewCount": "497623",
+        "likeCount": "21324",
+        "favoriteCount": "0",
+        "commentCount": "1371"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "ii8otS-SRcnSxPmjz86_sXDgwSo",
+      "id": "7hyftA7vRp4",
+      "snippet": {
+        "publishedAt": "2018-10-13T15:00:00Z",
+        "channelId": "UCDm-nYAJuqrBIy57EgWAymw",
+        "title": "VG Myths - Can You Beat New Super Mario Bros. 2 Without Collecting Any Coins?",
+        "description": "In today's episode of VG Myths, we decide to beat the most coin-littered Mario game without collecting a single one. It's possible a metaphor!\n\nIf you'd like to support the channel and make possible shows like VG Myths, Dumb Fun Gaming, A Complete Review, and my general game analysis series, please consider backing on Patreon~ https://patreon.com/Gamechamp\n\nI also sometimes stream games on Twitch. If you'd like to join the funtimes, check in at https://twitch.tv/gamechamp3k\n\nFor the No Commentary demonstration of the entire run: https://youtu.be/yfJ4_aFgWmI\n\nMedia Sources\nNew Super Mario Bros. 2\nKnack\nNintendo Unity's Coinless Run: https://youtu.be/y0CVz897BfU\nCeave Gaming's Coinless NSMBU Run: https://youtu.be/mDZjJ0OREaA",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7hyftA7vRp4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7hyftA7vRp4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7hyftA7vRp4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/7hyftA7vRp4/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/7hyftA7vRp4/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Gamechamp3000",
+        "tags": [
+          "gamechamp",
+          "gamechamp3000",
+          "gaming",
+          "video games",
+          "vg myths",
+          "new super mario bros 2",
+          "mario",
+          "nintendo",
+          "3ds",
+          "coinless",
+          "without collecting coins",
+          "challenge",
+          "can you beat"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "VG Myths - Can You Beat New Super Mario Bros. 2 Without Collecting Any Coins?",
+          "description": "In today's episode of VG Myths, we decide to beat the most coin-littered Mario game without collecting a single one. It's possible a metaphor!\n\nIf you'd like to support the channel and make possible shows like VG Myths, Dumb Fun Gaming, A Complete Review, and my general game analysis series, please consider backing on Patreon~ https://patreon.com/Gamechamp\n\nI also sometimes stream games on Twitch. If you'd like to join the funtimes, check in at https://twitch.tv/gamechamp3k\n\nFor the No Commentary demonstration of the entire run: https://youtu.be/yfJ4_aFgWmI\n\nMedia Sources\nNew Super Mario Bros. 2\nKnack\nNintendo Unity's Coinless Run: https://youtu.be/y0CVz897BfU\nCeave Gaming's Coinless NSMBU Run: https://youtu.be/mDZjJ0OREaA"
+        },
+        "defaultAudioLanguage": "en"
+      },
+      "contentDetails": {
+        "duration": "PT10M46S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": true,
+        "contentRating": {},
+        "projection": "rectangular"
+      },
+      "statistics": {
+        "viewCount": "4972210",
+        "likeCount": "67500",
+        "favoriteCount": "0",
+        "commentCount": "5185"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 4,
+    "resultsPerPage": 4
+  }
+}

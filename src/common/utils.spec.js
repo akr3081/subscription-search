@@ -1,3 +1,4 @@
+import ChannelsMock from '../__mocks__/channels.json';
 import SearchResultsMock from '../__mocks__/searchResults.json';
 import SubscriptionsMock from '../__mocks__/subscriptions.json';
 import { fetchSubscriptionData, getSubscriptions, fetchChannelResults, getSearchResults } from './utils.js';
@@ -40,7 +41,7 @@ describe('utils', () => {
     it('should get subscriptions', async () => {
       process.env.MOCK_API_CALLS = 'true';
       const subs = await getSubscriptions({ apiKey: 'mock-api-key', channelId: 'mock-channel-id' });
-      expect(subs).toEqual(SubscriptionsMock.items);
+      expect(subs.length).toEqual(ChannelsMock.items.length);
     });
 
     it('should throw if there is an error in the fetch response', async () => {
@@ -93,8 +94,8 @@ describe('utils', () => {
       process.env.MOCK_API_CALLS = 'true';
 
       const results = await getSearchResults({
-        selectedSubscriptions: [SubscriptionsMock.items[0].snippet.resourceId.channelId],
-        subscriptions: SubscriptionsMock.items,
+        selectedSubscriptions: [ChannelsMock.items[0].id],
+        subscriptions: ChannelsMock.items,
         apiKey: 'mock-api-key',
         searchTerm: 'mock-search-term'
       });
@@ -115,8 +116,8 @@ describe('utils', () => {
       );
 
       const results = await getSearchResults({
-        selectedSubscriptions: [SubscriptionsMock.items[0].snippet.resourceId.channelId],
-        subscriptions: SubscriptionsMock.items,
+        selectedSubscriptions: [ChannelsMock.items[0].id],
+        subscriptions: ChannelsMock.items,
         apiKey: 'mock-api-key',
         searchTerm: 'mock-search-term'
       });
@@ -139,8 +140,8 @@ describe('utils', () => {
 
       expect(async () => {
         await getSearchResults({
-          selectedSubscriptions: [SubscriptionsMock.items[0].snippet.resourceId.channelId],
-          subscriptions: SubscriptionsMock.items,
+          selectedSubscriptions: [ChannelsMock.items[0].id],
+          subscriptions: ChannelsMock.items,
           apiKey: 'mock-api-key',
           searchTerm: 'mock-search-term'
         });

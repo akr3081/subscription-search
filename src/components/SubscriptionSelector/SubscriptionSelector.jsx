@@ -16,7 +16,7 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
 
   const sortedItems = subscriptions.sort((a, b) => a?.snippet?.title?.localeCompare(b.snippet.title));
 
-  const selected = sortedItems.filter(item => selectedSubscriptions.includes(item.snippet.resourceId.channelId));
+  const selected = sortedItems.filter(item => selectedSubscriptions.includes(item.id));
   const unSelected = sortedItems.filter(item => !selected.includes(item));
 
   const selectedCount = selectedSubscriptions?.length;
@@ -27,7 +27,7 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
   }, [subscriptions]);
 
   const handleSelect = subscription => {
-    const channelId = subscription.snippet.resourceId.channelId;
+    const channelId = subscription.id;
     const isSelected = selectedSubscriptions.includes(channelId);
     let newSelectedSubs = [...selectedSubscriptions];
 
@@ -63,7 +63,7 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
             <SubscriptionCard
               name={subscription.snippet.title}
               image={subscription.snippet.thumbnails.default.url}
-              isSelected={selectedSubscriptions.includes(subscription.snippet.resourceId.channelId)}
+              isSelected={selectedSubscriptions.includes(subscription.id)}
               handleSelect={() => {
                 handleSelect(subscription);
               }}
@@ -77,7 +77,7 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
             <SubscriptionCard
               name={subscription.snippet.title}
               image={subscription.snippet.thumbnails.default.url}
-              isSelected={selectedSubscriptions.includes(subscription.snippet.resourceId.channelId)}
+              isSelected={selectedSubscriptions.includes(subscription.id)}
               handleSelect={() => {
                 handleSelect(subscription);
               }}

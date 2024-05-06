@@ -1,6 +1,8 @@
 import { BASE_URL } from './constants';
+import ChannelsMock from '../__mocks__/channels.json';
 import SearchResultsMock from '../__mocks__/searchResults.json';
 import SubscriptionMock from '../__mocks__/subscriptions.json';
+import VideoMetadataMock from '../__mocks__/videoMetadata.json';
 
 /**
  * Returns a formatted string of how long ago a given timestamp was
@@ -49,6 +51,18 @@ export const fetchSubscriptionData = async ({ channelId, apiKey, pageToken }) =>
   return await res.json();
 };
 
+export const fetchChannelData = async ({ subscriptionData, apiKey, pageToken }) => {
+  if (process.env.MOCK_API_CALLS === 'true') return pageToken === '' ? ChannelsMock : { items: [] };
+
+  const channelIds = subscriptionData?.items?.map(item => item?.snippet?.resourceId?.channelId) ?? [];
+  const channelIdsParam = channelIds.join(',');
+
+  const res = await fetch(
+    `${BASE_URL}/channels?key=${apiKey}&part=snippet&id=${channelIdsParam}&order=alphabetical&maxResults=50`
+  );
+  return await res.json();
+};
+
 /**
  * Gets a list of subscriptions for a given channel
  * @param {string} channelId - The channel for which subscriptions are fetched
@@ -60,19 +74,23 @@ export const getSubscriptions = async ({ channelId, apiKey }) => {
   let pageToken = '';
 
   do {
-    const res = await fetchSubscriptionData({ channelId, apiKey, pageToken });
+    const subscriptionData = await fetchSubscriptionData({ channelId, apiKey, pageToken });
+    if (subscriptionData.error) throw new Error(`fetchSubscriptionData error: ${subscriptionData.error.message}`);
 
-    // Propagate API errors
-    if (res.error) throw new Error(res.error.message);
+    // Get associated channel data for each subscription
+    const channelData = await fetchChannelData({ subscriptionData, apiKey, pageToken });
+    if (channelData.error) throw new Error(`fetchChannelData error: ${channelData.error.message}`);
 
-    pageToken = res.nextPageToken;
-    if (res?.items?.length) subscriptionsList.push(...res.items);
+    pageToken = subscriptionData.nextPageToken;
+    if (channelData?.items?.length) subscriptionsList.push(...channelData.items);
   } while (pageToken);
 
   return subscriptionsList;
 };
 
 export const fetchVideoMetadata = async ({ videoIds, apiKey }) => {
+  if (process.env.MOCK_API_CALLS === 'true') return VideoMetadataMock;
+
   const res = await fetch(
     `${BASE_URL}/videos?key=${apiKey}&id=${videoIds}&maxResults=50&part=statistics,contentDetails,snippet&safeSearch=none&type=video`
   );
@@ -152,11 +170,12 @@ export const getSearchResults = async ({ selectedSubscriptions, subscriptions, a
     const nextPageToken = res?.nextPageToken;
     const items = await getMappedVideoResults({ items: res?.items, apiKey });
 
-    const channelData = subscriptions.find(sub => sub.snippet.resourceId.channelId === subId);
+    const channelData = subscriptions.find(sub => sub.id === subId);
     const title = items?.[0]?.channelTitle ?? channelData.snippet.title;
     const image = channelData.snippet.thumbnails.medium;
+    const link = channelData.snippet.customUrl;
 
-    channelResults.push({ id: subId, title, image, pageToken: nextPageToken, items });
+    channelResults.push({ id: subId, title, image, link, pageToken: nextPageToken, items });
   }
 
   return channelResults;

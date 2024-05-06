@@ -1,14 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { SUBS_HEADER } from '../../common/constants';
-import SubscriptionsMock from '../../__mocks__/subscriptions.json';
+import ChannelsMock from '../../__mocks__/channels.json';
 import SubscriptionSelector from './SubscriptionSelector.jsx';
 import userEvent from '@testing-library/user-event';
 
 describe('SubscriptionSelector', () => {
   const props = {
-    subscriptions: SubscriptionsMock.items,
-    selectedSubscriptions: ['UC-oYqxpi6TO1J7BjQksSuOA', 'UC-uPNldCnPeasW6iUSD2ODQ'],
+    subscriptions: ChannelsMock.items,
+    selectedSubscriptions: ['UCCfOTX8l2zpgiALWKBx43Mg', 'UC2NU0s1H0p9N4jvF7qV59vA'],
     setSelectedSubscriptions: jest.fn(),
     handleRefresh: jest.fn(),
     isUserAuthenticated: true
@@ -68,9 +68,9 @@ describe('SubscriptionSelector', () => {
     await user.click(subCardAddIconButton);
 
     expect(props.setSelectedSubscriptions).toHaveBeenLastCalledWith([
-      'UC-oYqxpi6TO1J7BjQksSuOA',
-      'UC-uPNldCnPeasW6iUSD2ODQ',
-      'UC16fG7-summGsrcqkkYb6hg'
+      'UCCfOTX8l2zpgiALWKBx43Mg',
+      'UC2NU0s1H0p9N4jvF7qV59vA',
+      'UCBODyKF0JMbUd6D9Bklyzbw'
     ]);
   });
 
@@ -81,7 +81,7 @@ describe('SubscriptionSelector', () => {
     const subCardSubtractIconButton = screen.getAllByTestId('icon_button_subtract')[0];
     await user.click(subCardSubtractIconButton);
 
-    expect(props.setSelectedSubscriptions).toHaveBeenLastCalledWith(['UC-uPNldCnPeasW6iUSD2ODQ']);
+    expect(props.setSelectedSubscriptions).toHaveBeenLastCalledWith(['UCCfOTX8l2zpgiALWKBx43Mg']);
   });
 
   it('should call handleRefresh when header sync button is clicked', async () => {
