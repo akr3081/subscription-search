@@ -11,7 +11,7 @@ const HomePage = () => {
   const { apiKey, channelId, searchTerm, subscriptions, setApiKey, setChannelId, setSearchTerm, setSubscriptions } =
     useStore();
 
-  const [isUserAuthenticated, setIsUserAuthenticated] = useState(apiKey && channelId);
+  const [isUserAuthenticated, setIsUserAuthenticated] = useState(Boolean(apiKey && channelId));
   const [selectedSubscriptions, setSelectedSubscriptions] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
@@ -94,7 +94,7 @@ const HomePage = () => {
         handleSubmitAuth={handleSubmitAuth}
         handleSubmitSearch={handleSubmitSearch}
         isUserAuthenticated={isUserAuthenticated}
-        isSearchEnabled={selectedSubscriptions?.length}
+        isSearchEnabled={Boolean(selectedSubscriptions?.length)}
         className={styles.header}
       />
 

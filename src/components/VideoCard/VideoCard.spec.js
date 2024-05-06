@@ -8,6 +8,9 @@ describe('VideoCard', () => {
     const props = {
       videoId: 'mock-id-123',
       title: 'mock-title-123',
+      duration: '12:21',
+      views: '1.2k views',
+      videoAge: '2 years old',
       thumbnails: {
         medium: {
           url: 'https://i.ytimg.com/vi/q7EbdAxWQ9g/default.jpg',

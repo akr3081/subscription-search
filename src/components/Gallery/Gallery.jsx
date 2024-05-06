@@ -45,7 +45,7 @@ const Gallery = ({ title, image, link, items, showLoadMore, loadMoreItems, handl
         <div>
           <div className={styles.items}>
             {items.map(item => (
-              <VideoCard videoId={item.videoId} title={item.title} videoAge={item.videoAge} views={item.views} duration={item.duration} thumbnails={item.thumbnails} />
+              <VideoCard videoId={item.videoId} title={item.title} videoAge={item.videoAge} views={item.views} duration={item.duration} thumbnails={item.thumbnails} key={`gallery_${item.videoId}`} />
             ))}
           </div>
           {showLoadMore ? (

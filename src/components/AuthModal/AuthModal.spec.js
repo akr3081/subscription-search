@@ -19,7 +19,7 @@ describe('AuthModal', () => {
   const props = {
     isOpen: true,
     handleClose: jest.fn(),
-    handleSubmit: jest.fn(),
+    handleSubmit: jest.fn(e => e.preventDefault()),
     isUserAuthenticated: false
   };
 

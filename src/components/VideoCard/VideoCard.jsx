@@ -19,9 +19,9 @@ const VideoCard = ({ videoId, title, views, videoAge, duration, thumbnails }) =>
     <div className={styles.cardContent}>
       <h3 className={styles.title}>{title}</h3>
       <span className={styles.byline}>
-        <p>{views}</p>
-        <span className={styles.dot} />
-        <p>{videoAge}</p>
+        {views ? (<p>{views}</p>) : null}
+        {views && videoAge ? (<span className={styles.dot} />) : null}
+        {videoAge ? (<p>{videoAge}</p>) : null}
       </span>
     </div>
   </a>

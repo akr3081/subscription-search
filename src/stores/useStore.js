@@ -1,8 +1,8 @@
 import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
 const devConfig = { name: 'Subscription Search' };
-const persistConfig = { name: 'subscription-search', getStorage: () => globalThis.localStorage };
+const persistConfig = { name: 'subscription-search', storage: createJSONStorage(() => globalThis.localStorage) };
 
 const state = set => ({
   apiKey: '',
