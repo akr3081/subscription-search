@@ -1,8 +1,4 @@
-import { BASE_URL } from './constants';
-import ChannelsMock from '../__mocks__/channels.json';
-import SearchResultsMock from '../__mocks__/searchResults.json';
-import SubscriptionMock from '../__mocks__/subscriptions.json';
-import VideoMetadataMock from '../__mocks__/videoMetadata.json';
+import { fetchChannelData, fetchSearchResults, fetchSubscriptionData, fetchVideoMetadata } from './service.js';
 
 /**
  * Returns a formatted string of how long ago a given timestamp was
@@ -36,34 +32,6 @@ const formatDateString = timestamp => {
 };
 
 /**
- * Gets subscriptions based on the current pageToken
- * @param {string} channelId - The channel for which subscriptions are fetched
- * @param {string} apiKey - The api key used to fetch data
- * @param {string} pageToken - Token for paginated results
- * @returns {object} Subscription payload
- */
-export const fetchSubscriptionData = async ({ channelId, apiKey, pageToken }) => {
-  if (process.env.MOCK_API_CALLS === 'true') return pageToken === '' ? SubscriptionMock : { items: [] };
-
-  const res = await fetch(
-    `${BASE_URL}/subscriptions?key=${apiKey}&part=snippet&channelId=${channelId}&order=alphabetical&maxResults=50&pageToken=${pageToken}`
-  );
-  return await res.json();
-};
-
-export const fetchChannelData = async ({ subscriptionData, apiKey, pageToken }) => {
-  if (process.env.MOCK_API_CALLS === 'true') return pageToken === '' ? ChannelsMock : { items: [] };
-
-  const channelIds = subscriptionData?.items?.map(item => item?.snippet?.resourceId?.channelId) ?? [];
-  const channelIdsParam = channelIds.join(',');
-
-  const res = await fetch(
-    `${BASE_URL}/channels?key=${apiKey}&part=snippet&id=${channelIdsParam}&order=alphabetical&maxResults=50`
-  );
-  return await res.json();
-};
-
-/**
  * Gets a list of subscriptions for a given channel
  * @param {string} channelId - The channel for which subscriptions are fetched
  * @param {string} apiKey - The api key used to fetch data
@@ -86,15 +54,6 @@ export const getSubscriptions = async ({ channelId, apiKey }) => {
   } while (pageToken);
 
   return subscriptionsList;
-};
-
-export const fetchVideoMetadata = async ({ videoIds, apiKey }) => {
-  if (process.env.MOCK_API_CALLS === 'true') return VideoMetadataMock;
-
-  const res = await fetch(
-    `${BASE_URL}/videos?key=${apiKey}&id=${videoIds}&maxResults=50&part=statistics,contentDetails,snippet&safeSearch=none&type=video`
-  );
-  return await res.json();
 };
 
 export const getMappedVideoResults = async ({ items, apiKey }) => {
@@ -130,23 +89,6 @@ export const getMappedVideoResults = async ({ items, apiKey }) => {
 };
 
 /**
- * Gets a list of channel videos based on search term
- * @param {string} channelId - The channel for which videos are searched
- * @param {string} apiKey - The api key used to fetch data
- * @param {string} searchTerm - Input for search results
- * @returns {object} List of videos
- */
-export const fetchChannelResults = async ({ channelId, apiKey, searchTerm, pageToken = '' }) => {
-  if (process.env.MOCK_API_CALLS === 'true')
-    return { ...SearchResultsMock, items: SearchResultsMock.items.slice(0, 4) };
-
-  const res = await fetch(
-    `${BASE_URL}/search?key=${apiKey}&channelId=${channelId}&maxResults=4&q=${searchTerm}&part=snippet&safeSearch=none&type=video&pageToken=${pageToken}`
-  );
-  return await res.json();
-};
-
-/**
  * Gets search results for provided subscriptions
  * @param {string} subscriptionIds - List of channel ids from your subscriptions
  * @param {string} apiKey - The api key used to fetch data
@@ -157,7 +99,7 @@ export const getSearchResults = async ({ selectedSubscriptions, subscriptions, a
   const channelResults = [];
 
   for (const subId of selectedSubscriptions) {
-    const res = await fetchChannelResults({
+    const res = await fetchSearchResults({
       channelId: subId,
       apiKey,
       searchTerm,
