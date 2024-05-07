@@ -21,6 +21,16 @@ describe('services', () => {
       expect(res).toEqual(ChannelsMock);
     });
 
+    it('should return empty items array if MOCK_API_CALLS is enabled and pageToken is present', async () => {
+      process.env.MOCK_API_CALLS = 'true';
+      const res = await fetchChannelData({
+        subscriptionData: SubscriptionsMock,
+        apiKey: 'mockApiKey',
+        pageToken: 'mockToken'
+      });
+      expect(res).toEqual({ items: [] });
+    });
+
     it('should fetch channel data', async () => {
       process.env.MOCK_API_CALLS = 'false';
       global.fetch = jest.fn().mockImplementationOnce(() =>
@@ -95,6 +105,16 @@ describe('services', () => {
         pageToken: ''
       });
       expect(res).toEqual(SubscriptionsMock);
+    });
+
+    it('should return empty items array if MOCK_API_CALLS is enabled and pageToken is present', async () => {
+      process.env.MOCK_API_CALLS = 'true';
+      const res = await fetchSubscriptionData({
+        channelId: 'mockChannelId',
+        apiKey: 'mockApiKey',
+        pageToken: 'mockToken'
+      });
+      expect(res).toEqual({ items: [] });
     });
 
     it('should fetch subscription data', async () => {

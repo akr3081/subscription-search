@@ -1,7 +1,7 @@
 {
   "kind": "youtube#SubscriptionListResponse",
   "etag": "Cu3ZUvRm-81k018ap17Y2oBsAZ8",
-  "nextPageToken": "CDIQAA",
+  "nextPageToken": "",
   "pageInfo": {
     "totalResults": 146,
     "resultsPerPage": 50
