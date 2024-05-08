@@ -32,19 +32,23 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, 
       <div className={`${styles.header} ${className}`}>
         <YouTubeIcon className={styles.headerIcon} />
 
-        {isUserAuthenticated ? (<SearchBar handleSubmit={handleSubmitSearch} isSearchEnabled={isSearchEnabled} />) : null}
+        {isUserAuthenticated ? <SearchBar handleSubmit={handleSubmitSearch} isSearchEnabled={isSearchEnabled} /> : null}
 
         <div className={styles.icons}>
           <IconButton
             iconName="info"
             className={styles.icon}
-            onClick={() => { setIsInfoModalOpen(true) }}
+            onClick={() => {
+              setIsInfoModalOpen(true);
+            }}
           />
 
           <IconButton
             iconName="settings"
             className={styles.icon}
-            onClick={() => { setIsAuthModalOpen(true) }}
+            onClick={() => {
+              setIsAuthModalOpen(true);
+            }}
           />
         </div>
       </div>
@@ -52,13 +56,17 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, 
       <div id="modals">
         <InfoModal
           isOpen={isInfoModalOpen}
-          handleClose={() => { setIsInfoModalOpen(false) }}
+          handleClose={() => {
+            setIsInfoModalOpen(false);
+          }}
           className={styles.form}
         />
 
         <AuthModal
           isOpen={isAuthModalOpen}
-          handleClose={() => { setIsAuthModalOpen(false) }}
+          handleClose={() => {
+            setIsAuthModalOpen(false);
+          }}
           handleSubmit={handleAuthFormSubmit}
           className={styles.form}
           isUserAuthenticated={isUserAuthenticated}

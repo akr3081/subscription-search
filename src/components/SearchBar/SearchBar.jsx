@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import IconButton from '../IconButton/IconButton.jsx';
 import { SEARCH_VALIDATION_ERROR } from '../../common/constants.js';
+import useStore from '../../stores/useStore.js';
 import styles from './SearchBar.module.css';
 
 const SearchBar = ({ handleSubmit, isSearchEnabled, className }) => {
-  const submitSearch = (e) => {
+  const { searchTerm } = useStore();
+
+  const submitSearch = e => {
     e.preventDefault();
 
     if (!isSearchEnabled) {
@@ -21,13 +24,16 @@ const SearchBar = ({ handleSubmit, isSearchEnabled, className }) => {
   };
 
   return (
-    <form className={`${styles.searchBar} ${className}`} onSubmit={submitSearch} >
-      <input id="searchTerm" name="searchTerm" maxLength="100" placeholder="Search" required />
-      <IconButton
-        iconName="search"
-        className={styles.submit}
-        type="submit"
+    <form className={`${styles.searchBar} ${className}`} onSubmit={submitSearch}>
+      <input
+        id="searchTerm"
+        name="searchTerm"
+        maxLength="100"
+        placeholder="Search"
+        defaultValue={searchTerm}
+        required
       />
+      <IconButton iconName="search" className={styles.submit} type="submit" />
     </form>
   );
 };

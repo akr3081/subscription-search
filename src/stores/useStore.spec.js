@@ -1,14 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
-import useStore from './useStore.js';
+import useStore, { initialState } from './useStore.js';
 
 describe('useStore', () => {
-  const initialState = {
-    apiKey: 'mock-api-key',
-    channelId: 'mock-channel-id',
-    searchTerm: 'mock-search-term',
-    subscriptions: []
-  };
-
   beforeEach(() => {
     useStore.setState(initialState);
   });
@@ -33,6 +26,16 @@ describe('useStore', () => {
     expect(result.current.channelId).toEqual('new-channel-id');
   });
 
+  it('should handle get/set for searchResults', () => {
+    const { result } = renderHook(() => ({ ...useStore(state => state) }));
+
+    expect(result.current.searchResults).toEqual(initialState.searchResults);
+    expect(result.current.setSearchResults).toBeDefined();
+
+    act(() => result.current.setSearchResults([{ abc: 123 }]));
+    expect(result.current.searchResults).toEqual([{ abc: 123 }]);
+  });
+
   it('should handle get/set for searchTerm', () => {
     const { result } = renderHook(() => ({ ...useStore(state => state) }));
 
@@ -41,6 +44,16 @@ describe('useStore', () => {
 
     act(() => result.current.setSearchTerm('new-search-term'));
     expect(result.current.searchTerm).toEqual('new-search-term');
+  });
+
+  it('should handle get/set for selectedSubscriptions', () => {
+    const { result } = renderHook(() => ({ ...useStore(state => state) }));
+
+    expect(result.current.selectedSubscriptions).toEqual(initialState.selectedSubscriptions);
+    expect(result.current.setSelectedSubscriptions).toBeDefined();
+
+    act(() => result.current.setSelectedSubscriptions(['mock-sub-id']));
+    expect(result.current.selectedSubscriptions).toEqual(['mock-sub-id']);
   });
 
   it('should handle get/set for subscriptions', () => {

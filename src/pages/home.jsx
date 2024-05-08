@@ -8,12 +8,22 @@ import '../styles/global.css';
 import styles from './home.module.css';
 
 const HomePage = () => {
-  const { apiKey, channelId, searchTerm, subscriptions, setApiKey, setChannelId, setSearchTerm, setSubscriptions } =
-    useStore();
+  const {
+    apiKey,
+    channelId,
+    searchResults,
+    searchTerm,
+    selectedSubscriptions,
+    subscriptions,
+    setApiKey,
+    setChannelId,
+    setSearchResults,
+    setSearchTerm,
+    setSelectedSubscriptions,
+    setSubscriptions
+  } = useStore();
 
   const [isUserAuthenticated, setIsUserAuthenticated] = useState(Boolean(apiKey && channelId));
-  const [selectedSubscriptions, setSelectedSubscriptions] = useState([]);
-  const [searchResults, setSearchResults] = useState([]);
 
   const handleSubmitAuth = async formData => {
     let isAuthenticated = false;

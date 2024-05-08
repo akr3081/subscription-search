@@ -4,29 +4,48 @@ import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 const devConfig = { name: 'Subscription Search' };
 const persistConfig = { name: 'subscription-search', storage: createJSONStorage(() => globalThis.localStorage) };
 
-const state = set => ({
+export const initialState = {
   apiKey: '',
+  channelId: '',
+  searchResults: [],
+  searchTerm: '',
+  selectedSubscriptions: [],
+  subscriptions: []
+};
+
+const state = set => ({
+  apiKey: initialState.apiKey,
   setApiKey: value => {
     set({ apiKey: value });
   },
 
-  channelId: '',
+  channelId: initialState.channelId,
   setChannelId: value => {
     set({ channelId: value });
   },
 
-  searchTerm: '',
+  searchResults: initialState.searchResults,
+  setSearchResults: value => {
+    set({ searchResults: value });
+  },
+
+  searchTerm: initialState.searchTerm,
   setSearchTerm: value => {
     set({ searchTerm: value });
   },
 
-  subscriptions: [],
+  selectedSubscriptions: initialState.selectedSubscriptions,
+  setSelectedSubscriptions: value => {
+    set({ selectedSubscriptions: value });
+  },
+
+  subscriptions: initialState.subscriptions,
   setSubscriptions: value => {
     set({ subscriptions: value });
   },
 
   reset: () => {
-    set({ apiKey: '', channelId: '', searchTerm: '', subscriptions: [] });
+    set(initialState);
   }
 });
 
