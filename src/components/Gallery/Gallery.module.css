@@ -1,5 +1,5 @@
 .gallery {
-  background: #f7f7f7;
+  background: var(--background-color-light);
   border: 1px solid #d5d5d5;
   border-radius: 5px;
   display: flex;
@@ -18,7 +18,7 @@
 
 .channel {
   align-items: center;
-  color: black;
+  color: var(--font-color-default);
   cursor: pointer;
   display: flex;
   flex-wrap: nowrap;
@@ -81,9 +81,9 @@
 
 .loadMore button {
   align-items: center;
-  background: black;
+  background: var(--accent-color-submit);
   border-radius: 25px;
-  color: white;
+  color: var(--font-color-default);
   cursor: pointer;
   display: flex;
   height: 50px;

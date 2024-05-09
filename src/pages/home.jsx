@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getSearchResults, getSubscriptions } from '../common/utils';
 import AppHeader from '../components/AppHeader/AppHeader.jsx';
 import Gallery from '../components/Gallery/Gallery.jsx';
@@ -15,6 +15,7 @@ const HomePage = () => {
     searchTerm,
     selectedSubscriptions,
     subscriptions,
+    theme,
     setApiKey,
     setChannelId,
     setSearchResults,
@@ -24,6 +25,11 @@ const HomePage = () => {
   } = useStore();
 
   const [isUserAuthenticated, setIsUserAuthenticated] = useState(Boolean(apiKey && channelId));
+
+  // Special case for setting values of root element values based on theme state
+  useEffect(() => {
+    document.documentElement.style.setProperty('background', theme === 'dark' ? 'black' : 'white');
+  }, [theme]);
 
   const handleSubmitAuth = async formData => {
     let isAuthenticated = false;
@@ -99,7 +105,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className={styles.home}>
+    <div className={styles.home} data-theme={theme}>
       <AppHeader
         handleSubmitAuth={handleSubmitAuth}
         handleSubmitSearch={handleSubmitSearch}

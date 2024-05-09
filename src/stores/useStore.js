@@ -10,7 +10,8 @@ export const initialState = {
   searchResults: [],
   searchTerm: '',
   selectedSubscriptions: [],
-  subscriptions: []
+  subscriptions: [],
+  theme: 'light'
 };
 
 const state = set => ({
@@ -42,6 +43,11 @@ const state = set => ({
   subscriptions: initialState.subscriptions,
   setSubscriptions: value => {
     set({ subscriptions: value });
+  },
+
+  theme: initialState.theme,
+  setTheme: value => {
+    set({ theme: value });
   },
 
   reset: () => {

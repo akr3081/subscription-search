@@ -12,9 +12,9 @@
 @media screen and (max-width: 768px) {
   .home {
     grid-template-areas:
-    'header'
-    'leftRail'
-    'pageBody';
+      'header'
+      'leftRail'
+      'pageBody';
     grid-template-columns: 100%;
     grid-template-rows: min-content min-content auto;
   }

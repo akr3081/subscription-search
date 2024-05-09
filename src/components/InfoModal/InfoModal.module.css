@@ -1,5 +1,5 @@
 .modal {
-  background: #f7f7f7;
+  background: var(--background-color-light);
   gap: 20px;
   overflow: hidden;
   padding: 20px;
@@ -51,7 +51,7 @@
 
 .submitButton {
   align-self: flex-end;
-  background: #d5d5d5;
+  background: var(--accent-color-submit);
   border-radius: 18px;
   cursor: pointer;
   min-height: 40px;

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import useStore from '../../stores/useStore.js';
 import Modal from '../Modal/Modal.jsx';
+import ThemeToggle from '../ThemeToggle/ThemeToggle.jsx';
 import { CLEAR_DATA_CTA, SAVE_CTA } from '../../common/constants.js';
 import styles from './AuthModal.module.css';
 
@@ -10,14 +11,22 @@ const AuthModal = ({ isOpen, handleClose, handleSubmit, className, isUserAuthent
 
   return (
     <Modal isOpen={isOpen} handleClose={handleClose} className={`${styles.modal} ${className}`}>
-      {isUserAuthenticated ? (
-        <button className={styles.clearButton} type="button" onClick={() => {
-          reset();
-          window.location.reload();
-        }}>
-          {CLEAR_DATA_CTA}
-        </button>
-      ) : null}
+      <div className={styles.headerContainer}>
+        <ThemeToggle />
+
+        {isUserAuthenticated ? (
+          <button
+            className={styles.clearButton}
+            type="button"
+            onClick={() => {
+              reset();
+              window.location.reload();
+            }}
+          >
+            {CLEAR_DATA_CTA}
+          </button>
+        ) : null}
+      </div>
 
       <form className={`${styles.form} ${className}`} onSubmit={handleSubmit} data-testid="auth_form">
         <div className={styles.fields}>
@@ -28,11 +37,19 @@ const AuthModal = ({ isOpen, handleClose, handleSubmit, className, isUserAuthent
 
           <div className={styles.field}>
             <label htmlFor="channelId">Channel ID</label>
-            <input id="channelId" name="channelId" placeholder="Enter your channel ID" defaultValue={channelId} required />
+            <input
+              id="channelId"
+              name="channelId"
+              placeholder="Enter your channel ID"
+              defaultValue={channelId}
+              required
+            />
           </div>
         </div>
 
-        <button className={styles.submitButton} type="submit">{SAVE_CTA}</button>
+        <button className={styles.submitButton} type="submit">
+          {SAVE_CTA}
+        </button>
       </form>
     </Modal>
   );
