@@ -21,7 +21,7 @@ const ThemeToggle = ({ className }) => {
       }}
       tabIndex="0"
     >
-      <input type="checkbox" checked={isDarkModeEnabled} className={styles.checkbox} aria-hidden="true" />
+      <input type="checkbox" checked={isDarkModeEnabled} className={styles.checkbox} aria-hidden="true" readOnly />
       <span className={styles.slider} />
       {isDarkModeEnabled ? <DarkModeIcon className={styles.icon} /> : <LightModeIcon className={styles.icon} />}
     </div>

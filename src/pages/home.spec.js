@@ -1,5 +1,8 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import MappedSearchResultsMock from '../__mocks__/mappedSearchResults.json';
+import ChannelsMock from '../__mocks__/channels.json';
 import useStore from '../stores/useStore.js';
 import HomePage from './home.jsx';
 
@@ -15,10 +18,71 @@ describe('Home Page', () => {
     expect(screen.queryByTestId('icon_button_sync')).toBeNull();
   });
 
-  it('should render subscription selector when authenticated', () => {
-    useStore.setState({ apiKey: 'mock-api-key', channelId: 'mock-channel-id' });
+  it('should render app header based on selectedSubscriptions state', async () => {
+    const user = userEvent.setup();
+    useStore.setState({
+      apiKey: 'mock-api-key',
+      channelId: 'mock-channel-id',
+      searchResults: [],
+      searchTerm: '',
+      selectedSubscriptions: [ChannelsMock.items[0].id],
+      subscriptions: ChannelsMock.items
+    });
     render(<HomePage />);
 
-    expect(screen.getByTestId('icon_button_sync')).toBeDefined();
+    expect(useStore.getState().searchTerm).toEqual('');
+    expect(useStore.getState().searchResults.length).toEqual(0);
+
+    const searchBarInput = screen.getByPlaceholderText('Search');
+    const searchBarSubmitButton = screen.getByTestId('icon_button_search');
+
+    fireEvent.change(searchBarInput, { target: { value: 'mock-search-term' } });
+    await user.click(searchBarSubmitButton);
+
+    expect(useStore.getState().searchTerm).toEqual('mock-search-term');
+    expect(useStore.getState().searchResults.length > 0).toEqual(true);
+  });
+
+  it('should render subscription selector based on subscriptions/selectedSubscriptions state', async () => {
+    const user = userEvent.setup();
+    useStore.setState({
+      apiKey: 'mock-api-key',
+      channelId: 'mock-channel-id',
+      subscriptions: ChannelsMock.items,
+      selectedSubscriptions: [ChannelsMock.items[0].id]
+    });
+    render(<HomePage />);
+
+    // Selected subscriptions
+    expect(screen.getAllByTestId('icon_button_subtract').length).toEqual(1);
+
+    // Unselected subscriptions
+    expect(screen.getAllByTestId('icon_button_add').length).toEqual(ChannelsMock.items.length - 1);
+
+    // Should clear selected subcriptions when sync button is clicked
+    const syncButton = screen.getByTestId('icon_button_sync');
+    await user.click(syncButton);
+    expect(screen.queryAllByTestId('icon_button_subtract').length).toEqual(0);
+  });
+
+  it('should render channel gallery components based on searchResults state', async () => {
+    const user = userEvent.setup();
+    useStore.setState({ searchResults: MappedSearchResultsMock });
+    render(<HomePage />);
+
+    const videoTitle = MappedSearchResultsMock[0].items[0].title;
+
+    // Video is not found until arrow button is clicked and gallery is opened
+    expect(screen.queryByText(videoTitle)).toBeNull();
+
+    // Video is now found
+    const galleryArrowIconButton = screen.getAllByTestId('icon_button_arrow')[0];
+    await user.click(galleryArrowIconButton);
+    expect(screen.queryByText(videoTitle)).not.toBeNull();
+
+    // Video no longer found after gallery is removed
+    const galleryRemoveIconButton = screen.getAllByTestId('icon_button_remove')[0];
+    await user.click(galleryRemoveIconButton);
+    expect(screen.queryByText(videoTitle)).toBeNull();
   });
 });

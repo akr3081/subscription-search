@@ -141,6 +141,7 @@ const HomePage = () => {
             handleRemove={() => {
               handleRemoveChannel(channel?.id);
             }}
+            key={channel.id}
           />
         ))}
       </div>

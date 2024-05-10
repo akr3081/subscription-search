@@ -66,19 +66,27 @@ describe('useStore', () => {
     expect(result.current.subscriptions).toEqual([{ abc: 123 }]);
   });
 
+  it('should handle get/set for theme', () => {
+    const { result } = renderHook(() => ({ ...useStore(state => state) }));
+
+    expect(result.current.theme).toEqual(initialState.theme);
+    expect(result.current.setTheme).toBeDefined();
+
+    act(() => result.current.setTheme('dark'));
+    expect(result.current.theme).toEqual('dark');
+  });
+
   it('should clear state when reset is called', () => {
     const { result } = renderHook(() => ({ ...useStore(state => state) }));
 
-    expect(result.current.apiKey).toEqual(initialState.apiKey);
-    expect(result.current.channelId).toEqual(initialState.channelId);
-    expect(result.current.searchTerm).toEqual(initialState.searchTerm);
-    expect(result.current.subscriptions).toEqual(initialState.subscriptions);
-
     act(() => result.current.reset());
 
-    expect(result.current.apiKey).toEqual('');
-    expect(result.current.channelId).toEqual('');
-    expect(result.current.searchTerm).toEqual('');
-    expect(result.current.subscriptions).toEqual([]);
+    expect(result.current.apiKey).toEqual(initialState.apiKey);
+    expect(result.current.channelId).toEqual(initialState.channelId);
+    expect(result.current.searchResults).toEqual(initialState.searchResults);
+    expect(result.current.searchTerm).toEqual(initialState.searchTerm);
+    expect(result.current.selectedSubscriptions).toEqual(initialState.selectedSubscriptions);
+    expect(result.current.subscriptions).toEqual(initialState.subscriptions);
+    expect(result.current.theme).toEqual(initialState.theme);
   });
 });
