@@ -53,6 +53,7 @@
   align-self: flex-end;
   background: var(--accent-color-submit);
   border-radius: 18px;
+  color: var(--font-color-inverted);
   cursor: pointer;
   min-height: 40px;
   width: 50%;

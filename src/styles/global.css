@@ -4,7 +4,7 @@
   --accent-color-neutral: #efefef;
   --accent-color-night: darkblue;
   --accent-color-reject: red;
-  --accent-color-submit: #d5d5d5;
+  --accent-color-submit: black;
 
   --background-color: white;
   --background-color-light: #f7f7f7;
@@ -19,6 +19,8 @@
 }
 
 [data-theme='dark'] {
+  --accent-color-submit: #e8e8e8;
+
   --background-color: black;
   --background-color-light: #313030;
   --background-color-semi-light: #5a5a5a;

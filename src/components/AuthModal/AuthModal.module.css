@@ -2,7 +2,7 @@
   background: var(--background-color-light);
   overflow: hidden;
   padding: 20px;
-  height: 40% !important;
+  height: 50% !important;
   width: 40% !important;
 }
 
@@ -47,6 +47,7 @@
 }
 
 .field {
+  color: var(--font-color-default);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -55,8 +56,10 @@
 }
 
 .field input {
-  border: 1px solid black;
+  background: var(--background-color-light);
+  border: 1px solid var(--font-color-default);
   border-radius: 5px;
+  color: var(--font-color-default);
   height: 100%;
 }
 
@@ -64,6 +67,7 @@
   align-self: flex-end;
   background: var(--accent-color-submit);
   border-radius: 18px;
+  color: var(--font-color-inverted);
   cursor: pointer;
   min-height: 40px;
   width: 50%;

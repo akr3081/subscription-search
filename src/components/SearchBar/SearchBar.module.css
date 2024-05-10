@@ -1,7 +1,7 @@
 .searchBar {
-  border: 1px solid black;
+  border: 1px solid var(--font-color-default);
   border-radius: 20px;
-  background: white;
+  background: var(--background-color-light);
   display: flex;
   justify-content: space-between;
   overflow: hidden;
@@ -12,12 +12,14 @@
   background: none;
   border: none;
   border-radius: 20px 0 0 20px;
+  color: var(--font-color-default);
   padding: 10px;
   width: 100%;
 }
 
 .searchBar button {
-  background: var(--accent-color-submit);
+  background: var(--background-color-semi-dark);
   border-radius: 0 20px 20px 0;
+  fill: var(--font-color-default);
   padding: 10px;
 }

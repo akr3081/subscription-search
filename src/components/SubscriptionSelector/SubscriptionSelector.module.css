@@ -9,6 +9,7 @@
 .header {
   align-items: center;
   background: var(--background-color-semi-dark);
+  color: var(--font-color-default);
   display: flex;
   height: 3em;
   justify-content: center;

@@ -8,7 +8,7 @@
 }
 
 .headerIcon {
-  fill: red;
+  fill: var(--accent-color-reject);
   height: 50px;
   width: 50px;
 }
@@ -19,8 +19,7 @@
 }
 
 .icon {
-  background: var(--accent-color-neutral);
-  border: 1px solid black;
+  fill: var(--font-color-default);
   height: 50px;
   width: 50px;
 }
