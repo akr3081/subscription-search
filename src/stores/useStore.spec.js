@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
+import { THEMES } from '../common/constants.js';
 import useStore, { initialState } from './useStore.js';
 
 describe('useStore', () => {
@@ -72,8 +73,8 @@ describe('useStore', () => {
     expect(result.current.theme).toEqual(initialState.theme);
     expect(result.current.setTheme).toBeDefined();
 
-    act(() => result.current.setTheme('dark'));
-    expect(result.current.theme).toEqual('dark');
+    act(() => result.current.setTheme(THEMES.DARK));
+    expect(result.current.theme).toEqual(THEMES.DARK);
   });
 
   it('should clear state when reset is called', () => {

@@ -6,6 +6,10 @@ export const LOAD_MORE_CTA = 'Load More';
 export const SAVE_CTA = 'Save';
 export const SEARCH_VALIDATION_ERROR = 'Please select subscriptions to search';
 export const SUBS_HEADER = 'Subscriptions to Search';
+export const THEMES = {
+  DARK: 'dark',
+  LIGHT: 'light'
+};
 export const USAGE_STEPS = [
   {
     text: 'Generate a <a target="_blank" href="https://support.google.com/googleapi/answer/6158862">Google Cloud API key</a>',

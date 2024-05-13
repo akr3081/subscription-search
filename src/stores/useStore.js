@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
+import { THEMES } from '../common/constants';
 
 const devConfig = { name: 'Subscription Search' };
 const persistConfig = { name: 'subscription-search', storage: createJSONStorage(() => globalThis.localStorage) };
@@ -11,7 +12,7 @@ export const initialState = {
   searchTerm: '',
   selectedSubscriptions: [],
   subscriptions: [],
-  theme: 'light'
+  theme: THEMES.LIGHT
 };
 
 const state = set => ({

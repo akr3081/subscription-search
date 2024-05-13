@@ -4,6 +4,7 @@ import AppHeader from '../components/AppHeader/AppHeader.jsx';
 import Gallery from '../components/Gallery/Gallery.jsx';
 import SubscriptionSelector from '../components/SubscriptionSelector/SubscriptionSelector.jsx';
 import useStore from '../stores/useStore.js';
+import { THEMES } from '../common/constants.js';
 import '../styles/global.css';
 import styles from './home.module.css';
 
@@ -28,7 +29,7 @@ const HomePage = () => {
 
   // Special case for setting values of root element values based on theme state
   useEffect(() => {
-    document.documentElement.style.setProperty('background', theme === 'dark' ? 'black' : 'white');
+    document.documentElement.style.setProperty('background', theme === THEMES.DARK ? 'black' : 'white');
   }, [theme]);
 
   const handleSubmitAuth = async formData => {

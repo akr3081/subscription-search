@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DarkModeIcon, LightModeIcon } from '../Icon/Icon.jsx';
 import useStore from '../../stores/useStore.js';
+import { THEMES } from '../../common/constants.js';
 import styles from './ThemeToggle.module.css';
 
 const ThemeToggle = ({ className }) => {
   const { theme, setTheme } = useStore();
-  const isDarkModeEnabled = Boolean(theme === 'dark');
+  const isDarkModeEnabled = Boolean(theme === THEMES.DARK);
 
   const toggleSwitch = () => {
-    setTheme(isDarkModeEnabled ? 'light' : 'dark');
+    setTheme(isDarkModeEnabled ? THEMES.LIGHT : THEMES.DARK);
   };
 
   return (
