@@ -12,17 +12,16 @@ const InfoModal = ({ isOpen, handleClose, className }) => (
           <li key={`usage_${index}`}>
             <div className={styles.step}>
               <div dangerouslySetInnerHTML={{ __html: step.text }} />
-              {step?.image ? (<img src={step.image.url} alt={step.image.altText} referrerPolicy="no-referrer" />) : null}
-
+              {step?.image ? <img src={step.image.url} alt={step.image.altText} referrerPolicy="no-referrer" /> : null}
             </div>
           </li>
-        ))
-        }
-      </ol >
-
-    </div >
-    <button className={styles.submitButton} onClick={handleClose}>{CLOSE_CTA}</button>
-  </Modal >
+        ))}
+      </ol>
+    </div>
+    <button className={styles.submitButton} onClick={handleClose}>
+      {CLOSE_CTA}
+    </button>
+  </Modal>
 );
 
 InfoModal.propTypes = {

@@ -20,12 +20,25 @@ describe('Modal', () => {
   });
 
   it('should call handleClose when veil is clicked', async () => {
+    const handleCloseMock = jest.fn();
     const user = userEvent.setup();
-    render(<Modal {...props} />);
+    render(<Modal {...props} handleClose={handleCloseMock} />);
 
     const veil = screen.getByTestId('modal-veil');
     await user.click(veil);
 
-    expect(props.handleClose).toHaveBeenCalled();
+    expect(handleCloseMock).toHaveBeenCalled();
+  });
+
+  it('should call handleClose when escape key is clicked', async () => {
+    const handleCloseMock = jest.fn();
+    const user = userEvent.setup();
+    render(<Modal {...props} handleClose={handleCloseMock} />);
+
+    await user.keyboard('{Space}');
+    expect(handleCloseMock).not.toHaveBeenCalled();
+
+    await user.keyboard('{Escape}');
+    expect(handleCloseMock).toHaveBeenCalled();
   });
 });
