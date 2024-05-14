@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import AuthModal from '../AuthModal/AuthModal.jsx';
 import IconButton from '../IconButton/IconButton.jsx';
 import InfoModal from '../InfoModal/InfoModal.jsx';
+import HistoryModal from '../HistoryModal/HistoryModal.jsx';
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import { YouTubeIcon } from '../Icon/Icon.jsx';
 import styles from './AppHeader.module.css';
@@ -13,8 +14,9 @@ import styles from './AppHeader.module.css';
  * @param {string} className - CSS class name
  */
 const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, isSearchEnabled, className }) => {
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-  const [isInfoModalOpen, setIsInfoModalOpen] = useState(!isUserAuthenticated);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(!isUserAuthenticated);
+  const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
+  const [isHistoryModalOpen, setIsHistoryModalOpen] = useState(false);
 
   const handleAuthFormSubmit = async e => {
     e.preventDefault();
@@ -35,6 +37,13 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, 
         {isUserAuthenticated ? <SearchBar handleSubmit={handleSubmitSearch} isSearchEnabled={isSearchEnabled} /> : null}
 
         <div className={styles.icons}>
+          <IconButton
+            iconName="history"
+            className={styles.icon}
+            onClick={() => {
+              setIsHistoryModalOpen(true);
+            }}
+          />
           <IconButton
             iconName="info"
             className={styles.icon}
@@ -70,6 +79,15 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, 
           handleSubmit={handleAuthFormSubmit}
           className={styles.form}
           isUserAuthenticated={isUserAuthenticated}
+        />
+
+        <HistoryModal
+          isOpen={isHistoryModalOpen}
+          handleClose={() => {
+            setIsHistoryModalOpen(false);
+          }}
+          handleSubmitSearch={handleSubmitSearch}
+          className={styles.form}
         />
       </div>
     </>

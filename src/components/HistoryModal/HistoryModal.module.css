@@ -1,0 +1,79 @@
+.modal {
+  background: var(--background-color-light);
+  gap: 20px;
+  overflow: hidden;
+  padding: 20px;
+  height: 75% !important;
+  width: 50% !important;
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    width: 75% !important;
+  }
+}
+
+.heading {
+  color: var(--font-color-default);
+}
+
+.body {
+  align-items: center;
+  border: 1px solid (--font-color-inverted);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0;
+  width: 100%;
+}
+
+.item {
+  background-color: var(--background-color-semi-dark);
+  border: 1px solid var(--font-color-default);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  min-height: 50px;
+  width: 95%;
+}
+
+.itemContent {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.itemContent p {
+  color: var(--font-color-default);
+  margin: 0;
+  overflow: hidden;
+  padding-left: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.itemButtons {
+  display: flex;
+  justify-content: flex-end;
+  fill: var(--font-color-default);
+}
+
+.submitButton {
+  align-self: flex-end;
+  background: var(--accent-color-submit);
+  border-radius: 18px;
+  color: var(--font-color-inverted);
+  cursor: pointer;
+  min-height: 40px;
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .submitButton {
+    width: 100%;
+  }
+}

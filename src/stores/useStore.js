@@ -8,6 +8,7 @@ const persistConfig = { name: 'subscription-search', storage: createJSONStorage(
 export const initialState = {
   apiKey: '',
   channelId: '',
+  history: [],
   searchResults: [],
   searchTerm: '',
   selectedSubscriptions: [],
@@ -24,6 +25,11 @@ const state = set => ({
   channelId: initialState.channelId,
   setChannelId: value => {
     set({ channelId: value });
+  },
+
+  history: initialState.history,
+  setHistory: value => {
+    set({ history: value });
   },
 
   searchResults: initialState.searchResults,

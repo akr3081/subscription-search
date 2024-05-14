@@ -12,6 +12,7 @@ const HomePage = () => {
   const {
     apiKey,
     channelId,
+    history,
     searchResults,
     searchTerm,
     selectedSubscriptions,
@@ -19,6 +20,7 @@ const HomePage = () => {
     theme,
     setApiKey,
     setChannelId,
+    setHistory,
     setSearchResults,
     setSearchTerm,
     setSelectedSubscriptions,
@@ -50,17 +52,23 @@ const HomePage = () => {
   };
 
   const handleSubmitSearch = formData => {
+    const selectedSubs = formData?.selectedSubscriptions ?? selectedSubscriptions;
     setSearchResults([]);
 
     getSearchResults({
-      selectedSubscriptions,
+      selectedSubscriptions: selectedSubs,
       subscriptions,
       apiKey,
       searchTerm: formData.searchTerm
     })
       .then(results => {
+        setSelectedSubscriptions(selectedSubs);
         setSearchTerm(formData.searchTerm);
         setSearchResults(results);
+        setHistory([
+          { timestamp: new Date().getTime(), searchTerm: formData.searchTerm, selectedSubscriptions },
+          ...history
+        ]);
       })
       .catch(err => {
         alert(`Search Error: ${err}`);

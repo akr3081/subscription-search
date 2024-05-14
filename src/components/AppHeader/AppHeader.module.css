@@ -7,6 +7,16 @@
   padding: 10px;
 }
 
+.header form {
+  margin-left: 10%;
+}
+
+@media screen and (max-width: 768px) {
+  .header form {
+    margin-left: 0;
+  }
+}
+
 .headerIcon {
   fill: var(--accent-color-reject);
   height: 50px;
@@ -18,10 +28,23 @@
   gap: 10px;
 }
 
+@media screen and (max-width: 768px) {
+  .icons {
+    gap: 5px;
+  }
+}
+
 .icon {
   fill: var(--font-color-default);
   height: 50px;
   width: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .icon {
+    height: 30px;
+    width: 30px;
+  }
 }
 
 .icon:hover {

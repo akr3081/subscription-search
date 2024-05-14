@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import IconButton from '../IconButton/IconButton.jsx';
 import SubscriptionCard from '../SubscriptionCard/SubscriptionCard.jsx';
-import { SUBS_HEADER } from '../../common/constants.js';
+import { MISSING_SUBS_LABEL, SUBS_HEADER } from '../../common/constants.js';
 import styles from './SubscriptionSelector.module.css';
 
 /**
@@ -11,7 +11,13 @@ import styles from './SubscriptionSelector.module.css';
  * @param {array} selectedSubscriptions - List of selected channel ids
  * @param {function} setSelectedSubscriptions - Updates selectedSubscriptions state hook
  */
-const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelectedSubscriptions, handleRefresh, isUserAuthenticated }) => {
+const SubscriptionSelector = ({
+  subscriptions,
+  selectedSubscriptions,
+  setSelectedSubscriptions,
+  handleRefresh,
+  isUserAuthenticated
+}) => {
   const [isLoadingSubscriptions, setIsLoadingSubscriptions] = useState(false);
 
   const sortedItems = subscriptions.sort((a, b) => a?.snippet?.title?.localeCompare(b.snippet.title));
@@ -86,7 +92,7 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
           ))}
         </div>
       ) : (
-        <div>Please enter a valid API Key and Channel ID to view your subscriptions</div>
+        <div>{MISSING_SUBS_LABEL}</div>
       )}
     </div>
   ) : null;

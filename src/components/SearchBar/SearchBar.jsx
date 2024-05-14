@@ -31,6 +31,7 @@ const SearchBar = ({ handleSubmit, isSearchEnabled, className }) => {
         maxLength="100"
         placeholder="Search"
         defaultValue={searchTerm}
+        key={searchTerm}
         required
       />
       <IconButton iconName="search" className={styles.submit} type="submit" />
