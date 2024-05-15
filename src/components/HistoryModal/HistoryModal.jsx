@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CLOSE_CTA } from '../../common/constants.js';
+import { CLOSE_CTA, HISTORY_MODAL_HEADING } from '../../common/constants.js';
 import IconButton from '../IconButton/IconButton.jsx';
 import Modal from '../Modal/Modal.jsx';
 import useStore from '../../stores/useStore.js';
 import styles from './HistoryModal.module.css';
 
 const HistoryModal = ({ isOpen, handleClose, handleSubmitSearch, className }) => {
-  const { history, subscriptions, setHistory, setSearchResults, setSearchTerm, setSelectedSubscriptions } = useStore();
+  const { history, subscriptions, setHistory, setSearchTerm } = useStore();
 
   const applyHistoryItem = item => {
     setSearchTerm(item.searchTerm);
@@ -21,7 +21,9 @@ const HistoryModal = ({ isOpen, handleClose, handleSubmitSearch, className }) =>
   };
 
   const formatSelectedSubs = item => {
-    const subs = item.selectedSubscriptions.map(selectedSub => subscriptions.find(sub => sub.id === selectedSub));
+    const subs = item.selectedSubscriptions
+      .map(selectedSub => subscriptions.find(sub => sub.id === selectedSub))
+      .filter(sub => sub?.snippet);
 
     return subs.map(sub => (
       <span className={styles.subTag}>
@@ -33,10 +35,10 @@ const HistoryModal = ({ isOpen, handleClose, handleSubmitSearch, className }) =>
 
   return (
     <Modal isOpen={isOpen} handleClose={handleClose} className={`${styles.modal} ${className}`}>
-      <h1 className={styles.heading}>Search History</h1>
+      <h1 className={styles.heading}>{HISTORY_MODAL_HEADING}</h1>
       <div className={`${styles.body} ${className}`}>
         {history.map(item => (
-          <div className={styles.item}>
+          <div className={styles.item} key={`history_item_${item.timestamp}`}>
             <div
               className={styles.itemContent}
               onClick={() => {

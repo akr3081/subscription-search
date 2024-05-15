@@ -2,6 +2,7 @@ export const BASE_URL = 'https://youtube.googleapis.com/youtube/v3';
 export const CLEAR_DATA_CTA = 'Clear Local Data';
 export const CLOSE_CTA = 'Close';
 export const FALLBACK_CHANNEL_TITLE = '[TITLE NOT FOUND]';
+export const HISTORY_MODAL_HEADING = 'Search History';
 export const LOAD_MORE_CTA = 'Load More';
 export const MISSING_SUBS_LABEL = 'Please enter a valid API Key and Channel ID to view your subscriptions';
 export const SAVE_CTA = 'Save';

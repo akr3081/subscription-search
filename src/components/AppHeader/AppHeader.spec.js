@@ -23,6 +23,22 @@ describe('AppHeader', () => {
     expect(screen.queryByText(CLOSE_CTA)).toEqual(null);
   });
 
+  it('should open/close the history modal', async () => {
+    const user = userEvent.setup();
+    render(<AppHeader {...props} />);
+
+    const historyButton = screen.getByTestId('icon_button_history');
+    await user.click(historyButton);
+
+    // Should find history modal close button after icon button is clicked
+    const historyModalCloseButton = await screen.queryByText(CLOSE_CTA);
+    expect(historyModalCloseButton.tagName).toEqual('BUTTON');
+
+    // Should not find history modal close button after modal has been closed
+    await user.click(historyModalCloseButton);
+    expect(screen.queryByText(CLOSE_CTA)).toEqual(null);
+  });
+
   it('should open/close the settings modal', async () => {
     const user = userEvent.setup();
     render(<AppHeader {...props} />);
