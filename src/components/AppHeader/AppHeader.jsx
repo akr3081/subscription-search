@@ -13,7 +13,14 @@ import styles from './AppHeader.module.css';
  * @param {function} handleSubmitAuth - Handle auth form submit
  * @param {string} className - CSS class name
  */
-const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, isSearchEnabled, className }) => {
+const AppHeader = ({
+  handleSubmitAuth,
+  handleSubmitSearch,
+  isUserAuthenticated,
+  isSearchEnabled,
+  isLoadingSearch,
+  className
+}) => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(!isUserAuthenticated);
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
   const [isHistoryModalOpen, setIsHistoryModalOpen] = useState(false);
@@ -34,7 +41,9 @@ const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isUserAuthenticated, 
       <div className={`${styles.header} ${className}`}>
         <YouTubeIcon className={styles.headerIcon} />
 
-        {isUserAuthenticated ? <SearchBar handleSubmit={handleSubmitSearch} isSearchEnabled={isSearchEnabled} /> : null}
+        {isUserAuthenticated ? (
+          <SearchBar handleSubmit={handleSubmitSearch} isSearchEnabled={isSearchEnabled} isLoading={isLoadingSearch} />
+        ) : null}
 
         <div className={styles.icons}>
           <IconButton
@@ -99,6 +108,7 @@ AppHeader.propTypes = {
   handleSubmitSearch: PropTypes.func,
   isUserAuthenticated: PropTypes.bool,
   isSearchEnabled: PropTypes.bool,
+  isLoadingSearch: PropTypes.bool,
   className: PropTypes.string
 };
 

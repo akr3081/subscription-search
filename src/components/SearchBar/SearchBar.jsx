@@ -5,7 +5,7 @@ import { SEARCH_VALIDATION_ERROR } from '../../common/constants.js';
 import useStore from '../../stores/useStore.js';
 import styles from './SearchBar.module.css';
 
-const SearchBar = ({ handleSubmit, isSearchEnabled, className }) => {
+const SearchBar = ({ handleSubmit, isSearchEnabled, isLoading, className }) => {
   const { searchTerm } = useStore();
 
   const submitSearch = e => {
@@ -34,7 +34,13 @@ const SearchBar = ({ handleSubmit, isSearchEnabled, className }) => {
         key={searchTerm}
         required
       />
-      <IconButton iconName="search" className={styles.submit} type="submit" />
+      <IconButton
+        iconName="search"
+        isLoading={isLoading}
+        className={styles.submit}
+        type="submit"
+        disabled={isLoading}
+      />
     </form>
   );
 };

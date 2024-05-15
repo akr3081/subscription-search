@@ -28,6 +28,7 @@ const HomePage = () => {
   } = useStore();
 
   const [isUserAuthenticated, setIsUserAuthenticated] = useState(Boolean(apiKey && channelId));
+  const [isLoadingSearch, setIsLoadingSearch] = useState(false);
 
   // Special case for setting values of root element values based on theme state
   useEffect(() => {
@@ -52,6 +53,7 @@ const HomePage = () => {
   };
 
   const handleSubmitSearch = formData => {
+    setIsLoadingSearch(true);
     const selectedSubs = formData?.selectedSubscriptions ?? selectedSubscriptions;
     setSearchResults([]);
 
@@ -62,6 +64,7 @@ const HomePage = () => {
       searchTerm: formData.searchTerm
     })
       .then(results => {
+        setIsLoadingSearch(false);
         setSelectedSubscriptions(selectedSubs);
         setSearchTerm(formData.searchTerm);
         setSearchResults(results);
@@ -72,6 +75,7 @@ const HomePage = () => {
           ]);
       })
       .catch(err => {
+        isLoadingSearch(false);
         alert(`Search Error: ${err}`);
       });
   };
@@ -121,6 +125,7 @@ const HomePage = () => {
         handleSubmitSearch={handleSubmitSearch}
         isUserAuthenticated={isUserAuthenticated}
         isSearchEnabled={Boolean(selectedSubscriptions?.length)}
+        isLoadingSearch={isLoadingSearch}
         className={styles.header}
       />
 
