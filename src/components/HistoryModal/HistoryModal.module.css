@@ -34,26 +34,83 @@
   border: 1px solid var(--font-color-default);
   border-radius: 10px;
   display: flex;
+  height: 65px;
   justify-content: space-between;
-  min-height: 50px;
   width: 95%;
+}
+
+.item:hover {
+  opacity: 80%;
 }
 
 .itemContent {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  height: 100%;
   justify-content: space-evenly;
-  width: 100%;
+  overflow: hidden;
+  width: 75%;
 }
 
-.itemContent p {
+.searchTerm {
   color: var(--font-color-default);
+  font-size: 20px;
+  max-height: 40%;
   margin: 0;
   overflow: hidden;
   padding-left: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.selectedSubs {
+  display: flex;
+  gap: 10px;
+  max-height: 40%;
+  min-width: 90%;
+  overflow: hidden;
+  padding-left: 10px;
+}
+
+.subTag {
+  align-items: center;
+  color: var(--font-color-default);
+  display: flex;
+  gap: 2px;
+  max-width: 40%;
+}
+
+@media screen and (max-width: 768px) {
+  .subTag {
+    max-width: 40%;
+  }
+}
+
+.subTag img {
+  border-radius: 100%;
+  height: 1.5em;
+  width: 1.5em;
+}
+
+@media screen and (max-width: 768px) {
+  .subTag img {
+    height: 1em;
+    width: 1em;
+  }
+}
+
+.subTag p {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .subTag p {
+    font-size: 10px;
+  }
 }
 
 .itemButtons {

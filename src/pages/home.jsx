@@ -65,10 +65,11 @@ const HomePage = () => {
         setSelectedSubscriptions(selectedSubs);
         setSearchTerm(formData.searchTerm);
         setSearchResults(results);
-        setHistory([
-          { timestamp: new Date().getTime(), searchTerm: formData.searchTerm, selectedSubscriptions },
-          ...history
-        ]);
+        if (results.length)
+          setHistory([
+            { timestamp: new Date().getTime(), searchTerm: formData.searchTerm, selectedSubscriptions },
+            ...history
+          ]);
       })
       .catch(err => {
         alert(`Search Error: ${err}`);

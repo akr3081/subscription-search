@@ -21,13 +21,14 @@ const HistoryModal = ({ isOpen, handleClose, handleSubmitSearch, className }) =>
   };
 
   const formatSelectedSubs = item => {
-    const subNames = item.selectedSubscriptions.map(
-      selectedSub => subscriptions.find(sub => sub.id === selectedSub)?.snippet?.title ?? '[SUB NOT FOUND]'
-    );
+    const subs = item.selectedSubscriptions.map(selectedSub => subscriptions.find(sub => sub.id === selectedSub));
 
-    if (subNames.length <= 2) return subNames.join(', ');
-
-    return `${subNames.slice(0, 2).join(', ')} & ${subNames.length - 2} more`;
+    return subs.map(sub => (
+      <span className={styles.subTag}>
+        <img src={sub.snippet.thumbnails.medium.url} alt={sub.snippet.title} referrerPolicy="no-referrer" />
+        <p>{`${sub.snippet.title}`}</p>
+      </span>
+    ));
   };
 
   return (
@@ -42,8 +43,8 @@ const HistoryModal = ({ isOpen, handleClose, handleSubmitSearch, className }) =>
                 applyHistoryItem(item);
               }}
             >
-              <p>{`Search Term: ${item.searchTerm}`}</p>
-              <p>{`Selected Subs: ${formatSelectedSubs(item)}`}</p>
+              <p className={styles.searchTerm}>{item.searchTerm}</p>
+              <div className={styles.selectedSubs}>{formatSelectedSubs(item)}</div>
             </div>
             <div className={styles.itemButtons}>
               <IconButton
