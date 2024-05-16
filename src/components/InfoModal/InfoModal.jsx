@@ -18,7 +18,7 @@ const InfoModal = ({ isOpen, handleClose, className }) => (
         ))}
       </ol>
     </div>
-    <button className={styles.submitButton} onClick={handleClose}>
+    <button className={styles.closeButton} onClick={handleClose}>
       {CLOSE_CTA}
     </button>
   </Modal>

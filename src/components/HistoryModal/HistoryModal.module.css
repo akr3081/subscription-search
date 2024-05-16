@@ -118,12 +118,12 @@
   fill: var(--font-color-default);
 }
 
-.submitButton {
+.closeButton {
   align-self: flex-end;
-  background: var(--button-primary-background-color);
-  border: 1px solid var(--button-primary-border-color);
+  background: var(--button-secondary-background-color);
+  border: 1px solid var(--button-secondary-border-color);
   border-radius: 18px;
-  color: var(--button-primary-font-color);
+  color: var(--button-secondary-font-color);
   cursor: pointer;
   min-height: 40px;
   width: 50%;
