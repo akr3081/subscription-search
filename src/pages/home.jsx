@@ -75,7 +75,7 @@ const HomePage = () => {
           ]);
       })
       .catch(err => {
-        isLoadingSearch(false);
+        setIsLoadingSearch(false);
         alert(`Search Error: ${err}`);
       });
   };

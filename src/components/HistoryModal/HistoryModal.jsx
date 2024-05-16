@@ -10,8 +10,13 @@ const HistoryModal = ({ isOpen, handleClose, handleSubmitSearch, className }) =>
   const { history, subscriptions, setHistory, setSearchTerm } = useStore();
 
   const applyHistoryItem = item => {
+    // Filter out any selected subscriptions which are not found in current subscription list
+    const selectedSubs = item.selectedSubscriptions
+      .map(selectedSub => subscriptions.find(sub => sub.id === selectedSub)?.id)
+      .filter(subId => !!subId);
+
     setSearchTerm(item.searchTerm);
-    handleSubmitSearch({ searchTerm: item.searchTerm, selectedSubscriptions: item.selectedSubscriptions });
+    handleSubmitSearch({ searchTerm: item.searchTerm, selectedSubscriptions: selectedSubs });
     handleClose();
   };
 
