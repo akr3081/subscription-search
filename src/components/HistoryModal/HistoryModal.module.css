@@ -19,7 +19,6 @@
 
 .body {
   align-items: center;
-  border: 1px solid (--font-color-inverted);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -121,9 +120,10 @@
 
 .submitButton {
   align-self: flex-end;
-  background: var(--accent-color-submit);
+  background: var(--button-primary-background-color);
+  border: 1px solid var(--button-primary-border-color);
   border-radius: 18px;
-  color: var(--font-color-inverted);
+  color: var(--button-primary-font-color);
   cursor: pointer;
   min-height: 40px;
   width: 50%;

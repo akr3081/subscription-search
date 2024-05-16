@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import useStore from '../../stores/useStore.js';
 import Modal from '../Modal/Modal.jsx';
 import ThemeToggle from '../ThemeToggle/ThemeToggle.jsx';
-import { CLEAR_DATA_CTA, SAVE_CTA } from '../../common/constants.js';
+import { CANCEL_CTA, CLEAR_DATA_CTA, SAVE_CTA } from '../../common/constants.js';
 import styles from './AuthModal.module.css';
 
 const AuthModal = ({ isOpen, handleClose, handleSubmit, className, isUserAuthenticated }) => {
@@ -47,9 +47,14 @@ const AuthModal = ({ isOpen, handleClose, handleSubmit, className, isUserAuthent
           </div>
         </div>
 
-        <button className={styles.submitButton} type="submit">
-          {SAVE_CTA}
-        </button>
+        <div className={styles.buttons}>
+          <button className={styles.closeButton} onClick={handleClose} type="button">
+            {CANCEL_CTA}
+          </button>
+          <button className={styles.submitButton} type="submit">
+            {SAVE_CTA}
+          </button>
+        </div>
       </form>
     </Modal>
   );

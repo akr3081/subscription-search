@@ -1,4 +1,5 @@
 export const BASE_URL = 'https://youtube.googleapis.com/youtube/v3';
+export const CANCEL_CTA = 'Cancel';
 export const CLEAR_DATA_CTA = 'Clear Local Data';
 export const CLOSE_CTA = 'Close';
 export const FALLBACK_CHANNEL_TITLE = '[TITLE NOT FOUND]';

@@ -1,10 +1,18 @@
 :root {
   --accent-color-accept: green;
   --accent-color-day: yellow;
+  --accent-color-link: blue;
   --accent-color-neutral: #efefef;
   --accent-color-night: darkblue;
   --accent-color-reject: red;
-  --accent-color-submit: black;
+
+  --button-primary-background-color: black;
+  --button-primary-border-color: black;
+  --button-primary-font-color: white;
+
+  --button-secondary-background-color: transparent;
+  --button-secondary-border-color: black;
+  --button-secondary-font-color: black;
 
   --background-color: white;
   --background-color-light: #f7f7f7;
@@ -19,12 +27,16 @@
 }
 
 [data-theme='dark'] {
-  --accent-color-submit: #e8e8e8;
+  --accent-color-link: lightBlue;
 
   --background-color: black;
   --background-color-light: #313030;
   --background-color-semi-light: #5a5a5a;
   --background-color-semi-dark: #6d6d6d;
+
+  --button-secondary-background-color: transparent;
+  --button-secondary-border-color: white;
+  --button-secondary-font-color: white;
 
   --font-color-default: white;
   --font-color-inverted: black;

@@ -1,13 +1,14 @@
 .modal {
   background: var(--background-color-light);
   overflow: hidden;
+  max-height: 75% !important;
   padding: 20px;
-  height: 50% !important;
   width: 40% !important;
 }
 
 @media screen and (max-width: 768px) {
   .modal {
+    height: 50%;
     width: 75% !important;
   }
 }
@@ -16,7 +17,7 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -31,11 +32,13 @@
 
 .form {
   align-items: center;
+  border: 1px solid var(--font-color-default);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   height: 100%;
-  width: 100%;
+  padding: 20px;
 }
 
 .fields {
@@ -63,14 +66,36 @@
   height: 100%;
 }
 
-.submitButton {
-  align-self: flex-end;
-  background: var(--accent-color-submit);
+.buttons {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .buttons {
+    flex-direction: column;
+  }
+}
+
+.closeButton {
+  background: var(--button-secondary-background-color);
+  border: 1px solid var(--button-secondary-border-color);
   border-radius: 18px;
-  color: var(--font-color-inverted);
+  color: var(--button-secondary-font-color);
   cursor: pointer;
   min-height: 40px;
-  width: 50%;
+  width: 100%;
+}
+
+.submitButton {
+  background: var(--button-primary-background-color);
+  border: 1px solid var(--button-primary-border-color);
+  border-radius: 18px;
+  color: var(--button-primary-font-color);
+  cursor: pointer;
+  min-height: 40px;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {

@@ -27,7 +27,9 @@
 
 .steps {
   align-items: flex-start;
+  color: var(--font-color-default);
   display: flex;
+  fill: var(--font-color-default);
   flex-direction: column;
   gap: 30px;
   justify-content: flex-start;
@@ -43,6 +45,10 @@
   width: 100%;
 }
 
+.step a {
+  color: var(--accent-color-link);
+}
+
 .step img {
   align-self: center;
   height: auto;
@@ -51,9 +57,10 @@
 
 .submitButton {
   align-self: flex-end;
-  background: var(--accent-color-submit);
+  background: var(--button-primary-background-color);
+  border: 1px solid var(--button-primary-border-color);
   border-radius: 18px;
-  color: var(--font-color-inverted);
+  color: var(--button-primary-font-color);
   cursor: pointer;
   min-height: 40px;
   width: 50%;
