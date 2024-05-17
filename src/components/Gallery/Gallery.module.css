@@ -56,6 +56,10 @@
   cursor: pointer;
 }
 
+.linkButton svg {
+  fill: var(--font-color-default);
+}
+
 .open svg {
   transform: rotate(90deg);
 }
