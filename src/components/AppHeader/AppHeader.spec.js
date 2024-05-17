@@ -5,14 +5,20 @@ import { CLOSE_CTA, SAVE_CTA } from '../../common/constants.js';
 import AppHeader from './AppHeader.jsx';
 
 describe('AppHeader', () => {
-  const props = { handleSubmitSearch: jest.fn(), isUserAuthenticated: true, isSearchEnabled: true };
+  const props = {
+    handleSubmitSearch: jest.fn(),
+    isUserAuthenticated: true,
+    isSearchEnabled: true,
+    isUserAuthenticated: true
+  };
 
   it('should open/close the info modal', async () => {
     const user = userEvent.setup();
     render(<AppHeader {...props} />);
 
-    const infoButton = screen.getByTestId('icon_button_info');
-    await user.click(infoButton);
+    // Open Menu and click info modal item
+    await user.click(screen.getByTestId('icon_button_moreVertical'));
+    await user.click(screen.getByTestId('menu_item_info'));
 
     // Should find info modal close button after icon button is clicked
     const infoModalCloseButton = await screen.queryByText(CLOSE_CTA);
@@ -27,8 +33,9 @@ describe('AppHeader', () => {
     const user = userEvent.setup();
     render(<AppHeader {...props} />);
 
-    const historyButton = screen.getByTestId('icon_button_history');
-    await user.click(historyButton);
+    // Open Menu and click history modal item
+    await user.click(screen.getByTestId('icon_button_moreVertical'));
+    await user.click(screen.getByTestId('menu_item_history'));
 
     // Should find history modal close button after icon button is clicked
     const historyModalCloseButton = await screen.queryByText(CLOSE_CTA);
@@ -43,8 +50,9 @@ describe('AppHeader', () => {
     const user = userEvent.setup();
     render(<AppHeader {...props} />);
 
-    const settingsButton = screen.getByTestId('icon_button_settings');
-    await user.click(settingsButton);
+    // Open Menu and click settings modal item
+    await user.click(screen.getByTestId('icon_button_moreVertical'));
+    await user.click(screen.getByTestId('menu_item_settings'));
 
     expect(screen.queryByText(SAVE_CTA)).toBeDefined();
 
@@ -60,8 +68,8 @@ describe('AppHeader', () => {
     const handleSubmitAuthMock = jest.fn(() => true);
     render(<AppHeader {...props} handleSubmitAuth={handleSubmitAuthMock} />);
 
-    const settingsButton = screen.getByTestId('icon_button_settings');
-    await user.click(settingsButton);
+    await user.click(screen.getByTestId('icon_button_moreVertical'));
+    await user.click(screen.getByTestId('menu_item_settings'));
 
     const authForm = screen.getByTestId('auth_form');
     fireEvent.submit(authForm);
@@ -78,8 +86,8 @@ describe('AppHeader', () => {
     const handleSubmitAuthMock = jest.fn(() => false);
     render(<AppHeader {...props} handleSubmitAuth={handleSubmitAuthMock} />);
 
-    const settingsButton = screen.getByTestId('icon_button_settings');
-    await user.click(settingsButton);
+    await user.click(screen.getByTestId('icon_button_moreVertical'));
+    await user.click(screen.getByTestId('menu_item_settings'));
 
     const authForm = screen.getByTestId('auth_form');
     fireEvent.submit(authForm);

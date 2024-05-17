@@ -44,7 +44,8 @@ const Menu = ({ items, isUserAuthenticated, className }) => {
                     onClick={() => {
                       handleClick(item);
                     }}
-                    tabIndex="0"
+                    data-testid={`menu_item_${item.iconName}`}
+                    key={`menu_item_${item.iconName}`}
                   >
                     <IconComponent />
                     <p>{item.label}</p>

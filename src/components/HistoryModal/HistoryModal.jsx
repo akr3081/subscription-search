@@ -31,7 +31,7 @@ const HistoryModal = ({ isOpen, handleClose, handleSubmitSearch, className }) =>
       .filter(sub => sub?.snippet);
 
     return subs.map(sub => (
-      <span className={styles.subTag}>
+      <span className={styles.subTag} key={`selected_sub_${sub.id}`}>
         <img src={sub.snippet.thumbnails.medium.url} alt={sub.snippet.title} referrerPolicy="no-referrer" />
         <p>{`${sub.snippet.title}`}</p>
       </span>
