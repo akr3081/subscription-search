@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { CLEAR_DATA_CTA, SAVE_CTA } from '../../common/constants.js';
+import { SAVE_CTA } from '../../common/constants.js';
 import AuthModal from './AuthModal.jsx';
 
 describe('AuthModal', () => {
@@ -19,8 +19,7 @@ describe('AuthModal', () => {
   const props = {
     isOpen: true,
     handleClose: jest.fn(),
-    handleSubmit: jest.fn(e => e.preventDefault()),
-    isUserAuthenticated: false
+    handleSubmit: jest.fn(e => e.preventDefault())
   };
 
   it('should call handleSubmit when save button is clicked', async () => {
@@ -38,15 +37,5 @@ describe('AuthModal', () => {
     await user.click(saveButton);
 
     expect(props.handleSubmit).toHaveBeenCalled();
-  });
-
-  it('should clear state and refresh page when clear button is clicked', async () => {
-    const user = userEvent.setup();
-    render(<AuthModal {...props} isUserAuthenticated />);
-
-    // This button only appears after a user is authenticated
-    const clearButton = screen.queryByText(CLEAR_DATA_CTA);
-    await user.click(clearButton);
-    expect(window.location.reload).toHaveBeenCalled();
   });
 });

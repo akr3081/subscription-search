@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import useStore from '../../stores/useStore.js';
 import AuthModal from '../AuthModal/AuthModal.jsx';
 import InfoModal from '../InfoModal/InfoModal.jsx';
 import HistoryModal from '../HistoryModal/HistoryModal.jsx';
@@ -21,6 +22,8 @@ const AppHeader = ({
   isLoadingSearch,
   className
 }) => {
+  const { reset } = useStore();
+
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(!isUserAuthenticated);
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
   const [isHistoryModalOpen, setIsHistoryModalOpen] = useState(false);
@@ -50,6 +53,7 @@ const AppHeader = ({
             {
               iconName: 'history',
               label: 'History',
+              isAuthRequired: true,
               onClick: () => {
                 setIsHistoryModalOpen(true);
               }
@@ -67,8 +71,19 @@ const AppHeader = ({
               onClick: () => {
                 setIsAuthModalOpen(true);
               }
+            },
+            {
+              iconName: 'logout',
+              label: 'Sign Out',
+              isAuthRequired: true,
+              className: styles.signOut,
+              onClick: () => {
+                reset();
+                window.location.reload();
+              }
             }
           ]}
+          isUserAuthenticated={isUserAuthenticated}
         />
       </div>
 

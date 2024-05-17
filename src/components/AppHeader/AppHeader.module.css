@@ -22,3 +22,8 @@
   height: 50px;
   width: 50px;
 }
+
+.signOut {
+  color: var(--accent-color-reject);
+  fill: var(--accent-color-reject);
+}

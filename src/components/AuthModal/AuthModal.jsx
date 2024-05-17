@@ -3,29 +3,16 @@ import PropTypes from 'prop-types';
 import useStore from '../../stores/useStore.js';
 import Modal from '../Modal/Modal.jsx';
 import ThemeToggle from '../ThemeToggle/ThemeToggle.jsx';
-import { CANCEL_CTA, CLEAR_DATA_CTA, SAVE_CTA } from '../../common/constants.js';
+import { CANCEL_CTA, SAVE_CTA } from '../../common/constants.js';
 import styles from './AuthModal.module.css';
 
-const AuthModal = ({ isOpen, handleClose, handleSubmit, className, isUserAuthenticated }) => {
-  const { apiKey, channelId, reset } = useStore();
+const AuthModal = ({ isOpen, handleClose, handleSubmit, className }) => {
+  const { apiKey, channelId } = useStore();
 
   return (
     <Modal isOpen={isOpen} handleClose={handleClose} className={`${styles.modal} ${className}`}>
       <div className={styles.headerContainer}>
         <ThemeToggle />
-
-        {isUserAuthenticated ? (
-          <button
-            className={styles.clearButton}
-            type="button"
-            onClick={() => {
-              reset();
-              window.location.reload();
-            }}
-          >
-            {CLEAR_DATA_CTA}
-          </button>
-        ) : null}
       </div>
 
       <form className={`${styles.form} ${className}`} onSubmit={handleSubmit} data-testid="auth_form">
@@ -64,8 +51,7 @@ AuthModal.propTypes = {
   isOpen: PropTypes.bool,
   handleClose: PropTypes.func,
   children: PropTypes.node,
-  className: PropTypes.string,
-  isUserAuthenticated: PropTypes.bool
+  className: PropTypes.string
 };
 
 export default AuthModal;

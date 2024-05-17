@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon/Icon.jsx';
 import IconButton from '../IconButton/IconButton.jsx';
 import styles from './Menu.module.css';
 
-const Menu = ({ items, className }) => {
+const Menu = ({ items, isUserAuthenticated, className }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Close menu on escape key
+  useEffect(() => {
+    const closeMenu = e => {
+      if (e.code === 'Escape') setIsOpen(false);
+    };
+
+    window.addEventListener('keydown', closeMenu);
+    return () => window.removeEventListener('keydown', closeMenu);
+  }, []);
 
   const handleClick = item => {
     setIsOpen(false);
@@ -24,20 +34,23 @@ const Menu = ({ items, className }) => {
         />
         {isOpen ? (
           <div className={styles.items}>
-            {items.map(item => {
-              const IconComponent = Icon[item.iconName];
-              return (
-                <div
-                  className={styles.item}
-                  onClick={() => {
-                    handleClick(item);
-                  }}
-                >
-                  <IconComponent />
-                  <p>{item.label}</p>
-                </div>
-              );
-            })}
+            {items
+              .filter(item => !item.isAuthRequired || (item.isAuthRequired && isUserAuthenticated))
+              .map(item => {
+                const IconComponent = Icon[item.iconName];
+                return (
+                  <button
+                    className={`${styles.item} ${item.className}`}
+                    onClick={() => {
+                      handleClick(item);
+                    }}
+                    tabIndex="0"
+                  >
+                    <IconComponent />
+                    <p>{item.label}</p>
+                  </button>
+                );
+              })}
           </div>
         ) : null}
       </div>
@@ -54,6 +67,8 @@ const Menu = ({ items, className }) => {
   );
 };
 Menu.propTypes = {
+  items: PropTypes.array,
+  isUserAuthenticated: PropTypes.bool,
   className: PropTypes.string
 };
 
