@@ -8,7 +8,7 @@
 }
 
 .header form {
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 @media screen and (max-width: 768px) {
@@ -21,32 +21,4 @@
   fill: var(--accent-color-reject);
   height: 50px;
   width: 50px;
-}
-
-.icons {
-  display: flex;
-  gap: 10px;
-}
-
-@media screen and (max-width: 768px) {
-  .icons {
-    gap: 5px;
-  }
-}
-
-.icon {
-  fill: var(--font-color-default);
-  height: 50px;
-  width: 50px;
-}
-
-@media screen and (max-width: 768px) {
-  .icon {
-    height: 30px;
-    width: 30px;
-  }
-}
-
-.icon:hover {
-  opacity: 50%;
 }

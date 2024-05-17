@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import AuthModal from '../AuthModal/AuthModal.jsx';
-import IconButton from '../IconButton/IconButton.jsx';
 import InfoModal from '../InfoModal/InfoModal.jsx';
 import HistoryModal from '../HistoryModal/HistoryModal.jsx';
+import Menu from '../Menu/Menu.jsx';
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import { YouTubeIcon } from '../Icon/Icon.jsx';
 import styles from './AppHeader.module.css';
@@ -45,30 +45,31 @@ const AppHeader = ({
           <SearchBar handleSubmit={handleSubmitSearch} isSearchEnabled={isSearchEnabled} isLoading={isLoadingSearch} />
         ) : null}
 
-        <div className={styles.icons}>
-          <IconButton
-            iconName="history"
-            className={styles.icon}
-            onClick={() => {
-              setIsHistoryModalOpen(true);
-            }}
-          />
-          <IconButton
-            iconName="info"
-            className={styles.icon}
-            onClick={() => {
-              setIsInfoModalOpen(true);
-            }}
-          />
-
-          <IconButton
-            iconName="settings"
-            className={styles.icon}
-            onClick={() => {
-              setIsAuthModalOpen(true);
-            }}
-          />
-        </div>
+        <Menu
+          items={[
+            {
+              iconName: 'history',
+              label: 'History',
+              onClick: () => {
+                setIsHistoryModalOpen(true);
+              }
+            },
+            {
+              iconName: 'info',
+              label: 'Help',
+              onClick: () => {
+                setIsInfoModalOpen(true);
+              }
+            },
+            {
+              iconName: 'settings',
+              label: 'Settings',
+              onClick: () => {
+                setIsAuthModalOpen(true);
+              }
+            }
+          ]}
+        />
       </div>
 
       <div id="modals">
