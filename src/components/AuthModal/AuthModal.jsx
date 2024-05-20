@@ -7,7 +7,7 @@ import { CANCEL_CTA, SAVE_CTA } from '../../common/constants.js';
 import styles from './AuthModal.module.css';
 
 const AuthModal = ({ isOpen, handleClose, handleSubmit, className }) => {
-  const { apiKey, channelId } = useStore();
+  const { userData } = useStore();
 
   return (
     <Modal isOpen={isOpen} handleClose={handleClose} className={`${styles.modal} ${className}`}>
@@ -19,7 +19,13 @@ const AuthModal = ({ isOpen, handleClose, handleSubmit, className }) => {
         <div className={styles.fields}>
           <div className={styles.field}>
             <label htmlFor="apiKey">API Key</label>
-            <input id="apiKey" name="apiKey" placeholder="Enter a YouTube API Key" defaultValue={apiKey} required />
+            <input
+              id="apiKey"
+              name="apiKey"
+              placeholder="Enter a YouTube API Key"
+              defaultValue={userData.apiKey}
+              required
+            />
           </div>
 
           <div className={styles.field}>
@@ -28,7 +34,7 @@ const AuthModal = ({ isOpen, handleClose, handleSubmit, className }) => {
               id="channelId"
               name="channelId"
               placeholder="Enter your channel ID"
-              defaultValue={channelId}
+              defaultValue={userData.channelId}
               required
             />
           </div>

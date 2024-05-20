@@ -133,18 +133,25 @@ describe('utils', () => {
   });
 
   describe('getSubscriptions', () => {
-    it('should get subscriptions', async () => {
+    it('should get subscriptions/userData', async () => {
       fetchSubscriptionData.mockReturnValue(SubscriptionMock);
       fetchChannelData.mockReturnValue(ChannelsMock);
-      const subs = await getSubscriptions({ apiKey: 'mock-api-key', channelId: 'mock-channel-id' });
-      expect(subs.length).toEqual(ChannelsMock.items.length);
+      const { subscriptions, userData } = await getSubscriptions({
+        apiKey: 'mock-api-key',
+        channelId: 'mock-channel-id'
+      });
+      expect(subscriptions.length).toEqual(ChannelsMock.items.length);
+      expect(userData.channelId).toEqual(SubscriptionMock.items[0].subscriberSnippet.channelId);
     });
 
     it('should return empty array if fetchChannelData returns empty result', async () => {
       fetchSubscriptionData.mockReturnValue(SubscriptionMock);
       fetchChannelData.mockReturnValue({});
-      const subs = await getSubscriptions({ apiKey: 'mock-api-key', channelId: 'mock-channel-id' });
-      expect(subs).toEqual([]);
+      const { subscriptions } = await getSubscriptions({
+        apiKey: 'mock-api-key',
+        channelId: 'mock-channel-id'
+      });
+      expect(subscriptions).toEqual([]);
     });
 
     it('should throw if there is an error in the fetchSubscriptionData response', async () => {

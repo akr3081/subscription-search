@@ -112,20 +112,24 @@ export const getSearchResults = async ({ selectedSubscriptions, subscriptions, a
  * @returns {array} List of subscriptions
  */
 export const getSubscriptions = async ({ channelId, apiKey }) => {
-  const subscriptionsList = [];
+  const subscriptions = [];
   let pageToken = '';
+  let userData = {};
 
   do {
     const subscriptionData = await fetchSubscriptionData({ channelId, apiKey, pageToken });
     if (subscriptionData.error) throw new Error(`fetchSubscriptionData error: ${subscriptionData.error.message}`);
+    if (!userData.channelId) userData = subscriptionData?.items?.[0]?.subscriberSnippet;
 
     // Get associated channel data for each subscription
     const channelData = await fetchChannelData({ subscriptionData, apiKey, pageToken });
     if (channelData.error) throw new Error(`fetchChannelData error: ${channelData.error.message}`);
 
     pageToken = subscriptionData.nextPageToken;
-    if (channelData?.items?.length) subscriptionsList.push(...channelData.items);
+    if (channelData?.items?.length) subscriptions.push(...channelData.items);
   } while (pageToken);
 
-  return subscriptionsList;
+  if (!userData.channelId) throw new Error(`user auth error: ChannelId not found`);
+
+  return { subscriptions, userData: { ...userData, apiKey } };
 };

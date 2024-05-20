@@ -6,27 +6,16 @@ const devConfig = { name: 'Subscription Search' };
 const persistConfig = { name: 'subscription-search', storage: createJSONStorage(() => globalThis.localStorage) };
 
 export const initialState = {
-  apiKey: '',
-  channelId: '',
   history: [],
   searchResults: [],
   searchTerm: '',
   selectedSubscriptions: [],
   subscriptions: [],
-  theme: THEMES.LIGHT
+  theme: THEMES.LIGHT,
+  userData: {}
 };
 
 const state = set => ({
-  apiKey: initialState.apiKey,
-  setApiKey: value => {
-    set({ apiKey: value });
-  },
-
-  channelId: initialState.channelId,
-  setChannelId: value => {
-    set({ channelId: value });
-  },
-
   history: initialState.history,
   setHistory: value => {
     set({ history: value });
@@ -55,6 +44,11 @@ const state = set => ({
   theme: initialState.theme,
   setTheme: value => {
     set({ theme: value });
+  },
+
+  userData: initialState.userData,
+  setUserData: value => {
+    set({ userData: value });
   },
 
   reset: () => {

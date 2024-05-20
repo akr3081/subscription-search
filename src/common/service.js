@@ -51,7 +51,7 @@ export const fetchSubscriptionData = async ({ channelId, apiKey, pageToken }) =>
   if (process.env.MOCK_API_CALLS === 'true') return pageToken === '' ? SubscriptionMock : { items: [] };
 
   const res = await fetch(
-    `${BASE_URL}/subscriptions?key=${apiKey}&part=snippet&channelId=${channelId}&order=alphabetical&maxResults=50&pageToken=${pageToken}`
+    `${BASE_URL}/subscriptions?key=${apiKey}&part=snippet,subscriberSnippet&channelId=${channelId}&order=alphabetical&maxResults=50&pageToken=${pageToken}`
   );
   return await res.json();
 };

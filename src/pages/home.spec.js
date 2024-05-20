@@ -20,12 +20,11 @@ describe('Home Page', () => {
   it('should render app header based on selectedSubscriptions state', async () => {
     const user = userEvent.setup();
     useStore.setState({
-      apiKey: 'mock-api-key',
-      channelId: 'mock-channel-id',
       searchResults: [],
       searchTerm: '',
       selectedSubscriptions: [ChannelsMock.items[0].id],
-      subscriptions: ChannelsMock.items
+      subscriptions: ChannelsMock.items,
+      userData: { apiKey: 'mock-api-key', channelId: 'mock-channel-id' }
     });
     render(<HomePage />);
 
@@ -45,10 +44,9 @@ describe('Home Page', () => {
   it('should render subscription selector based on subscriptions/selectedSubscriptions state', async () => {
     const user = userEvent.setup();
     useStore.setState({
-      apiKey: 'mock-api-key',
-      channelId: 'mock-channel-id',
       subscriptions: ChannelsMock.items,
-      selectedSubscriptions: [ChannelsMock.items[0].id]
+      selectedSubscriptions: [ChannelsMock.items[0].id],
+      userData: { apiKey: 'mock-api-key', channelId: 'mock-channel-id' }
     });
     render(<HomePage />);
 

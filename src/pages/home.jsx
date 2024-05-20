@@ -10,24 +10,22 @@ import styles from './home.module.css';
 
 const HomePage = () => {
   const {
-    apiKey,
-    channelId,
     history,
     searchResults,
     searchTerm,
     selectedSubscriptions,
     subscriptions,
     theme,
-    setApiKey,
-    setChannelId,
+    userData,
     setHistory,
     setSearchResults,
     setSearchTerm,
     setSelectedSubscriptions,
-    setSubscriptions
+    setSubscriptions,
+    setUserData
   } = useStore();
 
-  const [isUserAuthenticated, setIsUserAuthenticated] = useState(Boolean(apiKey && channelId));
+  const [isUserAuthenticated, setIsUserAuthenticated] = useState(Boolean(userData.apiKey && userData.channelId));
   const [isLoadingSearch, setIsLoadingSearch] = useState(false);
 
   // Special case for setting values of root element values based on theme state
@@ -39,10 +37,12 @@ const HomePage = () => {
     let isAuthenticated = false;
 
     try {
-      const subs = await getSubscriptions({ apiKey: formData.apiKey, channelId: formData.channelId });
-      setSubscriptions(subs);
-      setApiKey(formData.apiKey);
-      setChannelId(formData.channelId);
+      const { subscriptions, userData } = await getSubscriptions({
+        apiKey: formData.apiKey,
+        channelId: formData.channelId
+      });
+      setSubscriptions(subscriptions);
+      setUserData(userData);
       setIsUserAuthenticated(true);
       isAuthenticated = true;
     } catch (err) {
@@ -60,7 +60,7 @@ const HomePage = () => {
     getSearchResults({
       selectedSubscriptions: selectedSubs,
       subscriptions,
-      apiKey,
+      apiKey: userData.apiKey,
       searchTerm: formData.searchTerm
     })
       .then(results => {
@@ -86,7 +86,7 @@ const HomePage = () => {
     getSearchResults({
       selectedSubscriptions: [channelId],
       subscriptions,
-      apiKey,
+      apiKey: userData.apiKey,
       searchTerm,
       pageToken: channel.pageToken
     })
@@ -136,7 +136,7 @@ const HomePage = () => {
           setSelectedSubscriptions={setSelectedSubscriptions}
           handleRefresh={() => {
             setSelectedSubscriptions([]);
-            handleSubmitAuth({ apiKey, channelId });
+            handleSubmitAuth({ apiKey: userData.apiKey, channelId: userData.channelId });
           }}
           isUserAuthenticated={isUserAuthenticated}
         />
