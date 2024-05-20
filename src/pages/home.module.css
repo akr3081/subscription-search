@@ -42,3 +42,15 @@
   overflow-y: scroll;
   width: 100%;
 }
+
+.banner {
+  margin-right: 25%;
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    margin: 0;
+    width: 80%;
+  }
+}

@@ -1,0 +1,31 @@
+.banner {
+  align-items: center;
+  background: var(--background-color-light);
+  border: 1px solid var(--font-color-default);
+  border-radius: 10px;
+  color: var(--font-color-default);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.heading {
+  color: var(--font-color-default);
+  font-size: xx-large;
+  margin: 0;
+}
+
+.subHeading {
+  color: var(--font-color-neutral);
+  font-size: medium;
+  margin: 0;
+}
+
+.banner svg {
+  border-radius: 100%;
+  fill: var(--font-color-default);
+  margin: 5px;
+}

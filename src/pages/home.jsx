@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getSearchResults, getSubscriptions } from '../common/utils';
 import AppHeader from '../components/AppHeader/AppHeader.jsx';
+import LoginBanner from '../components/LoginBanner/LoginBanner.jsx';
 import Gallery from '../components/Gallery/Gallery.jsx';
 import SubscriptionSelector from '../components/SubscriptionSelector/SubscriptionSelector.jsx';
 import useStore from '../stores/useStore.js';
@@ -143,22 +144,26 @@ const HomePage = () => {
       </div>
 
       <div className={styles.pageBody}>
-        {searchResults?.map(channel => (
-          <Gallery
-            title={channel.title}
-            image={channel.image}
-            link={`https://www.youtube.com/${channel.link}`}
-            items={channel.items}
-            showLoadMore={Boolean(channel.pageToken)}
-            loadMoreItems={() => {
-              loadMoreChannelVideos(channel);
-            }}
-            handleRemove={() => {
-              handleRemoveChannel(channel?.id);
-            }}
-            key={channel.id}
-          />
-        ))}
+        {isUserAuthenticated ? (
+          searchResults?.map(channel => (
+            <Gallery
+              title={channel.title}
+              image={channel.image}
+              link={`https://www.youtube.com/${channel.link}`}
+              items={channel.items}
+              showLoadMore={Boolean(channel.pageToken)}
+              loadMoreItems={() => {
+                loadMoreChannelVideos(channel);
+              }}
+              handleRemove={() => {
+                handleRemoveChannel(channel?.id);
+              }}
+              key={channel.id}
+            />
+          ))
+        ) : (
+          <LoginBanner className={styles.banner} />
+        )}
       </div>
     </div>
   );

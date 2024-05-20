@@ -4,6 +4,10 @@ export const CLOSE_CTA = 'Close';
 export const FALLBACK_CHANNEL_TITLE = '[TITLE NOT FOUND]';
 export const HISTORY_MODAL_HEADING = 'Search History';
 export const LOAD_MORE_CTA = 'Load More';
+export const LOGIN_BANNER_CONTENT = {
+  HEADING: 'Sign in to get started.',
+  SUBHEADING: 'Refer to the help menu for steps to get your YouTube apiKey and channelId.'
+};
 export const MISSING_SUBS_LABEL = 'Please enter a valid API Key and Channel ID to view your subscriptions';
 export const SAVE_CTA = 'Save';
 export const SEARCH_VALIDATION_ERROR = 'Please select subscriptions to search';

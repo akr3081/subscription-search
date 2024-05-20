@@ -24,7 +24,7 @@ const AppHeader = ({
 }) => {
   const { reset } = useStore();
 
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(!isUserAuthenticated);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
   const [isHistoryModalOpen, setIsHistoryModalOpen] = useState(false);
 

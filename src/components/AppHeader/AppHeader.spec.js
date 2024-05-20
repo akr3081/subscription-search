@@ -46,13 +46,13 @@ describe('AppHeader', () => {
     expect(screen.queryByText(CLOSE_CTA)).toEqual(null);
   });
 
-  it('should open/close the settings modal', async () => {
+  it('should open/close the login modal', async () => {
     const user = userEvent.setup();
-    render(<AppHeader {...props} />);
+    render(<AppHeader {...props} isUserAuthenticated={false} />);
 
     // Open Menu and click settings modal item
     await user.click(screen.getByTestId('menu_button'));
-    await user.click(screen.getByTestId('menu_item_settings'));
+    await user.click(screen.getByTestId('menu_item_login'));
 
     expect(screen.queryByText(SAVE_CTA)).toBeDefined();
 
@@ -63,13 +63,13 @@ describe('AppHeader', () => {
     expect(screen.queryByText(SAVE_CTA)).toEqual(null);
   });
 
-  it('should call handleSubmitAuth when settings modal is submitted', async () => {
+  it('should call handleSubmitAuth when login modal is submitted', async () => {
     const user = userEvent.setup();
     const handleSubmitAuthMock = jest.fn(() => true);
-    render(<AppHeader {...props} handleSubmitAuth={handleSubmitAuthMock} />);
+    render(<AppHeader {...props} handleSubmitAuth={handleSubmitAuthMock} isUserAuthenticated={false} />);
 
     await user.click(screen.getByTestId('menu_button'));
-    await user.click(screen.getByTestId('menu_item_settings'));
+    await user.click(screen.getByTestId('menu_item_login'));
 
     const authForm = screen.getByTestId('auth_form');
     fireEvent.submit(authForm);
@@ -84,10 +84,10 @@ describe('AppHeader', () => {
   it('should not close auth modal if handleSubmitAuth returns false', async () => {
     const user = userEvent.setup();
     const handleSubmitAuthMock = jest.fn(() => false);
-    render(<AppHeader {...props} handleSubmitAuth={handleSubmitAuthMock} />);
+    render(<AppHeader {...props} handleSubmitAuth={handleSubmitAuthMock} isUserAuthenticated={false} />);
 
     await user.click(screen.getByTestId('menu_button'));
-    await user.click(screen.getByTestId('menu_item_settings'));
+    await user.click(screen.getByTestId('menu_item_login'));
 
     const authForm = screen.getByTestId('auth_form');
     fireEvent.submit(authForm);
