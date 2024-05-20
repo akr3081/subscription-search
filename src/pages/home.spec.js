@@ -11,7 +11,7 @@ describe('Home Page', () => {
     render(<HomePage />);
 
     // Renders header
-    expect(screen.getByTestId('icon_button_moreVertical')).toBeDefined();
+    expect(screen.getByTestId('menu_button')).toBeDefined();
 
     // Subscription selector not rendered when user is not authenticated
     expect(screen.queryByTestId('icon_button_sync')).toBeNull();

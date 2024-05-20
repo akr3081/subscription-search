@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../Icon/Icon.jsx';
-import IconButton from '../IconButton/IconButton.jsx';
+import useStore from '../../stores/useStore.js';
+import Icon, { UserIcon } from '../Icon/Icon.jsx';
 import styles from './Menu.module.css';
 
 const Menu = ({ items, isUserAuthenticated, className }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { userData } = useStore();
 
   // Close menu on escape key
   useEffect(() => {
@@ -25,13 +26,19 @@ const Menu = ({ items, isUserAuthenticated, className }) => {
   return (
     <>
       <div className={`${styles.menu} ${className}`}>
-        <IconButton
-          iconName="moreVertical"
-          className={styles.icon}
+        <button
+          className={styles.menuButton}
+          data-testid="menu_button"
           onClick={() => {
             setIsOpen(!isOpen);
           }}
-        />
+        >
+          {isUserAuthenticated ? (
+            <img src={userData?.thumbnails?.medium?.url} alt={userData?.title} referrerPolicy="no-referrer" />
+          ) : (
+            <UserIcon />
+          )}
+        </button>
         {isOpen ? (
           <div className={styles.items}>
             {items

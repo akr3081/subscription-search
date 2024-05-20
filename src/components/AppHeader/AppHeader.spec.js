@@ -17,7 +17,7 @@ describe('AppHeader', () => {
     render(<AppHeader {...props} />);
 
     // Open Menu and click info modal item
-    await user.click(screen.getByTestId('icon_button_moreVertical'));
+    await user.click(screen.getByTestId('menu_button'));
     await user.click(screen.getByTestId('menu_item_info'));
 
     // Should find info modal close button after icon button is clicked
@@ -34,7 +34,7 @@ describe('AppHeader', () => {
     render(<AppHeader {...props} />);
 
     // Open Menu and click history modal item
-    await user.click(screen.getByTestId('icon_button_moreVertical'));
+    await user.click(screen.getByTestId('menu_button'));
     await user.click(screen.getByTestId('menu_item_history'));
 
     // Should find history modal close button after icon button is clicked
@@ -51,7 +51,7 @@ describe('AppHeader', () => {
     render(<AppHeader {...props} />);
 
     // Open Menu and click settings modal item
-    await user.click(screen.getByTestId('icon_button_moreVertical'));
+    await user.click(screen.getByTestId('menu_button'));
     await user.click(screen.getByTestId('menu_item_settings'));
 
     expect(screen.queryByText(SAVE_CTA)).toBeDefined();
@@ -68,7 +68,7 @@ describe('AppHeader', () => {
     const handleSubmitAuthMock = jest.fn(() => true);
     render(<AppHeader {...props} handleSubmitAuth={handleSubmitAuthMock} />);
 
-    await user.click(screen.getByTestId('icon_button_moreVertical'));
+    await user.click(screen.getByTestId('menu_button'));
     await user.click(screen.getByTestId('menu_item_settings'));
 
     const authForm = screen.getByTestId('auth_form');
@@ -86,7 +86,7 @@ describe('AppHeader', () => {
     const handleSubmitAuthMock = jest.fn(() => false);
     render(<AppHeader {...props} handleSubmitAuth={handleSubmitAuthMock} />);
 
-    await user.click(screen.getByTestId('icon_button_moreVertical'));
+    await user.click(screen.getByTestId('menu_button'));
     await user.click(screen.getByTestId('menu_item_settings'));
 
     const authForm = screen.getByTestId('auth_form');
