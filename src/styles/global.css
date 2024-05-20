@@ -1,7 +1,7 @@
 :root {
   --accent-color-accept: green;
   --accent-color-day: yellow;
-  --accent-color-link: blue;
+  --accent-color-link: #0560d4;
   --accent-color-neutral: #efefef;
   --accent-color-night: darkblue;
   --accent-color-reject: red;
@@ -27,7 +27,7 @@
 }
 
 [data-theme='dark'] {
-  --accent-color-link: lightBlue;
+  --accent-color-link: #3fa5ff;
 
   --background-color: black;
   --background-color-light: #313030;

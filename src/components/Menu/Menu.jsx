@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import useStore from '../../stores/useStore.js';
 import Icon, { UserIcon } from '../Icon/Icon.jsx';
 import styles from './Menu.module.css';
+import ThemeToggle from '../ThemeToggle/ThemeToggle.jsx';
 
-const Menu = ({ items, isUserAuthenticated, className }) => {
+const Menu = ({ items, isUserAuthenticated, showThemeToggle, className }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { userData } = useStore();
 
@@ -41,8 +42,14 @@ const Menu = ({ items, isUserAuthenticated, className }) => {
         </button>
         {isOpen ? (
           <div className={styles.items}>
+            {showThemeToggle ? (
+              <div className={styles.themeToggleContainer}>
+                <ThemeToggle />
+              </div>
+            ) : null}
+
             {items
-              .filter(item => !item.isAuthRequired || (item.isAuthRequired && isUserAuthenticated))
+              .filter(item => !item.isHidden)
               .map(item => {
                 const IconComponent = Icon[item.iconName];
                 return (
@@ -77,6 +84,7 @@ const Menu = ({ items, isUserAuthenticated, className }) => {
 Menu.propTypes = {
   items: PropTypes.array,
   isUserAuthenticated: PropTypes.bool,
+  showThemeToggle: PropTypes.bool,
   className: PropTypes.string
 };
 

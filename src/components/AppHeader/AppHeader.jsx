@@ -53,7 +53,7 @@ const AppHeader = ({
             {
               iconName: 'history',
               label: 'History',
-              isAuthRequired: true,
+              isHidden: !isUserAuthenticated,
               onClick: () => {
                 setIsHistoryModalOpen(true);
               }
@@ -66,8 +66,10 @@ const AppHeader = ({
               }
             },
             {
-              iconName: 'settings',
-              label: 'Settings',
+              iconName: 'login',
+              label: 'Sign In',
+              className: styles.signIn,
+              isHidden: isUserAuthenticated,
               onClick: () => {
                 setIsAuthModalOpen(true);
               }
@@ -75,7 +77,7 @@ const AppHeader = ({
             {
               iconName: 'logout',
               label: 'Sign Out',
-              isAuthRequired: true,
+              isHidden: !isUserAuthenticated,
               className: styles.signOut,
               onClick: () => {
                 reset();
@@ -84,6 +86,7 @@ const AppHeader = ({
             }
           ]}
           isUserAuthenticated={isUserAuthenticated}
+          showThemeToggle
         />
       </div>
 

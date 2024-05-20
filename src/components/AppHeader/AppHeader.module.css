@@ -23,7 +23,14 @@
   width: 50px;
 }
 
+.signIn {
+  color: var(--accent-color-link);
+  fill: var(--accent-color-link);
+  font-weight: bold;
+}
+
 .signOut {
   color: var(--accent-color-reject);
   fill: var(--accent-color-reject);
+  font-weight: bold;
 }

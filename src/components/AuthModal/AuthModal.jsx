@@ -11,10 +11,6 @@ const AuthModal = ({ isOpen, handleClose, handleSubmit, className }) => {
 
   return (
     <Modal isOpen={isOpen} handleClose={handleClose} className={`${styles.modal} ${className}`}>
-      <div className={styles.headerContainer}>
-        <ThemeToggle />
-      </div>
-
       <form className={`${styles.form} ${className}`} onSubmit={handleSubmit} data-testid="auth_form">
         <div className={styles.fields}>
           <div className={styles.field}>
