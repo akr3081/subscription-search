@@ -11,12 +11,12 @@ describe('Modal', () => {
 
   it('should render modal component with isOpen prop', () => {
     render(<Modal {...props} />);
-    expect(screen.queryByTestId('modal-veil')).not.toBeNull();
+    expect(screen.queryByTestId('modal_veil')).not.toBeNull();
   });
 
   it('should not render modal component without isOpen prop', () => {
     render(<Modal {...props} isOpen={false} />);
-    expect(screen.queryByTestId('modal-veil')).toBeNull();
+    expect(screen.queryByTestId('modal_veil')).toBeNull();
   });
 
   it('should call handleClose when veil is clicked', async () => {
@@ -24,7 +24,7 @@ describe('Modal', () => {
     const user = userEvent.setup();
     render(<Modal {...props} handleClose={handleCloseMock} />);
 
-    const veil = screen.getByTestId('modal-veil');
+    const veil = screen.getByTestId('modal_veil');
     await user.click(veil);
 
     expect(handleCloseMock).toHaveBeenCalled();

@@ -73,6 +73,7 @@ const Menu = ({ items, isUserAuthenticated, showThemeToggle, className }) => {
       {isOpen ? (
         <div
           className={styles.veil}
+          data-testid="menu_veil"
           onClick={() => {
             setIsOpen(false);
           }}

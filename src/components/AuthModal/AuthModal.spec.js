@@ -5,17 +5,6 @@ import { SAVE_CTA } from '../../common/constants.js';
 import AuthModal from './AuthModal.jsx';
 
 describe('AuthModal', () => {
-  let originalWindow = window;
-
-  beforeEach(() => {
-    delete window.location;
-    window.location = { reload: jest.fn() };
-  });
-
-  afterEach(() => {
-    window = originalWindow;
-  });
-
   const props = {
     isOpen: true,
     handleClose: jest.fn(),

@@ -1,10 +1,22 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import useStore, { initialState } from '../../stores/useStore.js';
 import { CLOSE_CTA, SAVE_CTA } from '../../common/constants.js';
 import AppHeader from './AppHeader.jsx';
 
 describe('AppHeader', () => {
+  let originalWindow = window;
+
+  beforeEach(() => {
+    delete window.location;
+    window.location = { reload: jest.fn() };
+  });
+
+  afterEach(() => {
+    window = originalWindow;
+  });
+
   const props = {
     handleSubmitSearch: jest.fn(),
     isUserAuthenticated: true,
@@ -57,7 +69,7 @@ describe('AppHeader', () => {
     expect(screen.queryByText(SAVE_CTA)).toBeDefined();
 
     // Relying on modal veil due to form submit issues
-    const modalVeil = screen.getByTestId('modal-veil');
+    const modalVeil = screen.getByTestId('modal_veil');
     await user.click(modalVeil);
 
     expect(screen.queryByText(SAVE_CTA)).toEqual(null);
@@ -78,6 +90,20 @@ describe('AppHeader', () => {
     await waitFor(() => {
       expect(handleSubmitAuthMock).toHaveBeenCalled();
       expect(screen.queryByText(SAVE_CTA)).toBeNull();
+    });
+  });
+
+  it('should clear state when logout menu item is clicked', async () => {
+    const user = userEvent.setup();
+    render(<AppHeader {...props} />);
+
+    await user.click(screen.getByTestId('menu_button'));
+    await user.click(screen.getByTestId('menu_item_logout'));
+
+    // Should call handleSubmitAuth and not find save cta as modal is closed
+    await waitFor(() => {
+      expect(window.location.reload).toHaveBeenCalled();
+      expect(useStore.getState().userData).toEqual(initialState.userData);
     });
   });
 

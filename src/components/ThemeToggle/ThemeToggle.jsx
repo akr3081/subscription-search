@@ -21,6 +21,7 @@ const ThemeToggle = ({ className }) => {
         if (e.code === 'Space' || e.code === 'Enter') toggleSwitch();
       }}
       tabIndex="0"
+      data-testid="theme_toggle"
     >
       <input type="checkbox" checked={isDarkModeEnabled} className={styles.checkbox} aria-hidden="true" readOnly />
       <span className={styles.slider} />

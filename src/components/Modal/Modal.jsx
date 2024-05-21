@@ -16,7 +16,7 @@ const Modal = ({ isOpen, handleClose, children, className }) => {
     <div>
       <div className={`${styles.modal} ${className}`}>{children}</div>
 
-      <div className={styles.veil} data-testid="modal-veil" onClick={handleClose} />
+      <div className={styles.veil} data-testid="modal_veil" onClick={handleClose} />
     </div>
   ) : null;
 };
