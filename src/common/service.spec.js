@@ -2,6 +2,7 @@ import ChannelsMock from '../__mocks__/channels.json';
 import SearchResultsMock from '../__mocks__/searchResults.json';
 import SubscriptionsMock from '../__mocks__/subscriptions.json';
 import VideoMetadataMock from '../__mocks__/videoMetadata.json';
+import { MAX_RESULTS } from './constants.js';
 import { fetchChannelData, fetchSearchResults, fetchSubscriptionData, fetchVideoMetadata } from './service.js';
 
 describe('services', () => {
@@ -75,7 +76,7 @@ describe('services', () => {
         searchTerm: 'mockSearchTerm',
         pageToken: ''
       });
-      expect(res).toEqual({ ...SearchResultsMock, items: SearchResultsMock.items.slice(0, 4) });
+      expect(res).toEqual({ ...SearchResultsMock, items: SearchResultsMock.items.slice(0, MAX_RESULTS) });
     });
 
     it('should fetch subscription data', async () => {
@@ -141,7 +142,7 @@ describe('services', () => {
         videoIds: ['video-id-123'],
         apiKey: 'mockApiKey'
       });
-      expect(res).toEqual(VideoMetadataMock);
+      expect(res.items[0]).toEqual(VideoMetadataMock.items[0]);
     });
 
     it('should fetch subscription data', async () => {

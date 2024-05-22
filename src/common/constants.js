@@ -8,6 +8,7 @@ export const LOGIN_BANNER_CONTENT = {
   HEADING: 'Sign in to get started.',
   SUBHEADING: 'Refer to the help menu for steps to get your YouTube apiKey and channelId.'
 };
+export const MAX_RESULTS = 4;
 export const MISSING_SUBS_LABEL = 'Please enter a valid API Key and Channel ID to view your subscriptions';
 export const SAVE_CTA = 'Save';
 export const SEARCH_VALIDATION_ERROR = 'Please select subscriptions to search';

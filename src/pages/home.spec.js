@@ -1,10 +1,12 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import MappedSearchResultsMock from '../__mocks__/mappedSearchResults.json';
 import ChannelsMock from '../__mocks__/channels.json';
 import useStore from '../stores/useStore.js';
 import HomePage from './home.jsx';
+import { LOAD_MORE_CTA, MAX_RESULTS } from '../common/constants.js';
+import { getSearchResults } from '../common/utils.js';
 
 describe('Home Page', () => {
   it('should render home page with default state', () => {
@@ -81,5 +83,37 @@ describe('Home Page', () => {
     const galleryRemoveIconButton = screen.getAllByTestId('icon_button_remove')[0];
     await user.click(galleryRemoveIconButton);
     expect(screen.queryByText(videoTitle)).toBeNull();
+  });
+
+  it('should load more videos when load more button is clicked', async () => {
+    const user = userEvent.setup();
+
+    const results = await getSearchResults({
+      selectedSubscriptions: [ChannelsMock.items[0].id],
+      subscriptions: ChannelsMock.items,
+      apiKey: 'mock-api-key',
+      searchTerm: 'mock-search-term'
+    });
+    // expect(results[0].items.map(item => item.title)).toBe(111111);
+
+    useStore.setState({ searchResults: results });
+    render(<HomePage />);
+
+    const channelTitle = ChannelsMock.items[0].snippet.title;
+
+    // Video is now found
+    const galleryArrowIconButton = screen.getAllByTestId('icon_button_arrow')[0];
+    await user.click(galleryArrowIconButton);
+
+    // Channel result with default video count
+    expect(screen.getByText(`${channelTitle} (${MAX_RESULTS})`)).toBeDefined();
+
+    const galleryLoadMoreButton = screen.getAllByText(LOAD_MORE_CTA)[0];
+    await user.click(galleryLoadMoreButton);
+
+    await waitFor(() => {
+      // Channel result with updated video count
+      expect(screen.getByText(`${channelTitle} (${MAX_RESULTS * 2})`)).toBeDefined();
+    });
   });
 });

@@ -1,4 +1,4 @@
-import { BASE_URL } from './constants';
+import { BASE_URL, MAX_RESULTS } from './constants';
 import ChannelsMock from '../__mocks__/channels.json';
 import SearchResultsMock from '../__mocks__/searchResults.json';
 import SubscriptionMock from '../__mocks__/subscriptions.json';
@@ -32,10 +32,10 @@ export const fetchChannelData = async ({ subscriptionData, apiKey, pageToken }) 
  */
 export const fetchSearchResults = async ({ channelId, apiKey, searchTerm, pageToken = '' }) => {
   if (process.env.MOCK_API_CALLS === 'true')
-    return { ...SearchResultsMock, items: SearchResultsMock.items.slice(0, 4) };
+    return { ...SearchResultsMock, items: SearchResultsMock.items.slice(0, MAX_RESULTS) };
 
   const res = await fetch(
-    `${BASE_URL}/search?key=${apiKey}&channelId=${channelId}&maxResults=4&q=${searchTerm}&part=snippet&safeSearch=none&type=video&pageToken=${pageToken}`
+    `${BASE_URL}/search?key=${apiKey}&channelId=${channelId}&maxResults=${MAX_RESULTS}&q=${searchTerm}&part=snippet&safeSearch=none&type=video&pageToken=${pageToken}`
   );
   return await res.json();
 };
@@ -63,7 +63,8 @@ export const fetchSubscriptionData = async ({ channelId, apiKey, pageToken }) =>
  * @returns {object} Object containing list of video metadata objects
  */
 export const fetchVideoMetadata = async ({ videoIds, apiKey }) => {
-  if (process.env.MOCK_API_CALLS === 'true') return VideoMetadataMock;
+  if (process.env.MOCK_API_CALLS === 'true')
+    return { ...VideoMetadataMock, items: VideoMetadataMock.items.slice(0, MAX_RESULTS) };
 
   const res = await fetch(
     `${BASE_URL}/videos?key=${apiKey}&id=${videoIds}&maxResults=50&part=statistics,contentDetails,snippet&safeSearch=none&type=video`
