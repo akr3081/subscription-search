@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import useStore from '../../stores/useStore.js';
 import IconButton from '../IconButton/IconButton.jsx';
 import SubscriptionCard from '../SubscriptionCard/SubscriptionCard.jsx';
 import { MISSING_SUBS_LABEL, SUBS_HEADER } from '../../common/constants.js';
@@ -11,13 +12,8 @@ import styles from './SubscriptionSelector.module.css';
  * @param {array} selectedSubscriptions - List of selected channel ids
  * @param {function} setSelectedSubscriptions - Updates selectedSubscriptions state hook
  */
-const SubscriptionSelector = ({
-  subscriptions,
-  selectedSubscriptions,
-  setSelectedSubscriptions,
-  handleRefresh,
-  isUserAuthenticated
-}) => {
+const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelectedSubscriptions, handleRefresh }) => {
+  const { userData } = useStore();
   const [isLoadingSubscriptions, setIsLoadingSubscriptions] = useState(false);
 
   const sortedItems = subscriptions.sort((a, b) => a?.snippet?.title?.localeCompare(b.snippet.title));
@@ -51,7 +47,7 @@ const SubscriptionSelector = ({
     handleRefresh();
   };
 
-  return isUserAuthenticated ? (
+  return userData?.isUserAuthenticated ? (
     <div className={styles.subscriptionSelector}>
       <div className={styles.header}>
         <p>{`${SUBS_HEADER} (${selectedCount}/${totalCount})`}</p>
@@ -102,8 +98,7 @@ SubscriptionSelector.propTypes = {
   subscriptions: PropTypes.arrayOf(PropTypes.object),
   selectedSubscriptions: PropTypes.arrayOf(PropTypes.string),
   setSelectedSubscriptions: PropTypes.func,
-  handleRefresh: PropTypes.func,
-  isUserAuthenticated: PropTypes.bool
+  handleRefresh: PropTypes.func
 };
 
 SubscriptionSelector.defaultProps = {

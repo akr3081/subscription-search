@@ -14,15 +14,8 @@ import styles from './AppHeader.module.css';
  * @param {function} handleSubmitAuth - Handle auth form submit
  * @param {string} className - CSS class name
  */
-const AppHeader = ({
-  handleSubmitAuth,
-  handleSubmitSearch,
-  isUserAuthenticated,
-  isSearchEnabled,
-  isLoadingSearch,
-  className
-}) => {
-  const { reset } = useStore();
+const AppHeader = ({ handleSubmitAuth, handleSubmitSearch, isSearchEnabled, isLoadingSearch, className }) => {
+  const { userData, reset } = useStore();
 
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
@@ -44,7 +37,7 @@ const AppHeader = ({
       <div className={`${styles.header} ${className}`}>
         <YouTubeIcon className={styles.headerIcon} />
 
-        {isUserAuthenticated ? (
+        {userData?.isUserAuthenticated ? (
           <SearchBar handleSubmit={handleSubmitSearch} isSearchEnabled={isSearchEnabled} isLoading={isLoadingSearch} />
         ) : null}
 
@@ -53,7 +46,7 @@ const AppHeader = ({
             {
               iconName: 'history',
               label: 'History',
-              isHidden: !isUserAuthenticated,
+              isHidden: !userData?.isUserAuthenticated,
               onClick: () => {
                 setIsHistoryModalOpen(true);
               }
@@ -69,7 +62,7 @@ const AppHeader = ({
               iconName: 'login',
               label: 'Sign In',
               className: styles.signIn,
-              isHidden: isUserAuthenticated,
+              isHidden: userData?.isUserAuthenticated,
               onClick: () => {
                 setIsAuthModalOpen(true);
               }
@@ -77,7 +70,7 @@ const AppHeader = ({
             {
               iconName: 'logout',
               label: 'Sign Out',
-              isHidden: !isUserAuthenticated,
+              isHidden: !userData?.isUserAuthenticated,
               className: styles.signOut,
               onClick: () => {
                 reset();
@@ -85,7 +78,7 @@ const AppHeader = ({
               }
             }
           ]}
-          isUserAuthenticated={isUserAuthenticated}
+          isUserAuthenticated={userData?.isUserAuthenticated}
           showThemeToggle
         />
       </div>
@@ -106,7 +99,6 @@ const AppHeader = ({
           }}
           handleSubmit={handleAuthFormSubmit}
           className={styles.form}
-          isUserAuthenticated={isUserAuthenticated}
         />
 
         <HistoryModal
@@ -125,7 +117,6 @@ const AppHeader = ({
 AppHeader.propTypes = {
   handleSubmitAuth: PropTypes.func,
   handleSubmitSearch: PropTypes.func,
-  isUserAuthenticated: PropTypes.bool,
   isSearchEnabled: PropTypes.bool,
   isLoadingSearch: PropTypes.bool,
   className: PropTypes.string

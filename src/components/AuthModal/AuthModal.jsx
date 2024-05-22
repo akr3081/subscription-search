@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import useStore from '../../stores/useStore.js';
 import Modal from '../Modal/Modal.jsx';
-import ThemeToggle from '../ThemeToggle/ThemeToggle.jsx';
 import { CANCEL_CTA, SAVE_CTA } from '../../common/constants.js';
 import styles from './AuthModal.module.css';
 

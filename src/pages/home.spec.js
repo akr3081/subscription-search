@@ -24,7 +24,7 @@ describe('Home Page', () => {
       searchTerm: '',
       selectedSubscriptions: [ChannelsMock.items[0].id],
       subscriptions: ChannelsMock.items,
-      userData: { apiKey: 'mock-api-key', channelId: 'mock-channel-id' }
+      userData: { apiKey: 'mock-api-key', channelId: 'mock-channel-id', isUserAuthenticated: true }
     });
     render(<HomePage />);
 
@@ -46,7 +46,7 @@ describe('Home Page', () => {
     useStore.setState({
       subscriptions: ChannelsMock.items,
       selectedSubscriptions: [ChannelsMock.items[0].id],
-      userData: { apiKey: 'mock-api-key', channelId: 'mock-channel-id' }
+      userData: { apiKey: 'mock-api-key', channelId: 'mock-channel-id', isUserAuthenticated: true }
     });
     render(<HomePage />);
 

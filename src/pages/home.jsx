@@ -26,7 +26,6 @@ const HomePage = () => {
     setUserData
   } = useStore();
 
-  const [isUserAuthenticated, setIsUserAuthenticated] = useState(Boolean(userData.apiKey && userData.channelId));
   const [isLoadingSearch, setIsLoadingSearch] = useState(false);
 
   // Special case for setting values of root element values based on theme state
@@ -43,8 +42,7 @@ const HomePage = () => {
         channelId: formData.channelId
       });
       setSubscriptions(subscriptions);
-      setUserData(userData);
-      setIsUserAuthenticated(true);
+      setUserData({ ...userData, isUserAuthenticated: true });
       isAuthenticated = true;
     } catch (err) {
       alert(`Subscription Error: ${err}`);
@@ -124,7 +122,7 @@ const HomePage = () => {
       <AppHeader
         handleSubmitAuth={handleSubmitAuth}
         handleSubmitSearch={handleSubmitSearch}
-        isUserAuthenticated={isUserAuthenticated}
+        isUserAuthenticated={userData.isUserAuthenticated}
         isSearchEnabled={Boolean(selectedSubscriptions?.length)}
         isLoadingSearch={isLoadingSearch}
         className={styles.header}
@@ -139,12 +137,11 @@ const HomePage = () => {
             setSelectedSubscriptions([]);
             handleSubmitAuth({ apiKey: userData.apiKey, channelId: userData.channelId });
           }}
-          isUserAuthenticated={isUserAuthenticated}
         />
       </div>
 
       <div className={styles.pageBody}>
-        {isUserAuthenticated ? (
+        {userData?.isUserAuthenticated ? (
           searchResults?.map(channel => (
             <Gallery
               title={channel.title}

@@ -1,17 +1,21 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import useStore from '../../stores/useStore.js';
 import { SUBS_HEADER } from '../../common/constants';
 import ChannelsMock from '../../__mocks__/channels.json';
 import SubscriptionSelector from './SubscriptionSelector.jsx';
 import userEvent from '@testing-library/user-event';
 
 describe('SubscriptionSelector', () => {
+  beforeEach(() => {
+    useStore.setState({ userData: { isUserAuthenticated: true } });
+  });
+
   const props = {
     subscriptions: ChannelsMock.items,
     selectedSubscriptions: ['UCCfOTX8l2zpgiALWKBx43Mg', 'UC2NU0s1H0p9N4jvF7qV59vA'],
     setSelectedSubscriptions: jest.fn(),
-    handleRefresh: jest.fn(),
-    isUserAuthenticated: true
+    handleRefresh: jest.fn()
   };
 
   it('should render component with props', () => {
@@ -32,7 +36,8 @@ describe('SubscriptionSelector', () => {
   });
 
   it('should not render component if user is not authenticated', () => {
-    render(<SubscriptionSelector {...props} isUserAuthenticated={false} />);
+    useStore.setState({ userData: { isUserAuthenticated: false } });
+    render(<SubscriptionSelector {...props} />);
 
     // Header elements are not found
     expect(screen.queryByText(`${SUBS_HEADER} (2/49)`)).toBeNull();

@@ -1,9 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import useStore from '../../stores/useStore.js';
 import Menu from './Menu.jsx';
 
 describe('Menu', () => {
+  beforeEach(() => {
+    useStore.setState({ userData: { isUserAuthenticated: true } });
+  });
+
   const props = {
     items: [
       {
@@ -19,7 +24,6 @@ describe('Menu', () => {
         onClick: jest.fn()
       }
     ],
-    isUserAuthenticated: true,
     showThemeToggle: true
   };
   it('should open the menu when menu button is clicked', async () => {

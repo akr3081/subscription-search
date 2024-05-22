@@ -11,6 +11,7 @@ describe('AppHeader', () => {
   beforeEach(() => {
     delete window.location;
     window.location = { reload: jest.fn() };
+    useStore.setState({ userData: { isUserAuthenticated: true } });
   });
 
   afterEach(() => {
@@ -19,9 +20,7 @@ describe('AppHeader', () => {
 
   const props = {
     handleSubmitSearch: jest.fn(),
-    isUserAuthenticated: true,
-    isSearchEnabled: true,
-    isUserAuthenticated: true
+    isSearchEnabled: true
   };
 
   it('should open/close the info modal', async () => {
@@ -59,8 +58,10 @@ describe('AppHeader', () => {
   });
 
   it('should open/close the login modal', async () => {
+    useStore.setState({ userData: { isUserAuthenticated: false } });
+
     const user = userEvent.setup();
-    render(<AppHeader {...props} isUserAuthenticated={false} />);
+    render(<AppHeader {...props} />);
 
     // Open Menu and click settings modal item
     await user.click(screen.getByTestId('menu_button'));
@@ -76,9 +77,11 @@ describe('AppHeader', () => {
   });
 
   it('should call handleSubmitAuth when login modal is submitted', async () => {
+    useStore.setState({ userData: { isUserAuthenticated: false } });
+
     const user = userEvent.setup();
     const handleSubmitAuthMock = jest.fn(() => true);
-    render(<AppHeader {...props} handleSubmitAuth={handleSubmitAuthMock} isUserAuthenticated={false} />);
+    render(<AppHeader {...props} handleSubmitAuth={handleSubmitAuthMock} />);
 
     await user.click(screen.getByTestId('menu_button'));
     await user.click(screen.getByTestId('menu_item_login'));
@@ -108,9 +111,11 @@ describe('AppHeader', () => {
   });
 
   it('should not close auth modal if handleSubmitAuth returns false', async () => {
+    useStore.setState({ userData: { isUserAuthenticated: false } });
+
     const user = userEvent.setup();
     const handleSubmitAuthMock = jest.fn(() => false);
-    render(<AppHeader {...props} handleSubmitAuth={handleSubmitAuthMock} isUserAuthenticated={false} />);
+    render(<AppHeader {...props} handleSubmitAuth={handleSubmitAuthMock} />);
 
     await user.click(screen.getByTestId('menu_button'));
     await user.click(screen.getByTestId('menu_item_login'));
@@ -137,7 +142,9 @@ describe('AppHeader', () => {
   });
 
   it('should not render search bar if user is not authenticated', async () => {
-    render(<AppHeader {...props} isUserAuthenticated={false} />);
+    useStore.setState({ userData: { isUserAuthenticated: false } });
+
+    render(<AppHeader {...props} />);
     expect(screen.queryByTestId('icon_button_search')).toEqual(null);
   });
 });
