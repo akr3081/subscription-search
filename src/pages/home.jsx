@@ -69,7 +69,7 @@ const HomePage = () => {
         setSearchResults(results);
         if (results.length)
           setHistory([
-            { timestamp: new Date().getTime(), searchTerm: formData.searchTerm, selectedSubscriptions },
+            { timestamp: new Date().getTime(), searchTerm: formData.searchTerm, selectedSubscriptions: selectedSubs },
             ...history
           ]);
       })

@@ -42,27 +42,36 @@ const HistoryModal = ({ isOpen, handleClose, handleSubmitSearch, className }) =>
     <Modal isOpen={isOpen} handleClose={handleClose} className={`${styles.modal} ${className}`}>
       <h1 className={styles.heading}>{HISTORY_MODAL_HEADING}</h1>
       <div className={`${styles.body} ${className}`}>
-        {history.map(item => (
-          <div className={styles.item} key={`history_item_${item.timestamp}`}>
-            <div
-              className={styles.itemContent}
-              onClick={() => {
-                applyHistoryItem(item);
-              }}
-            >
-              <p className={styles.searchTerm}>{item.searchTerm}</p>
-              <div className={styles.selectedSubs}>{formatSelectedSubs(item)}</div>
-            </div>
-            <div className={styles.itemButtons}>
-              <IconButton
-                iconName="remove"
+        {history.map(item => {
+          const timestamp = `${new Date(item.timestamp).toLocaleDateString()} ${new Date(
+            item.timestamp
+          ).toLocaleTimeString()}`;
+          const subs = formatSelectedSubs(item);
+
+          return (
+            <div className={styles.item} key={`history_item_${item.timestamp}`}>
+              <div
+                className={styles.itemContent}
+                tabIndex="0"
                 onClick={() => {
-                  removeItemFromHistory(item.timestamp);
+                  applyHistoryItem(item);
                 }}
-              />
+              >
+                <p className={styles.timestamp}>{timestamp}</p>
+                <p className={styles.searchTerm}>{item.searchTerm}</p>
+                <div className={styles.selectedSubs}>{subs}</div>
+              </div>
+              <div className={styles.itemButtons}>
+                <IconButton
+                  iconName="remove"
+                  onClick={() => {
+                    removeItemFromHistory(item.timestamp);
+                  }}
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       <button className={styles.closeButton} onClick={handleClose}>
         {CLOSE_CTA}
