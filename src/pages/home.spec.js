@@ -2,13 +2,23 @@ import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import MappedSearchResultsMock from '../__mocks__/mappedSearchResults.json';
+import SearchResultsMock from '../__mocks__/searchResults.json';
 import ChannelsMock from '../__mocks__/channels.json';
 import useStore from '../stores/useStore.js';
 import HomePage from './home.jsx';
 import { LOAD_MORE_CTA, MAX_RESULTS } from '../common/constants.js';
 import { getSearchResults } from '../common/utils.js';
+import { fetchSearchResults } from '../common/service.js';
+
+jest.mock('../common/service.js', () => ({
+  ...jest.requireActual('../common/service.js'),
+  fetchSearchResults: jest.fn() // TODO: This
+}));
 
 describe('Home Page', () => {
+  beforeEach(() => {
+    fetchSearchResults.mockReturnValue({ ...SearchResultsMock, items: SearchResultsMock.items.slice(0, MAX_RESULTS) });
+  });
   it('should render home page with default state', () => {
     render(<HomePage />);
 
@@ -19,7 +29,7 @@ describe('Home Page', () => {
     expect(screen.queryByTestId('icon_button_sync')).toBeNull();
   });
 
-  it('should render app header based on selectedSubscriptions state', async () => {
+  it('should render app header and handle search bar submit', async () => {
     const user = userEvent.setup();
     useStore.setState({
       searchResults: [],
@@ -94,7 +104,6 @@ describe('Home Page', () => {
       apiKey: 'mock-api-key',
       searchTerm: 'mock-search-term'
     });
-    // expect(results[0].items.map(item => item.title)).toBe(111111);
 
     useStore.setState({ searchResults: results });
     render(<HomePage />);
@@ -115,5 +124,31 @@ describe('Home Page', () => {
       // Channel result with updated video count
       expect(screen.getByText(`${channelTitle} (${MAX_RESULTS * 2})`)).toBeDefined();
     });
+  });
+
+  it('should catch and show alert message for search error', async () => {
+    fetchSearchResults.mockReturnValue({ error: 'mock-error' });
+
+    const user = userEvent.setup();
+    useStore.setState({
+      searchResults: [],
+      searchTerm: '',
+      selectedSubscriptions: [ChannelsMock.items[0].id],
+      subscriptions: ChannelsMock.items,
+      userData: { apiKey: 'mock-api-key', channelId: 'mock-channel-id', isUserAuthenticated: true }
+    });
+    render(<HomePage />);
+
+    expect(useStore.getState().searchTerm).toEqual('');
+    expect(useStore.getState().searchResults.length).toEqual(0);
+
+    const searchBarInput = screen.getByPlaceholderText('Search');
+    const searchBarSubmitButton = screen.getByTestId('icon_button_search');
+
+    fireEvent.change(searchBarInput, { target: { value: 'mock-search-term' } });
+    await user.click(searchBarSubmitButton);
+
+    expect(useStore.getState().searchTerm).toEqual('');
+    expect(useStore.getState().searchResults.length === 0).toEqual(true);
   });
 });
