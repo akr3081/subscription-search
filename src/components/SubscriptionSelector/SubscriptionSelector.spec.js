@@ -25,11 +25,7 @@ describe('SubscriptionSelector', () => {
     expect(screen.getByText(`${SUBS_HEADER} (2/49)`)).toBeDefined();
     expect(screen.getByTestId('icon_button_sync')).toBeDefined();
 
-    // Should render divider when there are selected items
-    expect(screen.getByRole('separator')).toBeDefined();
-
-    // Add/Substract icon buttons match number of selected/unselected subs
-    expect(screen.getAllByTestId('icon_button_subtract').length).toEqual(props.selectedSubscriptions.length);
+    // Add icon buttons match number of shown subs
     expect(screen.getAllByTestId('icon_button_add').length).toEqual(
       props.subscriptions.length - props.selectedSubscriptions.length
     );
@@ -44,7 +40,6 @@ describe('SubscriptionSelector', () => {
     expect(screen.queryByTestId('icon_button_sync')).toBeNull();
 
     // Subscriptions are not found
-    expect(screen.queryAllByTestId('icon_button_subtract').length).toEqual(0);
     expect(screen.queryAllByTestId('icon_button_add').length).toEqual(0);
   });
 
@@ -56,7 +51,6 @@ describe('SubscriptionSelector', () => {
     expect(screen.queryByTestId('icon_button_sync')).toBeDefined();
 
     // Subscriptions are empty
-    expect(screen.queryAllByTestId('icon_button_subtract').length).toEqual(0);
     expect(screen.queryAllByTestId('icon_button_add').length).toEqual(0);
   });
 
@@ -77,16 +71,6 @@ describe('SubscriptionSelector', () => {
       'UC2NU0s1H0p9N4jvF7qV59vA',
       'UCBODyKF0JMbUd6D9Bklyzbw'
     ]);
-  });
-
-  it('should call setSelectedSubscriptions when SubscriptionCard subtract iconButton is clicked', async () => {
-    const user = userEvent.setup();
-    render(<SubscriptionSelector {...props} />);
-
-    const subCardSubtractIconButton = screen.getAllByTestId('icon_button_subtract')[0];
-    await user.click(subCardSubtractIconButton);
-
-    expect(props.setSelectedSubscriptions).toHaveBeenLastCalledWith(['UCCfOTX8l2zpgiALWKBx43Mg']);
   });
 
   it('should call handleRefresh when header sync button is clicked', async () => {

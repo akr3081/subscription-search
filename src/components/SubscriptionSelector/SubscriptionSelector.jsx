@@ -15,11 +15,10 @@ import styles from './SubscriptionSelector.module.css';
 const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelectedSubscriptions, handleRefresh }) => {
   const { userData } = useStore();
   const [isLoadingSubscriptions, setIsLoadingSubscriptions] = useState(false);
+  const [filter, setFilter] = useState('');
 
   const sortedItems = subscriptions.sort((a, b) => a?.snippet?.title?.localeCompare(b.snippet.title));
-
-  const selected = sortedItems.filter(item => selectedSubscriptions.includes(item.id));
-  const unSelected = sortedItems.filter(item => !selected.includes(item));
+  const unSelected = sortedItems.filter(item => !selectedSubscriptions.includes(item.id));
 
   const selectedCount = selectedSubscriptions?.length;
   const totalCount = subscriptions?.length;
@@ -29,16 +28,7 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
   }, [subscriptions]);
 
   const handleSelect = subscription => {
-    const channelId = subscription.id;
-    const isSelected = selectedSubscriptions.includes(channelId);
-    let newSelectedSubs = [...selectedSubscriptions];
-
-    if (isSelected) {
-      newSelectedSubs = newSelectedSubs.filter(selectedSub => selectedSub !== channelId);
-    } else {
-      newSelectedSubs.push(channelId);
-    }
-
+    const newSelectedSubs = [...selectedSubscriptions, subscription.id];
     setSelectedSubscriptions(newSelectedSubs);
   };
 
@@ -49,43 +39,37 @@ const SubscriptionSelector = ({ subscriptions, selectedSubscriptions, setSelecte
 
   return userData?.isUserAuthenticated ? (
     <div className={styles.subscriptionSelector}>
-      <div className={styles.header}>
-        <p>{`${SUBS_HEADER} (${selectedCount}/${totalCount})`}</p>
-        <IconButton
-          iconName="sync"
-          className={styles.iconButton}
-          onClick={handleRefreshClick}
-          disabled={isLoadingSubscriptions}
+      <div className={styles.headerContainer}>
+        <div className={styles.header}>
+          <p>{`${SUBS_HEADER} (${selectedCount}/${totalCount})`}</p>
+          <IconButton iconName="sync" onClick={handleRefreshClick} disabled={isLoadingSubscriptions} />
+        </div>
+        <input
+          className={styles.filter}
+          value={filter}
+          placeholder="Filter Subscriptions"
+          maxLength="50"
+          onChange={e => {
+            setFilter(e.target.value.toLowerCase());
+          }}
         />
       </div>
 
       {subscriptions.length ? (
         <div className={styles.selections}>
-          {selected.map((subscription, index) => (
-            <SubscriptionCard
-              name={subscription.snippet.title}
-              image={subscription.snippet.thumbnails.default.url}
-              isSelected={selectedSubscriptions.includes(subscription.id)}
-              handleSelect={() => {
-                handleSelect(subscription);
-              }}
-              key={`selected_sub_${index}`}
-            />
-          ))}
-
-          {selected?.length ? <hr className={styles.divider} /> : null}
-
-          {unSelected.map((subscription, index) => (
-            <SubscriptionCard
-              name={subscription.snippet.title}
-              image={subscription.snippet.thumbnails.default.url}
-              isSelected={selectedSubscriptions.includes(subscription.id)}
-              handleSelect={() => {
-                handleSelect(subscription);
-              }}
-              key={`unselected_sub_${index}`}
-            />
-          ))}
+          {unSelected
+            .filter(sub => sub.snippet.title.toLowerCase().includes(filter))
+            .map((subscription, index) => (
+              <SubscriptionCard
+                name={subscription.snippet.title}
+                image={subscription.snippet.thumbnails.default.url}
+                isSelected={selectedSubscriptions.includes(subscription.id)}
+                handleSelect={() => {
+                  handleSelect(subscription);
+                }}
+                key={`unselected_sub_${index}`}
+              />
+            ))}
         </div>
       ) : (
         <div>{MISSING_SUBS_LABEL}</div>

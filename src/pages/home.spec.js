@@ -12,7 +12,7 @@ import { fetchSearchResults } from '../common/service.js';
 
 jest.mock('../common/service.js', () => ({
   ...jest.requireActual('../common/service.js'),
-  fetchSearchResults: jest.fn() // TODO: This
+  fetchSearchResults: jest.fn()
 }));
 
 describe('Home Page', () => {
@@ -41,7 +41,6 @@ describe('Home Page', () => {
     render(<HomePage />);
 
     expect(useStore.getState().searchTerm).toEqual('');
-    expect(useStore.getState().searchResults.length).toEqual(0);
 
     const searchBarInput = screen.getByPlaceholderText('Search');
     const searchBarSubmitButton = screen.getByTestId('icon_button_search');
@@ -50,7 +49,7 @@ describe('Home Page', () => {
     await user.click(searchBarSubmitButton);
 
     expect(useStore.getState().searchTerm).toEqual('mock-search-term');
-    expect(useStore.getState().searchResults.length > 0).toEqual(true);
+    expect(useStore.getState().searchResults[0].items.length > 0).toEqual(true);
   });
 
   it('should render subscription selector based on subscriptions/selectedSubscriptions state', async () => {
@@ -63,7 +62,7 @@ describe('Home Page', () => {
     render(<HomePage />);
 
     // Selected subscriptions
-    expect(screen.getAllByTestId('icon_button_subtract').length).toEqual(1);
+    expect(useStore.getState().selectedSubscriptions.length).toEqual(1);
 
     // Unselected subscriptions
     expect(screen.getAllByTestId('icon_button_add').length).toEqual(ChannelsMock.items.length - 1);
@@ -71,12 +70,15 @@ describe('Home Page', () => {
     // Should clear selected subcriptions when sync button is clicked
     const syncButton = screen.getByTestId('icon_button_sync');
     await user.click(syncButton);
-    expect(screen.queryAllByTestId('icon_button_subtract').length).toEqual(0);
+    expect(useStore.getState().selectedSubscriptions.length).toEqual(0);
   });
 
   it('should render channel gallery components based on searchResults state', async () => {
     const user = userEvent.setup();
-    useStore.setState({ searchResults: MappedSearchResultsMock });
+    useStore.setState({
+      searchResults: MappedSearchResultsMock,
+      selectedSubscriptions: [MappedSearchResultsMock[0].items[0].channelId]
+    });
     render(<HomePage />);
 
     const videoTitle = MappedSearchResultsMock[0].items[0].title;
@@ -105,7 +107,7 @@ describe('Home Page', () => {
       searchTerm: 'mock-search-term'
     });
 
-    useStore.setState({ searchResults: results });
+    useStore.setState({ searchResults: results, selectedSubscriptions: [ChannelsMock.items[0].id] });
     render(<HomePage />);
 
     const channelTitle = ChannelsMock.items[0].snippet.title;
@@ -140,7 +142,6 @@ describe('Home Page', () => {
     render(<HomePage />);
 
     expect(useStore.getState().searchTerm).toEqual('');
-    expect(useStore.getState().searchResults.length).toEqual(0);
 
     const searchBarInput = screen.getByPlaceholderText('Search');
     const searchBarSubmitButton = screen.getByTestId('icon_button_search');
@@ -148,7 +149,8 @@ describe('Home Page', () => {
     fireEvent.change(searchBarInput, { target: { value: 'mock-search-term' } });
     await user.click(searchBarSubmitButton);
 
+    // State is not updated when error is triggered
     expect(useStore.getState().searchTerm).toEqual('');
-    expect(useStore.getState().searchResults.length === 0).toEqual(true);
+    expect(window.alert).toHaveBeenCalledWith('Search Error: Error');
   });
 });

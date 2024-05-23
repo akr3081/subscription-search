@@ -33,6 +33,28 @@ const HomePage = () => {
     document.documentElement.style.setProperty('background', theme === THEMES.DARK ? 'black' : 'white');
   }, [theme]);
 
+  useEffect(() => {
+    // Updated search results with empty results objects for new selectedSubscriptions
+    const selectedSubResults = selectedSubscriptions.map(selectedSubId => {
+      const existingResult = searchResults?.find(channelRes => channelRes.id === selectedSubId);
+      if (existingResult) return existingResult;
+
+      const matchedSubscription = subscriptions.find(sub => sub.id === selectedSubId);
+
+      return {
+        id: selectedSubId,
+        title: matchedSubscription.snippet.title,
+        image: matchedSubscription.snippet.thumbnails.medium,
+        link: matchedSubscription.snippet.customUrl,
+        items: []
+      };
+    });
+
+    // Filter to remove any results which are not found in selectedSubscriptions
+    const newResults = selectedSubResults?.filter(channelRes => selectedSubscriptions.includes(channelRes.id));
+    setSearchResults(newResults);
+  }, [selectedSubscriptions]);
+
   const handleSubmitAuth = async formData => {
     let isAuthenticated = false;
 
@@ -67,11 +89,12 @@ const HomePage = () => {
         setSelectedSubscriptions(selectedSubs);
         setSearchTerm(formData.searchTerm);
         setSearchResults(results);
-        if (results.length)
+        if (results.length) {
           setHistory([
             { timestamp: new Date().getTime(), searchTerm: formData.searchTerm, selectedSubscriptions: selectedSubs },
             ...history
           ]);
+        }
       })
       .catch(err => {
         setIsLoadingSearch(false);
@@ -109,12 +132,8 @@ const HomePage = () => {
   };
 
   const handleRemoveChannel = channelId => {
-    // FIXME: Add this once empty channel gallerys are added
-    // const newSelectedSubscriptions = selectedSubscriptions.filter(sub => sub !== channelId);
-    // setSelectedSubscriptions(newSelectedSubscriptions)
-
-    const newResults = searchResults?.filter(channelResult => channelResult.id !== channelId);
-    setSearchResults(newResults);
+    const newSelectedSubscriptions = selectedSubscriptions.filter(sub => sub !== channelId);
+    setSelectedSubscriptions(newSelectedSubscriptions);
   };
 
   return (
@@ -142,22 +161,24 @@ const HomePage = () => {
 
       <div className={styles.pageBody}>
         {userData?.isUserAuthenticated ? (
-          searchResults?.map(channel => (
-            <Gallery
-              title={channel.title}
-              image={channel.image}
-              link={`https://www.youtube.com/${channel.link}`}
-              items={channel.items}
-              showLoadMore={true}
-              loadMoreItems={() => {
-                loadMoreChannelVideos(channel);
-              }}
-              handleRemove={() => {
-                handleRemoveChannel(channel?.id);
-              }}
-              key={channel.id}
-            />
-          ))
+          searchResults
+            ?.sort((a, b) => a.title.localeCompare(b.title))
+            ?.map(channel => (
+              <Gallery
+                title={channel.title}
+                image={channel.image}
+                link={`https://www.youtube.com/${channel.link}`}
+                items={channel.items}
+                showLoadMore={true}
+                loadMoreItems={() => {
+                  loadMoreChannelVideos(channel);
+                }}
+                handleRemove={() => {
+                  handleRemoveChannel(channel?.id);
+                }}
+                key={`gallery_${channel.id}`}
+              />
+            ))
         ) : (
           <LoginBanner className={styles.banner} />
         )}

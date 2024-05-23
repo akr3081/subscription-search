@@ -15,9 +15,12 @@ const Gallery = ({ title, image, link, items, showLoadMore, loadMoreItems, handl
   return (
     <div className={styles.gallery}>
       <div className={styles.header}>
-        <div className={styles.channel} onClick={() => {
-          setIsOpen(!isOpen);
-        }}>
+        <div
+          className={styles.channel}
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        >
           <IconButton
             iconName="arrow"
             className={isOpen ? styles.open : ''}
@@ -26,7 +29,7 @@ const Gallery = ({ title, image, link, items, showLoadMore, loadMoreItems, handl
             }}
           />
           <img src={image?.url} alt={title} referrerPolicy="no-referrer" />
-          <h2>{`${title ?? FALLBACK_CHANNEL_TITLE} (${items.length})`}</h2>
+          <h2>{`${title ?? FALLBACK_CHANNEL_TITLE} (${items?.length})`}</h2>
         </div>
 
         <div className={styles.icons}>
@@ -36,7 +39,6 @@ const Gallery = ({ title, image, link, items, showLoadMore, loadMoreItems, handl
             </a>
           </button>
 
-
           <IconButton iconName="remove" onClick={handleRemove} />
         </div>
       </div>
@@ -44,8 +46,16 @@ const Gallery = ({ title, image, link, items, showLoadMore, loadMoreItems, handl
       {isOpen ? (
         <div>
           <div className={styles.items}>
-            {items.map(item => (
-              <VideoCard videoId={item.videoId} title={item.title} videoAge={item.videoAge} views={item.views} duration={item.duration} thumbnails={item.thumbnails} key={`gallery_${item.videoId}`} />
+            {items.map((item, index) => (
+              <VideoCard
+                videoId={item.videoId}
+                title={item.title}
+                videoAge={item.videoAge}
+                views={item.views}
+                duration={item.duration}
+                thumbnails={item.thumbnails}
+                key={`gallery_${title}_${index}`}
+              />
             ))}
           </div>
           {showLoadMore ? (

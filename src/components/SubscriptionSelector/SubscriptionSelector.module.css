@@ -1,30 +1,51 @@
 .subscriptionSelector {
-  border: 1px solid black;
+  background: var(--background-color-light);
+  border: 1px solid var(--font-color-default);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   width: 100%;
 }
 
-.header {
-  align-items: center;
-  background: var(--background-color-semi-dark);
+.headerContainer {
+  align-items: flex-start;
+  border: 1px solid var(--font-color-default);
   color: var(--font-color-default);
   display: flex;
-  height: 3em;
+  flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  min-height: 3em;
   width: 100%;
 }
 
-.iconButton svg {
+.header {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.header svg {
   background: var(--accent-color-neutral);
   border: 1px solid black;
   border-radius: 5px;
 }
 
-.selections {
+.filter {
   align-self: center;
+  background: none;
+  border: 1px solid var(--font-color-default);
+  border-radius: 10px;
+  color: var(--font-color-default);
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 80%;
+}
+
+.selections {
+  background: var(--background-color-semi-light);
+  border: 1px solid var(--font-color-default);
   display: grid;
   row-gap: 5px;
   max-height: 85vh;
