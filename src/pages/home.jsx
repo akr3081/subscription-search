@@ -169,7 +169,7 @@ const HomePage = () => {
                 image={channel.image}
                 link={`https://www.youtube.com/${channel.link}`}
                 items={channel.items}
-                showLoadMore={true}
+                showLoadMore={Boolean(channel.pageToken)}
                 loadMoreItems={() => {
                   loadMoreChannelVideos(channel);
                 }}
