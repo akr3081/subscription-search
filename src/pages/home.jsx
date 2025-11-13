@@ -163,6 +163,8 @@ const HomePage = () => {
         {userData?.isUserAuthenticated ? (
           searchResults
             ?.sort((a, b) => a.title.localeCompare(b.title))
+            ?.filter(result => result.items.length)
+            ?.concat(searchResults.filter(result => !result.items.length))
             ?.map(channel => (
               <Gallery
                 title={channel.title}

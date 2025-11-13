@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CN from 'classnames';
 import PropTypes from 'prop-types';
 import { NewTabIcon } from '../Icon/Icon.jsx';
 import IconButton from '../IconButton/IconButton.jsx';
@@ -13,7 +14,7 @@ const Gallery = ({ title, image, link, items, showLoadMore, loadMoreItems, handl
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={styles.gallery}>
+    <div className={CN(styles.gallery, { [styles.empty]: !items?.length })}>
       <div className={styles.header}>
         <div
           className={styles.channel}
@@ -29,7 +30,7 @@ const Gallery = ({ title, image, link, items, showLoadMore, loadMoreItems, handl
             }}
           />
           <img src={image?.url} alt={title} referrerPolicy="no-referrer" />
-          <h2>{`${title ?? FALLBACK_CHANNEL_TITLE} (${items?.length})`}</h2>
+          <h2>{`(${items?.length}) ${title ?? FALLBACK_CHANNEL_TITLE}`}</h2>
         </div>
 
         <div className={styles.icons}>
